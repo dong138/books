@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book 正则表达式 -->
+<!-- Start book 正则表达式 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>re模块操作 | 正则表达式</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../正则/section.4.html" />
+    
+    
+    <link rel="prev" href="../正则/section.1.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="re模块操作"
+        data-filepath="正则/section.3.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:24:08 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="正则/section.1.html">
+            
+                
+                    <a href="../正则/section.1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        正则表达式概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="正则/section.3.html">
+            
+                
+                    <a href="../正则/section.3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        re模块操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="正则/section.4.html">
+            
+                
+                    <a href="../正则/section.4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        匹配字符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="正则/section.5.html">
+            
+                
+                    <a href="../正则/section.5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        匹配个数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="正则/section.6.html">
+            
+                
+                    <a href="../正则/section.6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        匹配开头结尾
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="正则/section.7.html">
+            
+                
+                    <a href="../正则/section.7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        匹配分组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="正则/section.8.html">
+            
+                
+                    <a href="../正则/section.8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        re模块的高级用法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="正则/section.9.html">
+            
+                
+                    <a href="../正则/section.9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        贪婪和非贪婪
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="正则/section.10.html">
+            
+                
+                    <a href="../正则/section.10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        r的作用
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >正则表达式</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="re&#x6A21;&#x5757;&#x64CD;&#x4F5C;">re&#x6A21;&#x5757;&#x64CD;&#x4F5C;</h1>
+<p>&#x5728;Python&#x4E2D;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x540D;&#x5B57;&#x4E3A;<code>re</code></p>
+<h2 id="1-re&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;">1. re&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;match&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x64CD;&#x4F5C;</span>
+result = re.match(&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;,&#x8981;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;)
+
+<span class="hljs-comment"># &#x5982;&#x679C;&#x4E0A;&#x4E00;&#x6B65;&#x5339;&#x914D;&#x5230;&#x6570;&#x636E;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;group&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x53D6;&#x6570;&#x636E;</span>
+result.group()
+</code></pre>
+<h2 id="2-re&#x6A21;&#x5757;&#x793A;&#x4F8B;&#x5339;&#x914D;&#x4EE5;itcast&#x5F00;&#x5934;&#x7684;&#x8BED;&#x53E5;">2. re&#x6A21;&#x5757;&#x793A;&#x4F8B;(&#x5339;&#x914D;&#x4EE5;itcast&#x5F00;&#x5934;&#x7684;&#x8BED;&#x53E5;)</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+
+result = re.match(<span class="hljs-string">&quot;itcast&quot;</span>, <span class="hljs-string">&quot;itcast.cn&quot;</span>)
+
+ret = result.group()
+print(ret)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<pre><code>itcast
+</code></pre><h2 id="3-&#x8BF4;&#x660E;">3. &#x8BF4;&#x660E;</h2>
+<ul>
+<li><code>re.match()</code> &#x80FD;&#x591F;&#x5339;&#x914D;&#x51FA;&#x4EE5;&quot;xx&quot;&#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../正则/section.1.html" class="navigation navigation-prev " aria-label="Previous page: 正则表达式概述"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../正则/section.4.html" class="navigation navigation-next " aria-label="Next page: 匹配字符"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book 正则表达式 -->
+<!-- End of book 正则表达式 -->
+</html>
