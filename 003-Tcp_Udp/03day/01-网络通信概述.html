@@ -1,0 +1,622 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book python高级 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>网络通信概述 | python高级</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../03day/02-ip地址.html" />
+    
+    
+    <link rel="prev" href="../03day/index.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="1.1"
+        data-chapter-title="网络通信概述"
+        data-filepath="03day/01-网络通信概述.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 09:32:57 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="03day/index.html">
+            
+                
+                    <a href="../03day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        网络编程-UDP
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="03day/01-网络通信概述.html">
+            
+                
+                    <a href="../03day/01-网络通信概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        网络通信概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="03day/02-ip地址.html">
+            
+                
+                    <a href="../03day/02-ip地址.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        ip地址(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="03day/03-Linux命令（ping、ifconfig）.html">
+            
+                
+                    <a href="../03day/03-Linux命令（ping、ifconfig）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Linux命令(ping、ifconfig等)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03day/04-端口.html">
+            
+                
+                    <a href="../03day/04-端口.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        端口(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03day/05-socket简介.html">
+            
+                
+                    <a href="../03day/05-socket简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        socket简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="03day/06-udp网络程序-发送、接收数据.html">
+            
+                
+                    <a href="../03day/06-udp网络程序-发送、接收数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        UDP网络程序-发送、接收数据(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="03day/07-python3编码转换.html">
+            
+                
+                    <a href="../03day/07-python3编码转换.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        python3编码转换
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="03day/08-udp绑定信息.html">
+            
+                
+                    <a href="../03day/08-udp绑定信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        UDP绑定端口问题(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="03day/09-udp网络通信过程.html">
+            
+                
+                    <a href="../03day/09-udp网络通信过程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        网络通信过程(简单版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="03day/10-应用：聊天室.html">
+            
+                
+                    <a href="../03day/10-应用：聊天室.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        案例：聊天室
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="03day/11-应用：UDP聊天软件.html">
+            
+                
+                    <a href="../03day/11-应用：UDP聊天软件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        案例：UDP聊天软件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="03day/12-广播.html">
+            
+                
+                    <a href="../03day/12-广播.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.12.</b>
+                        
+                        UDP广播
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="03day/13-广播-小案例.html">
+            
+                
+                    <a href="../03day/13-广播-小案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.13.</b>
+                        
+                        UDP广播-小案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="03day/14-应用：局域网投票软件.html">
+            
+                
+                    <a href="../03day/14-应用：局域网投票软件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.14.</b>
+                        
+                        案例：局域网投票软件
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="05day/index.html">
+            
+                
+                    <a href="../05day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        网络编程-TCP
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="05day/01-tcp简介.html">
+            
+                
+                    <a href="../05day/01-tcp简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        TCP简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="05day/02-tcp网络程序-客户端.html">
+            
+                
+                    <a href="../05day/02-tcp网络程序-客户端.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        TCP网络程序-客户端(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="05day/03-tcp网络程序-服务器.html">
+            
+                
+                    <a href="../05day/03-tcp网络程序-服务器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        TCP网络程序-服务器(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="05day/04-tcp注意点.html">
+            
+                
+                    <a href="../05day/04-tcp注意点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        TCP注意点(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="05day/05-案例：模拟在线客户.html">
+            
+                
+                    <a href="../05day/05-案例：模拟在线客户.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        案例：模拟在线客户
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="05day/06-案例:文件下载器.html">
+            
+                
+                    <a href="../05day/06-案例:文件下载器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        案例：文件下载器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="05day/07-tcp的3次握手.html">
+            
+                
+                    <a href="../05day/07-tcp的3次握手.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        TCP3次握手
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="05day/08-tcp的4次挥手.html">
+            
+                
+                    <a href="../05day/08-tcp的4次挥手.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        TCP4次挥手
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="05day/tcp长连接和短连接.html">
+            
+                
+                    <a href="../05day/tcp长连接和短连接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        TCP长连接和短连接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="05day/wireshark的使用.html">
+            
+                
+                    <a href="../05day/wireshark的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        wireshark的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="05day/tcp-ip简介.html">
+            
+                
+                    <a href="../05day/tcp-ip简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        TCP/IP简介
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >python高级</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x6982;&#x8FF0;">&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x6982;&#x8FF0;</h1>
+<h2 id="1-&#x5F15;&#x5165;">1. &#x5F15;&#x5165;</h2>
+<blockquote>
+<p> &#x5982;&#x679C;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x5FEB;&#x901F;&#x7684;&#x5C06;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x5BF9;&#x65B9;</p>
+</blockquote>
+<h2 id="2-&#x4EC0;&#x4E48;&#x662F;&#x7F51;&#x7EDC;">2. &#x4EC0;&#x4E48;&#x662F;&#x7F51;&#x7EDC;</h2>
+<p><img src="../Images/04day/1509251610362274.jpg" alt=""></p>
+<p><img src="../Images/04day/7bec4421be9a45ffb2f17d0a1fac129f_th.jpeg" alt=""></p>
+<p><img src="../Images/04day/b8ac6f2471851372ca6b35.jpg" alt=""></p>
+<h4 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h4>
+<ul>
+<li>&#x7F51;&#x7EDC;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x8F85;&#x52A9;&#x53CC;&#x65B9;&#x6216;&#x8005;&#x591A;&#x65B9;&#x80FD;&#x591F;&#x8FDE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x5DE5;&#x5177;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#x53EF;&#x60F3;<code>&#x5355;&#x673A;</code>&#x7684;&#x4E16;&#x754C;&#x662F;&#x591A;&#x4E48;&#x7684;&#x5B64;&#x5355;</li>
+</ul>
+<h4 id="&#x5355;&#x673A;&#x6E38;&#x620F;&#xFF08;&#x4E0D;&#x80FD;&#x548C;&#x8FDC;&#x5728;&#x4ED6;&#x4E61;&#x7684;&#x670B;&#x53CB;&#x4E00;&#x8D77;&#x73A9;&#xFF09;">&#x5355;&#x673A;&#x6E38;&#x620F;&#xFF08;&#x4E0D;&#x80FD;&#x548C;&#x8FDC;&#x5728;&#x4ED6;&#x4E61;&#x7684;&#x670B;&#x53CB;&#x4E00;&#x8D77;&#x73A9;&#xFF09;</h4>
+<p><img src="../Images/04day/20160312081117_08d13b461d1fddd3775d8a7a1db37b10_3.jpeg" alt=""></p>
+<p><img src="../Images/04day/23030474471407226366.jpg" alt=""></p>
+<p><img src="../Images/04day/2834823748728347823742.jpg" alt=""></p>
+<h2 id="3-&#x4F7F;&#x7528;&#x7F51;&#x7EDC;&#x7684;&#x76EE;&#x7684;">3. &#x4F7F;&#x7528;&#x7F51;&#x7EDC;&#x7684;&#x76EE;&#x7684;</h2>
+<p>&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x8054;&#x901A;&#x591A;&#x65B9;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x7528;&#x7684;&#xFF0C;&#x5373;&#x628A;&#x6570;&#x636E;&#x4ECE;&#x4E00;&#x65B9;&#x4F20;&#x9012;&#x7ED9;&#x53E6;&#x5916;&#x4E00;&#x65B9;</p>
+<p>&#x524D;&#x9762;&#x7684;&#x5B66;&#x4E60;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x90FD;&#x662F;&#x5355;&#x673A;&#x7684;&#xFF0C;&#x5373;&#x4E0D;&#x80FD;&#x548C;&#x5176;&#x4ED6;&#x7535;&#x8111;&#x4E0A;&#x7684;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x901A;&#x4FE1;</p>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7535;&#x8111;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;&#x4E4B;&#x95F4;&#x80FD;&#x591F;&#x4E92;&#x76F8;&#x4F20;&#x9012;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x501F;&#x52A9;&#x7F51;&#x7EDC;&#x7684;&#x529F;&#x80FD;</p>
+<h2 id="4-&#x5C0F;&#x603B;&#x7ED3;">4. &#x5C0F;&#x603B;&#x7ED3;</h2>
+<ul>
+<li>&#x4F7F;&#x7528;&#x7F51;&#x7EDC;&#x80FD;&#x591F;&#x628A;&#x591A;&#x65B9;&#x94FE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;</li>
+<li>&#x6240;&#x8C13;&#x7684;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x5C31;&#x662F;&#xFF0C;&#x8BA9;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x7535;&#x8111;&#x4E0A;&#x7684;&#x8F6F;&#x4EF6;&#x80FD;&#x591F;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;&#xFF0C;&#x5373;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;</li>
+</ul>
+<p><img src="../Images/04day/Snip20160901_55.png" alt=""></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../03day/index.html" class="navigation navigation-prev " aria-label="Previous page: 网络编程-UDP"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../03day/02-ip地址.html" class="navigation navigation-next " aria-label="Next page: ip地址(重点)"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"toggle-chapters":{},"splitter":{},"emphasize":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book python高级 -->
+</html>
