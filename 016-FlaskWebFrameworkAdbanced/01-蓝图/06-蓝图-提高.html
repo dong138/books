@@ -1,0 +1,1118 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book flask框架进阶 -->
+<!-- Start book flask框架进阶 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>蓝图-提高 | flask框架进阶</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../02-Cookie、Session/index.html" />
+    
+    
+    <link rel="prev" href="../01-蓝图/05-蓝图-基础.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="1.6"
+        data-chapter-title="蓝图-提高"
+        data-filepath="01-蓝图/06-蓝图-提高.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:46:41 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-蓝图/index.html">
+            
+                
+                    <a href="../01-蓝图/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        蓝图
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-蓝图/01-前台、后台.html">
+            
+                
+                    <a href="../01-蓝图/01-前台、后台.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        前台、后台
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-蓝图/02-后台显示.html">
+            
+                
+                    <a href="../01-蓝图/02-后台显示.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        后台显示
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-蓝图/03-后台基本功能-统计用户数据.html">
+            
+                
+                    <a href="../01-蓝图/03-后台基本功能-统计用户数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        后台基本功能-统计用户数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-蓝图/04-模板-控制代码块.html">
+            
+                
+                    <a href="../01-蓝图/04-模板-控制代码块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        模板-控制代码块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="01-蓝图/05-蓝图-基础.html">
+            
+                
+                    <a href="../01-蓝图/05-蓝图-基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        蓝图-基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="01-蓝图/06-蓝图-提高.html">
+            
+                
+                    <a href="../01-蓝图/06-蓝图-提高.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        蓝图-提高
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-Cookie、Session/index.html">
+            
+                
+                    <a href="../02-Cookie、Session/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Cookie、Session
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-Cookie、Session/01-cookie介绍.html">
+            
+                
+                    <a href="../02-Cookie、Session/01-cookie介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        cookie介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-Cookie、Session/02-显示登录页面.html">
+            
+                
+                    <a href="../02-Cookie、Session/02-显示登录页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        显示登录页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-Cookie、Session/03-登录的问题.html">
+            
+                
+                    <a href="../02-Cookie、Session/03-登录的问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        登录的问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="02-Cookie、Session/04-使用cookie解决认证的问题.html">
+            
+                
+                    <a href="../02-Cookie、Session/04-使用cookie解决认证的问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        使用cookie解决认证的问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="02-Cookie、Session/05-获取请求参数.html">
+            
+                
+                    <a href="../02-Cookie、Session/05-获取请求参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        获取请求参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="02-Cookie、Session/06-退出登录-cookie方式.html">
+            
+                
+                    <a href="../02-Cookie、Session/06-退出登录-cookie方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        退出登录-cookie方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="02-Cookie、Session/07-Cookie的漏洞.html">
+            
+                
+                    <a href="../02-Cookie、Session/07-Cookie的漏洞.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Cookie的漏洞
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="02-Cookie、Session/08-Session.html">
+            
+                
+                    <a href="../02-Cookie、Session/08-Session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Session
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="02-Cookie、Session/09-退出登录-session方式.html">
+            
+                
+                    <a href="../02-Cookie、Session/09-退出登录-session方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        退出登录-session方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="02-Cookie、Session/10-Cookie与Session对比总结.html">
+            
+                
+                    <a href="../02-Cookie、Session/10-Cookie与Session对比总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        Cookie与Session对比总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-POST、Ajax、JSON/index.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        POST、Ajax、JSON
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="03-POST、Ajax、JSON/01-显示注册页面.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/01-显示注册页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        显示注册页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03-POST、Ajax、JSON/02-POST请求.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/02-POST请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        POST请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03-POST、Ajax、JSON/03-ajax.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/03-ajax.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        ajax
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03-POST、Ajax、JSON/04-JSON.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/04-JSON.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        JSON
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="03-POST、Ajax、JSON/05-后端逻辑实现.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/05-后端逻辑实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        后端逻辑实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="03-POST、Ajax、JSON/06-修改登录页面.html">
+            
+                
+                    <a href="../03-POST、Ajax、JSON/06-修改登录页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        修改登录页面
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04-图片验证码/index.html">
+            
+                
+                    <a href="../04-图片验证码/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        图片验证码
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="04-图片验证码/01-生成图片验证码.html">
+            
+                
+                    <a href="../04-图片验证码/01-生成图片验证码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        生成图片验证码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="04-图片验证码/02-网页中显示验证码.html">
+            
+                
+                    <a href="../04-图片验证码/02-网页中显示验证码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        网页中显示验证码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="04-图片验证码/03-网页中显示验证码-升级版.html">
+            
+                
+                    <a href="../04-图片验证码/03-网页中显示验证码-升级版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        网页中显示验证码-升级版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="04-图片验证码/04-个人简历登录时添加图片验证码.html">
+            
+                
+                    <a href="../04-图片验证码/04-个人简历登录时添加图片验证码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        个人简历登录时添加图片验证码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="04-图片验证码/05-个人简历注册时添加图片验证码.html">
+            
+                
+                    <a href="../04-图片验证码/05-个人简历注册时添加图片验证码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        个人简历注册时添加图片验证码
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-项目结构升级、异常捕获等/index.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        项目结构升级、异常捕获等
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="05-项目结构升级、异常捕获等/01-flask-SQLAlchemy、升级项目结构.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/01-flask-SQLAlchemy、升级项目结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        flask-SQLAlchemy、升级项目结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="05-项目结构升级、异常捕获等/02-添加配置文件.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/02-添加配置文件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        添加配置文件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="05-项目结构升级、异常捕获等/03-相关配置参数.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/03-相关配置参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        相关配置参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="05-项目结构升级、异常捕获等/04-异常捕获.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/04-异常捕获.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        异常捕获
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="05-项目结构升级、异常捕获等/05-升级个人简历-登录验证.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/05-升级个人简历-登录验证.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        升级个人简历-登录验证
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="05-项目结构升级、异常捕获等/06-请求钩子.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/06-请求钩子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        请求钩子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="05-项目结构升级、异常捕获等/07-上下文.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/07-上下文.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        上下文
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="05-项目结构升级、异常捕获等/08-特有变量和函数.html">
+            
+                
+                    <a href="../05-项目结构升级、异常捕获等/08-特有变量和函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        特有变量和函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="06-分页、邮件、文件/index.html">
+            
+                
+                    <a href="../06-分页、邮件、文件/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        分页、邮件、文件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="06-分页、邮件、文件/01-分页（后台用户管理）.html">
+            
+                
+                    <a href="../06-分页、邮件、文件/01-分页（后台用户管理）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        分页（后台用户管理）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="06-分页、邮件、文件/02-邮箱（注册验证）.html">
+            
+                
+                    <a href="../06-分页、邮件、文件/02-邮箱（注册验证）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        邮箱（注册验证）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="06-分页、邮件、文件/03-文件上传（个人页面）.html">
+            
+                
+                    <a href="../06-分页、邮件、文件/03-文件上传（个人页面）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        文件上传（个人页面）
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="07-模板/index.html">
+            
+                
+                    <a href="../07-模板/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        模板
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="07-模板/01-宏.html">
+            
+                
+                    <a href="../07-模板/01-宏.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        宏
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="07-模板/02-模板继承.html">
+            
+                
+                    <a href="../07-模板/02-模板继承.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        模板继承
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="07-模板/03-包含.html">
+            
+                
+                    <a href="../07-模板/03-包含.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        包含
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="07-模板/04-过滤器.html">
+            
+                
+                    <a href="../07-模板/04-过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        过滤器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="07-模板/05-自定义过滤器.html">
+            
+                
+                    <a href="../07-模板/05-自定义过滤器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        自定义过滤器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="08-CSRF、数据库迁移/index.html">
+            
+                
+                    <a href="../08-CSRF、数据库迁移/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        CSRF、数据库迁移
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="08-CSRF、数据库迁移/01-CSRF.html">
+            
+                
+                    <a href="../08-CSRF、数据库迁移/01-CSRF.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        CSRF
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="08-CSRF、数据库迁移/02-防止CSRF攻击.html">
+            
+                
+                    <a href="../08-CSRF、数据库迁移/02-防止CSRF攻击.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        防止CSRF攻击
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="08-CSRF、数据库迁移/03-导出requirements.html">
+            
+                
+                    <a href="../08-CSRF、数据库迁移/03-导出requirements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        导出requirements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="08-CSRF、数据库迁移/04-数据库迁移.html">
+            
+                
+                    <a href="../08-CSRF、数据库迁移/04-数据库迁移.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        数据库迁移
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >flask框架进阶</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="blueprint&#x84DD;&#x56FE;">Blueprint(&#x84DD;&#x56FE;)</h1>
+<h2 id="1-blueprint&#x6982;&#x5FF5;">1. Blueprint&#x6982;&#x5FF5;</h2>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;Blueprint &#x662F;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x5728;&#x8FD9;&#x4E2A;Blueprint &#x88AB;&#x6CE8;&#x518C;&#x5230;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E4B;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x88AB;&#x8C03;&#x7528;&#xFF0C;Flask &#x53EF;&#x4EE5;&#x901A;&#x8FC7;Blueprint&#x6765;&#x7EC4;&#x7EC7;URL&#x4EE5;&#x53CA;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x3002;</p>
+<p>Flask&#x4F7F;&#x7528;Blueprint&#x8BA9;&#x5E94;&#x7528;&#x5B9E;&#x73B0;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5728;Flask&#x4E2D;&#xFF0C;Blueprint&#x5177;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x5177;&#x6709;&#x591A;&#x4E2A;Blueprint</li>
+<li>&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;Blueprint&#x6CE8;&#x518C;&#x5230;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x672A;&#x4F7F;&#x7528;&#x7684;URL&#x4E0B;&#x6BD4;&#x5982; &#x201C;/&#x201D;&#x3001;&#x201C;/sample&#x201D;&#x6216;&#x8005;&#x5B50;&#x57DF;&#x540D;</li>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x591A;&#x6B21;</li>
+<li>Blueprint&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x5177;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x677F;&#x3001;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x5176;&#x5B83;&#x7684;&#x901A;&#x7528;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x5B9E;&#x73B0;&#x5E94;&#x7528;&#x7684;&#x89C6;&#x56FE;&#x548C;&#x51FD;&#x6570;&#x7684;</li>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x8981;&#x6CE8;&#x518C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;Blueprint</li>
+</ul>
+<p>&#x4F46;&#x662F;&#x4E00;&#x4E2A;Blueprint&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x4E0D;&#x80FD;&#x72EC;&#x7ACB;&#x4E8E;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#xFF0C;&#x800C;&#x5FC5;&#x987B;&#x8981;&#x6CE8;&#x518C;&#x5230;&#x67D0;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#x3002;</p>
+<h2 id="2-&#x8FD0;&#x884C;&#x673A;&#x5236;">2. &#x8FD0;&#x884C;&#x673A;&#x5236;</h2>
+<ul>
+<li>&#x84DD;&#x56FE;&#x662F;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x7EC4;&#x5C06;&#x6765;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x4E0A;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x64CD;&#x4F5C;</li>
+<li>&#x5F53;&#x5728;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528; route &#x88C5;&#x9970;&#x5668;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x65F6;,&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x5C06;&#x4FEE;&#x6539;&#x5BF9;&#x8C61;&#x7684;url_map&#x8DEF;&#x7531;&#x8868;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x6839;&#x672C;&#x6CA1;&#x6709;&#x8DEF;&#x7531;&#x8868;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x4E0A;&#x8C03;&#x7528;route&#x88C5;&#x9970;&#x5668;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x65F6;,&#x5B83;&#x53EA;&#x662F;&#x5728;&#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x5EF6;&#x8FDF;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x5217;&#x8868;defered_functions&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x9879;</li>
+<li>&#x5F53;&#x6267;&#x884C;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x7684; register_blueprint() &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x5C06;&#x4ECE;&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x7684; defered_functions &#x5217;&#x8868;&#x4E2D;&#x53D6;&#x51FA;&#x6BCF;&#x4E00;&#x9879;&#xFF0C;&#x5E76;&#x4EE5;&#x81EA;&#x8EAB;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x6267;&#x884C;&#x8BE5;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x8C03;&#x7528;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x7684; add_url_rule() &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x5C06;&#x771F;&#x6B63;&#x7684;&#x4FEE;&#x6539;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x8DEF;&#x7531;&#x8868;</li>
+</ul>
+<h2 id="3-&#x84DD;&#x56FE;&#x7684;url&#x524D;&#x7F00;">3. &#x84DD;&#x56FE;&#x7684;url&#x524D;&#x7F00;</h2>
+<ul>
+<li>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x4E0A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x84DD;&#x56FE;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;url_prefix&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#xFF08;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x662F;/&#xFF09;</li>
+<li><p>&#x5728;&#x5E94;&#x7528;&#x6700;&#x7EC8;&#x7684;&#x8DEF;&#x7531;&#x8868; url_map&#x4E2D;&#xFF0C;&#x5728;&#x84DD;&#x56FE;&#x4E0A;&#x6CE8;&#x518C;&#x7684;&#x8DEF;&#x7531;URL&#x81EA;&#x52A8;&#x88AB;&#x52A0;&#x4E0A;&#x4E86;&#x8FD9;&#x4E2A;&#x524D;&#x7F00;&#xFF0C;&#x8FD9;&#x4E2A;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5728;&#x591A;&#x4E2A;&#x84DD;&#x56FE;&#x4E2D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;URL&#x89C4;&#x5219;&#x800C;&#x4E0D;&#x4F1A;&#x6700;&#x7EC8;&#x5F15;&#x8D77;&#x51B2;&#x7A81;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x6CE8;&#x518C;&#x84DD;&#x56FE;&#x65F6;&#x5C06;&#x4E0D;&#x540C;&#x7684;&#x84DD;&#x56FE;&#x6302;&#x63A5;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x81EA;&#x8DEF;&#x5F84;&#x5373;&#x53EF;</p>
+</li>
+<li><p>url_for</p>
+<pre><code class="lang-python">url_for(<span class="hljs-string">&apos;admin.index&apos;</span>)  <span class="hljs-comment"># /admin/index</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="4-&#x8BBE;&#x7F6E;&#x6A21;&#x7248;&#x76EE;&#x5F55;&#x4E86;&#x89E3;">4. &#x8BBE;&#x7F6E;&#x6A21;&#x7248;&#x76EE;&#x5F55;(&#x4E86;&#x89E3;)</h2>
+<p>&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x9ED8;&#x8BA4;&#x7684;&#x6A21;&#x677F;&#x76EE;&#x5F55;&#x4E3A;&#x7CFB;&#x7EDF;&#x7684;&#x6A21;&#x7248;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x521B;&#x5EFA;&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x65F6;&#x4F7F;&#x7528; template_folder &#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x6A21;&#x677F;&#x76EE;&#x5F55;</p>
+<pre><code class="lang-python">admin = Blueprint(<span class="hljs-string">&apos;admin&apos;</span>,__name__,template_folder=<span class="hljs-string">&apos;my_templates&apos;</span>)
+</code></pre>
+<blockquote>
+<p>&#x6CE8;:&#x5982;&#x679C;&#x5728; templates &#x4E2D;&#x5B58;&#x5728;&#x548C; my_templates &#x540C;&#x540D;&#x6587;&#x4EF6;,&#x5219;&#x7CFB;&#x7EDF;&#x4F1A;&#x4F18;&#x5148;&#x4F7F;&#x7528; templates &#x4E2D;&#x7684;&#x6587;&#x4EF6;
+&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;<a href="https://stackoverflow.com/questions/7974771/flask-blueprint-template-folder" target="_blank">https://stackoverflow.com/questions/7974771/flask-blueprint-template-folder</a></p>
+</blockquote>
+<h2 id="5-&#x6CE8;&#x518C;&#x9759;&#x6001;&#x8DEF;&#x7531;&#x4E86;&#x89E3;">5. &#x6CE8;&#x518C;&#x9759;&#x6001;&#x8DEF;&#x7531;(&#x4E86;&#x89E3;)</h2>
+<p>&#x548C;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x4E0D;&#x540C;&#xFF0C;&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65F6;&#x4E0D;&#x4F1A;&#x9ED8;&#x8BA4;&#x6CE8;&#x518C;&#x9759;&#x6001;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x7531;&#x3002;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x6307;&#x5B9A; static_folder &#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5C06;&#x84DD;&#x56FE;&#x6240;&#x5728;&#x76EE;&#x5F55;&#x4E0B;&#x7684;static_admin&#x76EE;&#x5F55;&#x8BBE;&#x7F6E;&#x4E3A;&#x9759;&#x6001;&#x76EE;&#x5F55;</p>
+<pre><code class="lang-python">admin = Blueprint(<span class="hljs-string">&quot;admin&quot;</span>, __name__, static_folder=<span class="hljs-string">&apos;static_admin&apos;</span>)
+app.register_blueprint(admin, url_prefix=<span class="hljs-string">&apos;/admin&apos;</span>)
+</code></pre>
+<p>&#x73B0;&#x5728;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>/admin/static_admin/&lt;filename&gt;</code>&#x8BBF;&#x95EE;<code>static_admin</code>&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x4E86;
+&#x5B9A;&#x5236;&#x9759;&#x6001;&#x76EE;&#x5F55;URL&#x89C4;&#x5219; &#xFF1A;</p>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x521B;&#x5EFA;&#x84DD;&#x56FE;&#x5BF9;&#x8C61;&#x65F6;&#x4F7F;&#x7528; static_url_path &#x6765;&#x6539;&#x53D8;&#x9759;&#x6001;&#x76EE;&#x5F55;&#x7684;&#x8DEF;&#x7531;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5C06;&#x4E3A; <code>static_admin</code>&#x6587;&#x4EF6;&#x5939;&#x7684;&#x8DEF;&#x7531;&#x8BBE;&#x7F6E;&#x4E3A;<code>/lib</code></p>
+</blockquote>
+<pre><code class="lang-python">admin = Blueprint(<span class="hljs-string">&quot;admin&quot;</span>,__name__,static_folder=<span class="hljs-string">&apos;static_admin&apos;</span>,static_url_path=<span class="hljs-string">&apos;/lib&apos;</span>)
+app.register_blueprint(admin,url_prefix=<span class="hljs-string">&apos;/admin&apos;</span>)
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../01-蓝图/05-蓝图-基础.html" class="navigation navigation-prev " aria-label="Previous page: 蓝图-基础"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../02-Cookie、Session/index.html" class="navigation navigation-next " aria-label="Next page: Cookie、Session"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book flask框架进阶 -->
+<!-- End of book flask框架进阶 -->
+</html>

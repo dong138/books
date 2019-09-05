@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book flask框架基础 -->
+<!-- Start book flask框架基础 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>路由、视图、模板、数据库基础 | flask框架基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../02-路由、视图、模板、数据库基础/01-路由基础.html" />
+    
+    
+    <link rel="prev" href="../01-显示一个完整的网页-最简单版/07-视图函数中返回一个完整的html页面.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="路由、视图、模板、数据库基础"
+        data-filepath="02-路由、视图、模板、数据库基础/README.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:44:44 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-显示一个完整的网页-最简单版/index.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        显示一个完整的网页-最简单版
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-显示一个完整的网页-最简单版/01-浏览器和服务器的关系.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/01-浏览器和服务器的关系.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Flask简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-显示一个完整的网页-最简单版/02-web框架、flask简介.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/02-web框架、flask简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        web框架、flask简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-显示一个完整的网页-最简单版/03-开发flask的准备工作.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/03-开发flask的准备工作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        开发flask的准备工作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-显示一个完整的网页-最简单版/04-flask第1个页面-sublime版.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/04-flask第1个页面-sublime版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        flask第1个页面-sublime版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="01-显示一个完整的网页-最简单版/05-flask第1个页面-pycharm版.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/05-flask第1个页面-pycharm版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        flask第1个页面-pycharm版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="01-显示一个完整的网页-最简单版/06-flask第1个页面的解说.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/06-flask第1个页面的解说.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        flask第1个页面的解说
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="01-显示一个完整的网页-最简单版/07-视图函数中返回一个完整的html页面.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/07-视图函数中返回一个完整的html页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        视图函数中返回一个完整的html页面
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="02-路由、视图、模板、数据库基础/index.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        路由、视图、模板、数据库基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-路由、视图、模板、数据库基础/01-路由基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/01-路由基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        路由基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-路由、视图、模板、数据库基础/02-视图基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/02-视图基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        视图基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-路由、视图、模板、数据库基础/03-模板基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/03-模板基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        模板基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="02-路由、视图、模板、数据库基础/04-flask使用数据库-基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/04-flask使用数据库-基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        flask使用数据库-基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="02-路由、视图、模板、数据库基础/05-flask使用数据库-SQLAlchemy.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/05-flask使用数据库-SQLAlchemy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        flask使用数据库-SQLAlchemy
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >flask框架基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x4ECA;&#x65E5;&#x77E5;&#x8BC6;&#x6982;&#x8981;">&#x4ECA;&#x65E5;&#x77E5;&#x8BC6;&#x6982;&#x8981;</h1>
+<h2 id="&#x4E86;&#x89E3;&#x7684;&#x77E5;&#x8BC6;&#xFF1A;">&#x4E86;&#x89E3;&#x7684;&#x77E5;&#x8BC6;&#xFF1A;</h2>
+<blockquote>
+<ol>
+<li>&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F;&#x8DEF;&#x7531;</li>
+<li>&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F;&#x89C6;&#x56FE;&#xFF08;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#xFF09;</li>
+<li>&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F;&#x6A21;&#x677F;</li>
+</ol>
+</blockquote>
+<h2 id="&#x5FC5;&#x4F1A;&#x7684;&#x77E5;&#x8BC6;">&#x5FC5;&#x4F1A;&#x7684;&#x77E5;&#x8BC6;</h2>
+<blockquote>
+<ol>
+<li>&#x63CF;&#x8FF0;&#x51FA;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;flask&#x6846;&#x67B6;&#x5B8C;&#x6210;&#x7684;WEB&#x670D;&#x52A1;&#x5668;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8DEF;&#x7531;&#x3001;&#x89C6;&#x56FE;&#x3001;&#x6A21;&#x677F;&#x7684;&#x4F5C;&#x7528;&#x4EE5;&#x53CA;&#x5173;&#x7CFB;</li>
+<li>&#x5728;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x80FD;&#x591F;&#x719F;&#x7EC3;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#xFF0C;&#x57FA;&#x672C;&#x7684;SQL&#x539F;&#x751F;&#x8BED;&#x53E5;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x5E93;&#x7684;&#x67E5;&#x8BE2;&#x7B49;&#x64CD;&#x4F5C;</li>
+<li>&#x5728;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#x80FD;&#x591F;&#x719F;&#x7EC3;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#xFF0C;&#x57FA;&#x672C;&#x7684;SQLAlchemy&#x5B8C;&#x6210;&#x6570;&#x636E;&#x5E93;&#x7684;&#x67E5;&#x8BE2;&#x7B49;&#x64CD;&#x4F5C;</li>
+<li>&#x80FD;&#x591F;&#x4F7F;&#x7528;pycharm&#x4ECE;&#x65E0;&#x5230;&#x6709;&#x5EFA;&#x7ACB;&#x201C;MVT&#x201D;&#x7684;&#x9879;&#x76EE;&#x7ED3;&#x6784;</li>
+</ol>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../01-显示一个完整的网页-最简单版/07-视图函数中返回一个完整的html页面.html" class="navigation navigation-prev " aria-label="Previous page: 视图函数中返回一个完整的html页面"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../02-路由、视图、模板、数据库基础/01-路由基础.html" class="navigation navigation-next " aria-label="Next page: 路由基础"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book flask框架基础 -->
+<!-- End of book flask框架基础 -->
+</html>

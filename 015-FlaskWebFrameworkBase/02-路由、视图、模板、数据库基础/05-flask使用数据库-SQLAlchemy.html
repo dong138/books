@@ -1,0 +1,607 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book flask框架基础 -->
+<!-- Start book flask框架基础 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>flask使用数据库-SQLAlchemy | flask框架基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../02-路由、视图、模板、数据库基础/04-flask使用数据库-基础.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="2.5"
+        data-chapter-title="flask使用数据库-SQLAlchemy"
+        data-filepath="02-路由、视图、模板、数据库基础/05-flask使用数据库-SQLAlchemy.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:44:44 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-显示一个完整的网页-最简单版/index.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        显示一个完整的网页-最简单版
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-显示一个完整的网页-最简单版/01-浏览器和服务器的关系.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/01-浏览器和服务器的关系.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Flask简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-显示一个完整的网页-最简单版/02-web框架、flask简介.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/02-web框架、flask简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        web框架、flask简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-显示一个完整的网页-最简单版/03-开发flask的准备工作.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/03-开发flask的准备工作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        开发flask的准备工作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-显示一个完整的网页-最简单版/04-flask第1个页面-sublime版.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/04-flask第1个页面-sublime版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        flask第1个页面-sublime版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="01-显示一个完整的网页-最简单版/05-flask第1个页面-pycharm版.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/05-flask第1个页面-pycharm版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        flask第1个页面-pycharm版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="01-显示一个完整的网页-最简单版/06-flask第1个页面的解说.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/06-flask第1个页面的解说.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        flask第1个页面的解说
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="01-显示一个完整的网页-最简单版/07-视图函数中返回一个完整的html页面.html">
+            
+                
+                    <a href="../01-显示一个完整的网页-最简单版/07-视图函数中返回一个完整的html页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        视图函数中返回一个完整的html页面
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-路由、视图、模板、数据库基础/index.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        路由、视图、模板、数据库基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-路由、视图、模板、数据库基础/01-路由基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/01-路由基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        路由基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-路由、视图、模板、数据库基础/02-视图基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/02-视图基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        视图基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-路由、视图、模板、数据库基础/03-模板基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/03-模板基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        模板基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="02-路由、视图、模板、数据库基础/04-flask使用数据库-基础.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/04-flask使用数据库-基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        flask使用数据库-基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="02-路由、视图、模板、数据库基础/05-flask使用数据库-SQLAlchemy.html">
+            
+                
+                    <a href="../02-路由、视图、模板、数据库基础/05-flask使用数据库-SQLAlchemy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        flask使用数据库-SQLAlchemy
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >flask框架基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="flask&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;sqlalchemy">flask&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;-SQLAlchemy</h1>
+<h2 id="1-&#x5F15;&#x5165;">1. &#x5F15;&#x5165;</h2>
+<blockquote>
+<p>&#x4E0A;&#x4E00;&#x8282;&#x8BFE;&#xFF0C;&#x5B66;&#x4E60;&#x4E86;&#x5728;&#x89C6;&#x56FE;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;python&#x539F;&#x751F;&#x64CD;&#x4F5C;MySQL&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x3002;</p>
+<p>SQL&#x8BED;&#x53E5;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x800C;&#x4E14;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#xFF0C;&#x4E00;&#x4E01;&#x70B9;&#x7684;&#x5730;&#x65B9;&#x5199;&#x9519;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E2A;SQL&#x8BED;&#x53E5;&#x5C31;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x5F00;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x7ECF;&#x5E38;&#x56E0;&#x4E3A;SQL&#x8BED;&#x53E5;&#x7684;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x803D;&#x8BEF;&#x4E86;&#x9879;&#x76EE;&#x7684;&#x6574;&#x4F53;&#x8FDB;&#x5EA6;&#xFF0C;&#x90A3;&#x4E48;&#x9879;&#x76EE;&#x7ECF;&#x7406;&#x4F1A;&#x627E;&#x4F60;&#x201C;&#x8C08;&#x8C08;&#x7684;&#x201D;&#xFF0C;&#x4F60;&#x61C2;&#x5F97;</p>
+</blockquote>
+<p>&#x4E4B;&#x524D;&#x54B1;&#x4EEC;&#x4E5F;&#x5B66;&#x4E60;&#x8FC7;<code>orm</code>&#x8FD8;&#x6709;&#x5370;&#x8C61;&#x4E48;&#xFF1F;</p>
+<p>&#x8BF4;&#x7684;&#x901A;&#x4FD7;&#x70B9;&#xFF1A;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5BF9;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x7EC8;&#x5B83;&#x81EA;&#x52A8;&#x8F6C;&#x5316;&#x4E3A;SQL&#x8BED;&#x53E5;</p>
+<p>&#x5BF9;&#x4E86;&#xFF0C;&#x5C31;&#x662F;&#x90A3;&#x4E2A;<code>SQLAlchemy</code></p>
+<h2 id="2-&#x4F7F;&#x7528;sqlalchemy&#x5BF9;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x5347;&#x7EA7;">2. &#x4F7F;&#x7528;SQLAlchemy&#x5BF9;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x5347;&#x7EA7;</h2>
+<h3 id="21-&#x5B9A;&#x4E49;&#x7C7B;&#x6A21;&#x578B;">2.1. &#x5B9A;&#x4E49;&#x7C7B;&#x6A21;&#x578B;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask
+<span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> render_template
+<span class="hljs-keyword">import</span> pymysql
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;flask&#x5BF9;&#x8C61;</span>
+app = Flask(__name__)
+
+<span class="hljs-decorator">@app.route(&quot;/&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7528;&#x6765;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;url&#x5BF9;&#x5E94;&#x7684;&#x903B;&#x8F91;&#x5904;&#x7406;
+    :return:
+    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x54C8;&#x54C8;&#x54C8; &#xFF0C;&#x6211;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;flask&#x9875;&#x9762;&#xFF0C;&#x6210;&#x529F;&#x7684;&#x9053;&#x7406;&#x5F00;&#x59CB;&#x4E86;...&quot;</span>
+
+<span class="hljs-decorator">@app.route(&quot;/test&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x8FD9;&#x662F;test&#x9875;&#x9762;&quot;</span>
+
+<span class="hljs-decorator">@app.route(&quot;/profile&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8FD4;&#x56DE;html&#x9875;&#x9762;&#x6570;&#x636E;
+    :return:
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># return &quot;&lt;h1&gt;&#x6211;&#x662F;&#x4E2A;&#x4EBA;&#x4E3B;&#x9875;&lt;/h1&gt;&quot;</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;profile.html&quot;</span>) <span class="hljs-keyword">as</span> f:
+        content = f.read()
+    <span class="hljs-keyword">return</span> content
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v2/&lt;user_id&gt;&quot;)  # &lt;user_id&gt;&#x8868;&#x793A;&#x5339;&#x914D;url&#x65F6;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x6570;&#x636E;&#x63D0;&#x53D6;&#x51FA;&#x6765;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v2</span><span class="hljs-params">(user_id)</span>:</span>  <span class="hljs-comment"># &#x5C06;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&lt;user_id&gt;&#x4E2D;&lt;&gt;&#x5185;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x800C;&#x4E14;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x53C2;&#x4E5F;&#x662F;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&lt;h1&gt;&#x8FD9;&#x662F;%s&#x7684;&#x4E2A;&#x4EBA;&#x4E3B;&#x9875;&lt;/h1&gt;&quot;</span> % user_id
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v3/&lt;user_id&gt;&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v3</span><span class="hljs-params">(user_id)</span>:</span>
+    <span class="hljs-comment"># return &quot;&lt;h1&gt;&#x8FD9;&#x662F;%s&#x7684;&#x4E2A;&#x4EBA;&#x4E3B;&#x9875;&lt;/h1&gt;&quot; % user_id</span>
+    <span class="hljs-comment"># 1. &#x8BFB;&#x53D6;profile.html&#x6587;&#x4EF6;</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;profile.html&quot;</span>) <span class="hljs-keyword">as</span> f:
+        content = f.read()
+
+    <span class="hljs-comment"># 2. &#x5C06;&#x521A;&#x521A;&#x6807;&#x8BB0;&#x7684;&#x90A3;&#x4E2A;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FDB;&#x884C;&#x66FF;&#x6362;&#xFF1B;&#x5373;&#x5C06;xxxx&#x66FF;&#x6362;&#x4E3A;user_id</span>
+    content = content.replace(<span class="hljs-string">&quot;xxxx&quot;</span>, user_id)
+
+    <span class="hljs-comment"># 3. &#x5C06;&#x66FF;&#x6362;&#x4E4B;&#x540E;&#x7684;HTML&#x9875;&#x9762;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x81EA;&#x5DF1;&#x4E2A;&#x4EBA;&#x7B80;&#x5386;&#x4E86;</span>
+    <span class="hljs-keyword">return</span> content
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v4/&lt;user_id&gt;&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v4</span><span class="hljs-params">(user_id)</span>:</span>
+    <span class="hljs-comment"># return render_template(&quot;profile.html&quot;)</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&quot;profile.html&quot;</span>, xxxx=user_id)
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v5/&lt;user_id&gt;&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v5</span><span class="hljs-params">(user_id)</span>:</span>
+    <span class="hljs-comment"># 1. &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;</span>
+    <span class="hljs-comment"># 1.1 &#x521B;&#x5EFA;Connection&#x8FDE;&#x63A5;</span>
+    conn = pymysql.connect(host=<span class="hljs-string">&apos;localhost&apos;</span>, port=<span class="hljs-number">3306</span>, database=<span class="hljs-string">&apos;flask_1&apos;</span>, user=<span class="hljs-string">&apos;root&apos;</span>, password=<span class="hljs-string">&apos;123456&apos;</span>, charset=<span class="hljs-string">&apos;utf8&apos;</span>)
+    <span class="hljs-comment"># 1.2 &#x83B7;&#x5F97;Cursor&#x5BF9;&#x8C61;</span>
+    cs1 = conn.cursor()
+    <span class="hljs-comment"># 1.3 &#x6784;&#x9020;&#x53C2;&#x6570;&#x5217;&#x8868;</span>
+    params = [user_id]
+    <span class="hljs-comment"># 1.4 &#x6267;&#x884C;select&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x53D7;&#x5F71;&#x54CD;&#x7684;&#x884C;&#x6570;&#xFF1A;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;</span>
+    cs1.execute(<span class="hljs-string">&apos;select * from user where user_id=%s&apos;</span>, params)
+    <span class="hljs-comment"># 1.5 &#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;</span>
+    result = cs1.fetchone()
+    <span class="hljs-comment"># result = cs1.fetchall()</span>
+    print(result)
+    <span class="hljs-comment"># 1.6 &#x5173;&#x95ED;Cursor&#x5BF9;&#x8C61;</span>
+    cs1.close()
+    <span class="hljs-comment"># 1.7 &#x95ED;Connection&#x5BF9;&#x8C61;</span>
+    conn.close()
+
+    <span class="hljs-comment"># 2. &#x6A21;&#x677F;&#x6E32;&#x67D3;</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&quot;profile.html&quot;</span>, xxxx=user_id)
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v6/&lt;user_id&gt;&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v6</span><span class="hljs-params">(user_id)</span>:</span>
+    <span class="hljs-comment"># 1. &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;</span>
+    <span class="hljs-comment"># 1.1 &#x521B;&#x5EFA;Connection&#x8FDE;&#x63A5;</span>
+    conn = pymysql.connect(host=<span class="hljs-string">&apos;localhost&apos;</span>, port=<span class="hljs-number">3306</span>, database=<span class="hljs-string">&apos;flask_1&apos;</span>, user=<span class="hljs-string">&apos;root&apos;</span>, password=<span class="hljs-string">&apos;123456&apos;</span>, charset=<span class="hljs-string">&apos;utf8&apos;</span>)
+    <span class="hljs-comment"># 1.2 &#x83B7;&#x5F97;Cursor&#x5BF9;&#x8C61;</span>
+    cs1 = conn.cursor()
+    <span class="hljs-comment"># 1.3 &#x6784;&#x9020;&#x53C2;&#x6570;&#x5217;&#x8868;</span>
+    params = [user_id]
+    <span class="hljs-comment"># 1.4 &#x6267;&#x884C;select&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x53D7;&#x5F71;&#x54CD;&#x7684;&#x884C;&#x6570;&#xFF1A;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;</span>
+    cs1.execute(<span class="hljs-string">&apos;select * from user where user_id=%s&apos;</span>, params)
+    <span class="hljs-comment"># 1.5 &#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;</span>
+    result = cs1.fetchone()
+    <span class="hljs-comment"># result = cs1.fetchall()</span>
+    print(result)
+    <span class="hljs-comment"># 1.6 &#x5173;&#x95ED;Cursor&#x5BF9;&#x8C61;</span>
+    cs1.close()
+    <span class="hljs-comment"># 1.7 &#x95ED;Connection&#x5BF9;&#x8C61;</span>
+    conn.close()
+
+    <span class="hljs-comment"># 2. &#x6A21;&#x677F;&#x6E32;&#x67D3;</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&quot;profile.html&quot;</span>, user_name=result[<span class="hljs-number">2</span>], head_img=result[<span class="hljs-number">3</span>])
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v7/&lt;user_id&gt;&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v7</span><span class="hljs-params">(user_id)</span>:</span>
+    <span class="hljs-comment"># 1. &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;</span>
+    <span class="hljs-comment"># 1.1 &#x521B;&#x5EFA;Connection&#x8FDE;&#x63A5;</span>
+    conn = pymysql.connect(host=<span class="hljs-string">&apos;localhost&apos;</span>, port=<span class="hljs-number">3306</span>, database=<span class="hljs-string">&apos;flask_1&apos;</span>, user=<span class="hljs-string">&apos;root&apos;</span>, password=<span class="hljs-string">&apos;123456&apos;</span>, charset=<span class="hljs-string">&apos;utf8&apos;</span>)
+    <span class="hljs-comment"># 1.2 &#x83B7;&#x5F97;Cursor&#x5BF9;&#x8C61;</span>
+    cs1 = conn.cursor()
+    <span class="hljs-comment"># 1.3 &#x6784;&#x9020;&#x53C2;&#x6570;&#x5217;&#x8868;</span>
+    params = [user_id]
+    <span class="hljs-comment"># 1.4 &#x6267;&#x884C;select&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x53D7;&#x5F71;&#x54CD;&#x7684;&#x884C;&#x6570;&#xFF1A;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;</span>
+    cs1.execute(<span class="hljs-string">&apos;select * from user where user_id=%s&apos;</span>, params)
+    <span class="hljs-comment"># 1.5 &#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;</span>
+    result = cs1.fetchone()
+    <span class="hljs-comment"># result = cs1.fetchall()</span>
+    print(result)
+    <span class="hljs-comment"># 1.6 &#x5173;&#x95ED;Cursor&#x5BF9;&#x8C61;</span>
+    cs1.close()
+    <span class="hljs-comment"># 1.7 &#x95ED;Connection&#x5BF9;&#x8C61;</span>
+    conn.close()
+
+    <span class="hljs-comment"># 2. &#x6A21;&#x677F;&#x6E32;&#x67D3;</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&quot;profile.html&quot;</span>, user_name=result[<span class="hljs-number">2</span>], head_img=result[<span class="hljs-number">3</span>], short_description=result[<span class="hljs-number">4</span>])
+
+
+<span class="hljs-comment"># ================= &#x4E0B;&#x9762;&#x662F;&#x6DFB;&#x52A0;&#x7684;&#x4EE3;&#x7801; ===================</span>
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:123456@localhost:3306/flask_1?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;user&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)
+    user_id = Column(String(<span class="hljs-number">50</span>), nullable=<span class="hljs-keyword">False</span>)
+    user_name = Column(String(<span class="hljs-number">50</span>), nullable=<span class="hljs-keyword">False</span>)
+    head_img = Column(String(<span class="hljs-number">200</span>))
+    short_description = Column(String(<span class="hljs-number">300</span>))
+
+
+<span class="hljs-decorator">@app.route(&quot;/profile_v8/&lt;user_id&gt;&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">profile_v8</span><span class="hljs-params">(user_id)</span>:</span>
+    <span class="hljs-comment"># 1. &#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;</span>
+    <span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+    DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+    session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x7B2C;&#x4E00;&#x884C;</span>
+    obj = session.query(User).filter(User.user_id == user_id).one()
+    <span class="hljs-comment"># &#x5173;&#x95ED;session</span>
+    session.close()
+
+    <span class="hljs-comment"># 2. &#x6A21;&#x677F;&#x6E32;&#x67D3;</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&quot;profile.html&quot;</span>, user_name=obj.user_name, head_img=obj.head_img, short_description=obj.short_description)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    app.run()
+</code></pre>
+<p><img src="../assets/image-20180813174642167.png" alt="image-20180813174642167"></p>
+<h4 id="&#x91CD;&#x542F;flask&#x9879;&#x76EE;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x65B0;&#x8BBF;&#x95EE;">&#x91CD;&#x542F;flask&#x9879;&#x76EE;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x65B0;&#x8BBF;&#x95EE;</h4>
+<p><img src="../assets/image-20180813174754935.png" alt="image-20180813174754935"></p>
+<h2 id="3-&#x5347;&#x7EA7;">3. &#x5347;&#x7EA7;</h2>
+<h3 id="31-&#x65B0;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;python&#x5305;">3.1. &#x65B0;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;python&#x5305;</h3>
+<p><img src="../assets/image-20180813175118240.png" alt="image-20180813175118240"></p>
+<p><img src="../assets/image-20180813175144353.png" alt="image-20180813175144353"></p>
+<p><img src="../assets/image-20180813175252004.png" alt="image-20180813175252004"></p>
+<h3 id="&#x5EFA;&#x7ACB;modelspy&#x6587;&#x4EF6;">&#x5EFA;&#x7ACB;<code>models.py</code>&#x6587;&#x4EF6;</h3>
+<p><img src="../assets/image-20180813175345726.png" alt="image-20180813175345726"></p>
+<p><img src="../assets/image-20180813175542948.png" alt="image-20180813175542948"></p>
+<h3 id="&#x5C06;mainpy&#x4E2D;&#x7684;&#x6A21;&#x578B;&#x7C7B;&#xFF0C;&#x526A;&#x5207;&#x5230;modelspy&#x4E2D;">&#x5C06;<code>main.py</code>&#x4E2D;&#x7684;&#x6A21;&#x578B;&#x7C7B;&#xFF0C;&#x526A;&#x5207;&#x5230;<code>models.py</code>&#x4E2D;</h3>
+<p><img src="../assets/image-20180813175801726.png" alt="image-20180813175801726"></p>
+<h3 id="&#x526A;&#x5207;&#x540E;&#x7684;&#x6548;&#x679C;">&#x526A;&#x5207;&#x540E;&#x7684;&#x6548;&#x679C;</h3>
+<p><img src="../assets/image-20180813180049466.png" alt="image-20180813180049466"></p>
+<h3 id="&#x91CD;&#x542F;flask&#x9879;&#x76EE;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x65B0;&#x8BBF;&#x95EE;">&#x91CD;&#x542F;flask&#x9879;&#x76EE;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x65B0;&#x8BBF;&#x95EE;</h3>
+<p><img src="../assets/image-20180813180139533.png" alt="image-20180813180139533"></p>
+<h2 id="4-&#x603B;&#x7ED3;">4. &#x603B;&#x7ED3;</h2>
+<p><img src="../assets/image-20180813180539732.png" alt="image-20180813180539732"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../02-路由、视图、模板、数据库基础/04-flask使用数据库-基础.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: flask使用数据库-基础"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book flask框架基础 -->
+<!-- End of book flask框架基础 -->
+</html>
