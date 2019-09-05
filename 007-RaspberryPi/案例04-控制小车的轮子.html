@@ -1,0 +1,649 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python操作树莓派 -->
+<!-- Start book Python操作树莓派 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>控制小车的轮子 | Python操作树莓派</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./案例05-树莓派扫码连接无线网络.html" />
+    
+    
+    <link rel="prev" href="./案例03-控制蜂鸣器.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.4"
+        data-chapter-title="控制小车的轮子"
+        data-filepath="案例04-控制小车的轮子.md"
+        data-basepath="."
+        data-revision="Thu Sep 05 2019 10:16:32 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="README2.html">
+            
+                
+                    <a href="./README2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        树莓派基本操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-树莓派-是什么.html">
+            
+                
+                    <a href="./01-树莓派-是什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        树莓派-是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="02-树莓派-能做什么.html">
+            
+                
+                    <a href="./02-树莓派-能做什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        树莓派-能做什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="03-树莓派-怎样做.html">
+            
+                
+                    <a href="./03-树莓派-怎样做.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        树莓派-怎样做
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="04-一步步搭建树莓派/index.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        一步步搭建树莓派
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="04-一步步搭建树莓派/01-树莓派以及SD卡.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/01-树莓派以及SD卡.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        树莓派以及SD卡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-linux、mac版.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-linux、mac版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        烧录镜像到SD卡(Linux、mac版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-windows版.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-windows版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        烧录镜像到SD卡(Windows版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="04-一步步搭建树莓派/03-HDMI链接显示器及开机.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/03-HDMI链接显示器及开机.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        HDMI链接显示器及开机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="04-一步步搭建树莓派/04-树莓派基本配置.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/04-树莓派基本配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        树莓派基本配置
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="README3.html">
+            
+                
+                    <a href="./README3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        树莓派基本配置
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="案例01-控制LED灯.html">
+            
+                
+                    <a href="./案例01-控制LED灯.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        控制LED灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="案例02-按键检测.html">
+            
+                
+                    <a href="./案例02-按键检测.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        按键控制LED灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="案例03-控制蜂鸣器.html">
+            
+                
+                    <a href="./案例03-控制蜂鸣器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        控制蜂鸣器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="案例04-控制小车的轮子.html">
+            
+                
+                    <a href="./案例04-控制小车的轮子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        控制小车的轮子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="案例05-树莓派扫码连接无线网络.html">
+            
+                
+                    <a href="./案例05-树莓派扫码连接无线网络.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        扫码连接无线网络
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="案例06-树莓派开机启动.html">
+            
+                
+                    <a href="./案例06-树莓派开机启动.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        开机启动
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Python操作树莓派</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="&#x63A7;&#x5236;&#x5C0F;&#x8F66;&#x7684;&#x8F6E;&#x5B50;">&#x63A7;&#x5236;&#x5C0F;&#x8F66;&#x7684;&#x8F6E;&#x5B50;</h3>
+<blockquote>
+<p>&#x4E00;&#x4E2A;&#x8F6E;&#x5B50;&#x7684;&#x63A7;&#x5236;</p>
+</blockquote>
+<p><img src="assets/wheel1.jpg" alt="&#x4E00;&#x4E2A;&#x8F6E;&#x5B50;"></p>
+<ul>
+<li>&#x628A;&#x8F66;&#x8F6E;&#x548C;&#x70B9;&#x51FB;&#x5982;&#x4E0A;&#x56FE;&#x4E00;&#x6837;&#x63A5;&#x597D;&#xFF0C;&#x628A;&#x7EBF;&#x63D2;&#x5230;&#x5982;&#x4E0B;&#x56FE;&#x7684;&#x7EA2;&#x8272;&#x6846;&#x6846;&#x5185;&#xFF0C;</li>
+</ul>
+<p><img src="assets/1546906884885.png" alt="1546906884885"></p>
+<p>&#x200B;     <img src="assets/1546907249600.png" alt="1546907249600"></p>
+<ul>
+<li>&#x5DE6;&#x4FA7;&#x8F66;&#x8F6E;&#x524D;&#x8FDB;&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<span class="hljs-keyword">import</span> RPi.GPIO <span class="hljs-keyword">as</span> GPIO
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-comment"># &#x5F15;&#x811A; &#x7F16;&#x53F7;</span>
+PWMA = <span class="hljs-number">18</span>  <span class="hljs-comment"># &#x5DE6;&#x4FA7;</span>
+AIN1 = <span class="hljs-number">22</span>  <span class="hljs-comment"># </span>
+AIN2 = <span class="hljs-number">27</span>  <span class="hljs-comment"># </span>
+
+PWMB = <span class="hljs-number">23</span>  <span class="hljs-comment"># &#x53F3;&#x4FA7;</span>
+BIN1 = <span class="hljs-number">25</span>  <span class="hljs-comment"># </span>
+BIN2 = <span class="hljs-number">24</span>  <span class="hljs-comment"># </span>
+
+
+
+<span class="hljs-comment"># &#x5F53;&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x811A;&#x672C;/&#x7535;&#x8DEF;&#x4F7F;&#x7528;&#x4F60;&#x7684;Raspberry Pi&#x7684;GPIO&#x63A5;&#x53E3;&#x65F6;&#x4F1A;&#x63D0;&#x793A;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x3002;</span>
+<span class="hljs-comment"># &#x56E0;&#x6B64;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x811A;&#x672C;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x63D0;&#x793A;&#x8B66;&#x544A;&#x4FE1;&#x606F;</span>
+GPIO.setwarnings(<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># &#x662F;&#x5426;&#x63D0;&#x793A;&#x5F15;&#x811A;&#x88AB;&#x590D;&#x7528;&#x8B66;&#x544A;</span>
+
+GPIO.setmode(GPIO.BCM)  <span class="hljs-comment"># &#x5DE5;&#x4F5C;&#x6A21;&#x5F0F; BCM(&#x6570;&#x5B57;&#x7F16;&#x53F7;&#x6A21;&#x5F0F;)  &#x8FD8;&#x6709;&#x4E00;&#x79CD;BOARD&#x6A21;&#x5F0F;(&#x677F;&#x8F7D;&#x7F16;&#x53F7;&#x6A21;&#x5F0F;)</span>
+GPIO.setup(AIN2, GPIO.OUT)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;</span>
+GPIO.setup(AIN1, GPIO.OUT)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;</span>
+GPIO.setup(PWMA, GPIO.OUT)
+
+
+<span class="hljs-comment">#&#x8BBE;&#x7F6E;&#x5DE6;&#x4FA7;&#x8F6E;&#x5B50;           100&#x662F;&#x9891;&#x7387;  &#x5360;&#x7A7A;&#x6BD4;&#x5EFA;&#x7ACB;&#x5728; &#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x4E0A; &#x9891;&#x7387; &#x592A;&#x4F4E;&#x5C0F;&#x8F66;&#x4F1A;&#x8D70;&#x8D70;&#x505C;&#x505C;</span>
+L_Motor = GPIO.PWM(PWMA, <span class="hljs-number">100</span>)
+<span class="hljs-comment">#&#x8BBE;&#x7F6E;&#x5DE6;&#x4FA7;&#x8F6E;&#x5B50;           &#x521D;&#x59CB;&#x5360;&#x7A7A;&#x6BD4; &#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5C0F;&#x8F66;&#x7684;&#x901F;&#x5EA6;&#x4E86;</span>
+L_Motor.start(<span class="hljs-number">0</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">try</span>:
+        L_Motor.ChangeDutyCycle(<span class="hljs-number">100</span>)  <span class="hljs-comment"># &#x66F4;&#x6539;&#x5360;&#x7A7A;&#x6BD4;&#xFF1A; &#x8303;&#x56F4;&#xFF1A;0.0 &lt;= dc &gt;= 100.0 &#x53EF;&#x4EE5;&#x5F71;&#x54CD;&#x901F;&#x5EA6;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            GPIO.output(AIN2, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># AIN2 &#x5DE6;&#x540E;&#x8F6E; &#x524D;&#x8FDB;</span>
+            GPIO.output(AIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN2 &#x5DE6;&#x524D;&#x8F6E; &#x540E;&#x9000;</span>
+            time.sleep(<span class="hljs-number">1</span>)
+            GPIO.output(AIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN2 &#x5DE6;&#x540E;&#x8F6E; &#x540E;&#x9000; </span>
+            GPIO.output(AIN1, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># AIN2 &#x5DE6;&#x524D;&#x8F6E; &#x524D;&#x8FDB;</span>
+            time.sleep(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">except</span> KeyboardInterrupt:
+        GPIO.cleanup()  <span class="hljs-comment"># &#x6E05;&#x7406;&#x6240;&#x6709;&#x7AEF;&#x53E3;</span>
+</code></pre>
+<ul>
+<li>&#x591A;&#x4E2A;&#x8F6E;&#x5B50;&#x7684;&#x63A7;&#x5236;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<span class="hljs-keyword">import</span> RPi.GPIO <span class="hljs-keyword">as</span> GPIO
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-comment"># &#x5F15;&#x811A; &#x7F16;&#x53F7;</span>
+PWMA = <span class="hljs-number">18</span>  <span class="hljs-comment"># &#x5DE6;&#x4FA7;&#x8F6E;</span>
+AIN1 = <span class="hljs-number">22</span>  <span class="hljs-comment"># &#x5DE6;&#x8F6E;&#x524D;&#x8FDB;</span>
+AIN2 = <span class="hljs-number">27</span>  <span class="hljs-comment"># &#x5DE6;&#x8F6E;&#x540E;&#x9000;</span>
+
+PWMB = <span class="hljs-number">23</span>  <span class="hljs-comment"># &#x53F3;&#x4FA7;&#x8F6E;</span>
+BIN1 = <span class="hljs-number">25</span>  <span class="hljs-comment"># &#x53F3;&#x8F6E;&#x524D;&#x8FDB;</span>
+BIN2 = <span class="hljs-number">24</span>  <span class="hljs-comment"># &#x53F3;&#x8F6E;&#x540E;&#x9000;</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">t_up</span><span class="hljs-params">(speed, t_time)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5C0F;&#x8F66;&#x5411;&#x524D;&#x7684;&#x4EE3;&#x7801;
+    :param speed: &#x901F;&#x5EA6;
+    :param t_time:&#x8DD1;&#x7684;&#x65F6;&#x95F4;
+    :return:
+    &quot;&quot;&quot;</span>
+    L_Motor.ChangeDutyCycle(speed)  <span class="hljs-comment"># &#x66F4;&#x6539;&#x5360;&#x7A7A;&#x6BD4;&#xFF1A; &#x8303;&#x56F4;&#xFF1A;0.0 &lt;= dc &gt;= 100.0 &#x53EF;&#x4EE5;&#x5F71;&#x54CD;&#x901F;&#x5EA6;</span>
+    GPIO.output(AIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN2   &#x5DE6;&#x8F6E;&#x540E;&#x9000;</span>
+    GPIO.output(AIN1, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># AIN1  &#x5DE6;&#x8F6E;&#x524D;&#x8FDB;</span>
+
+    R_Motor.ChangeDutyCycle(speed)
+    GPIO.output(BIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># BIN2  &#x53F3;&#x8F6E;&#x540E;&#x9000;</span>
+    GPIO.output(BIN1, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># BIN1   &#x53F3;&#x8F6E;&#x524D;&#x8FDB;</span>
+    time.sleep(t_time)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">t_down</span><span class="hljs-params">(speed, t_time)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5C0F;&#x8F66;&#x5411;&#x540E;&#x7684;&#x4EE3;&#x7801;
+    :param speed: &#x901F;&#x5EA6;
+    :param t_time:&#x8DD1;&#x7684;&#x65F6;&#x95F4;
+    :return:
+    &quot;&quot;&quot;</span>
+    L_Motor.ChangeDutyCycle(speed)
+    GPIO.output(AIN2, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># AIN2</span>
+    GPIO.output(AIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN1</span>
+
+    R_Motor.ChangeDutyCycle(speed)
+    GPIO.output(BIN2, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># BIN2</span>
+    GPIO.output(BIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># BIN1</span>
+    time.sleep(t_time)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">t_left</span><span class="hljs-params">(speed, t_time)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5DE6;&#x8F66;&#x8F6E;&#x540E;&#x9000;   &#x53F3;&#x8F66;&#x8F6E;&#x524D;&#x8FDB;  &#x5C31;&#x53EF;&#x4EE5;&#x8BA9;&#x5C0F;&#x8F66;&#x5DE6;&#x8F6C;
+    &quot;&quot;&quot;</span>
+    L_Motor.ChangeDutyCycle(speed)
+    GPIO.output(AIN2, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># AIN2    &#x5DE6;&#x8F66;&#x8F6E;&#x540E;&#x9000;</span>
+    GPIO.output(AIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN1</span>
+
+    R_Motor.ChangeDutyCycle(speed)
+    GPIO.output(BIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># BIN2</span>
+    GPIO.output(BIN1, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># BIN1  &#x53F3;&#x8F66;&#x8F6E;&#x524D;&#x8FDB;</span>
+    time.sleep(t_time)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">t_right</span><span class="hljs-params">(speed, t_time)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5DE6;&#x8F6E;&#x524D;&#x8FDB;   &#x53F3;&#x8F66;&#x8F6E;&#x540E;&#x9000;  &#x5C31;&#x53EF;&#x4EE5;&#x8BA9;&#x5C0F;&#x8F66;&#x53F3;&#x8F6C;
+    &quot;&quot;&quot;</span>
+    L_Motor.ChangeDutyCycle(speed)
+    GPIO.output(AIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN2</span>
+    GPIO.output(AIN1, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># AIN1  &#x5DE6;&#x8F66;&#x8F6E;&#x524D;&#x8FDB;</span>
+
+    R_Motor.ChangeDutyCycle(speed)
+    GPIO.output(BIN2, <span class="hljs-keyword">True</span>)  <span class="hljs-comment"># BIN2   &#x53F3;&#x8F66;&#x8F6E;&#x540E;&#x9000;</span>
+    GPIO.output(BIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># BIN1</span>
+    time.sleep(t_time)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">t_stop</span><span class="hljs-params">(t_time)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5C0F;&#x8F66;&#x505C;&#x6B62;
+    &quot;&quot;&quot;</span>
+    L_Motor.ChangeDutyCycle(<span class="hljs-number">0</span>)
+    GPIO.output(AIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN2</span>
+    GPIO.output(AIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># AIN1</span>
+
+    R_Motor.ChangeDutyCycle(<span class="hljs-number">0</span>)
+    GPIO.output(BIN2, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># BIN2</span>
+    GPIO.output(BIN1, <span class="hljs-keyword">False</span>)  <span class="hljs-comment"># BIN1</span>
+    time.sleep(t_time)
+
+
+<span class="hljs-comment"># &#x5F53;&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x811A;&#x672C;/&#x7535;&#x8DEF;&#x4F7F;&#x7528;&#x4F60;&#x7684;Raspberry Pi&#x7684;GPIO&#x63A5;&#x53E3;&#x65F6;&#x4F1A;&#x63D0;&#x793A;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x3002;</span>
+<span class="hljs-comment"># &#x56E0;&#x6B64;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x811A;&#x672C;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x63D0;&#x793A;&#x8B66;&#x544A;&#x4FE1;&#x606F;</span>
+GPIO.setwarnings(<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># &#x662F;&#x5426;&#x63D0;&#x793A;&#x5F15;&#x811A;&#x88AB;&#x590D;&#x7528;&#x8B66;&#x544A;</span>
+
+GPIO.setmode(GPIO.BCM)  <span class="hljs-comment"># &#x5DE5;&#x4F5C;&#x6A21;&#x5F0F; BCM(&#x6570;&#x5B57;&#x7F16;&#x53F7;&#x6A21;&#x5F0F;)  &#x8FD8;&#x6709;&#x4E00;&#x79CD;BOARD&#x6A21;&#x5F0F;(&#x677F;&#x8F7D;&#x7F16;&#x53F7;&#x6A21;&#x5F0F;)</span>
+GPIO.setup(AIN2, GPIO.OUT)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;</span>
+GPIO.setup(AIN1, GPIO.OUT)
+GPIO.setup(PWMA, GPIO.OUT)
+
+GPIO.setup(BIN1, GPIO.OUT)
+GPIO.setup(BIN2, GPIO.OUT)
+GPIO.setup(PWMB, GPIO.OUT)
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5DE6;&#x4FA7;&#x8F6E;&#x5B50;            100&#x662F;&#x9891;&#x7387;  &#x5360;&#x7A7A;&#x6BD4;&#x5EFA;&#x7ACB;&#x5728; &#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x4E0A; &#x9891;&#x7387; &#x592A;&#x4F4E;&#x5C0F;&#x8F66;&#x4F1A;&#x8D70;&#x8D70;&#x505C;&#x505C;</span>
+L_Motor = GPIO.PWM(PWMA, <span class="hljs-number">100</span>)
+L_Motor.start(<span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x53F3;&#x4FA7;&#x8F6E;&#x5B50; </span>
+R_Motor = GPIO.PWM(PWMB, <span class="hljs-number">100</span>)
+R_Motor.start(<span class="hljs-number">0</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            t_up(<span class="hljs-number">100</span>, <span class="hljs-number">3</span>)  <span class="hljs-comment"># &#x5411;&#x524D;</span>
+            t_down(<span class="hljs-number">100</span>, <span class="hljs-number">3</span>)  <span class="hljs-comment"># &#x5411;&#x540E;</span>
+            t_left(<span class="hljs-number">100</span>, <span class="hljs-number">3</span>)  <span class="hljs-comment"># &#x5DE6;&#x8F6C;</span>
+            t_right(<span class="hljs-number">100</span>, <span class="hljs-number">3</span>)  <span class="hljs-comment"># &#x53F3;&#x8F6C;</span>
+            t_stop(<span class="hljs-number">3</span>)  <span class="hljs-comment"># &#x505C;&#x4E0B;</span>
+    <span class="hljs-keyword">except</span> KeyboardInterrupt:
+        GPIO.cleanup()  <span class="hljs-comment"># &#x6E05;&#x7406;&#x6240;&#x6709;&#x7AEF;&#x53E3;</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./案例03-控制蜂鸣器.html" class="navigation navigation-prev " aria-label="Previous page: 控制蜂鸣器"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./案例05-树莓派扫码连接无线网络.html" class="navigation navigation-next " aria-label="Next page: 扫码连接无线网络"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python操作树莓派 -->
+<!-- End of book Python操作树莓派 -->
+</html>

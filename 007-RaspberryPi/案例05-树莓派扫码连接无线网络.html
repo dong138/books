@@ -1,0 +1,686 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python操作树莓派 -->
+<!-- Start book Python操作树莓派 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>扫码连接无线网络 | Python操作树莓派</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./案例06-树莓派开机启动.html" />
+    
+    
+    <link rel="prev" href="./案例04-控制小车的轮子.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.5"
+        data-chapter-title="扫码连接无线网络"
+        data-filepath="案例05-树莓派扫码连接无线网络.md"
+        data-basepath="."
+        data-revision="Thu Sep 05 2019 10:16:32 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="README2.html">
+            
+                
+                    <a href="./README2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        树莓派基本操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-树莓派-是什么.html">
+            
+                
+                    <a href="./01-树莓派-是什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        树莓派-是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="02-树莓派-能做什么.html">
+            
+                
+                    <a href="./02-树莓派-能做什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        树莓派-能做什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="03-树莓派-怎样做.html">
+            
+                
+                    <a href="./03-树莓派-怎样做.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        树莓派-怎样做
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="04-一步步搭建树莓派/index.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        一步步搭建树莓派
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="04-一步步搭建树莓派/01-树莓派以及SD卡.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/01-树莓派以及SD卡.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        树莓派以及SD卡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-linux、mac版.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-linux、mac版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        烧录镜像到SD卡(Linux、mac版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-windows版.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-windows版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        烧录镜像到SD卡(Windows版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="04-一步步搭建树莓派/03-HDMI链接显示器及开机.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/03-HDMI链接显示器及开机.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        HDMI链接显示器及开机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="04-一步步搭建树莓派/04-树莓派基本配置.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/04-树莓派基本配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        树莓派基本配置
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="README3.html">
+            
+                
+                    <a href="./README3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        树莓派基本配置
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="案例01-控制LED灯.html">
+            
+                
+                    <a href="./案例01-控制LED灯.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        控制LED灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="案例02-按键检测.html">
+            
+                
+                    <a href="./案例02-按键检测.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        按键控制LED灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="案例03-控制蜂鸣器.html">
+            
+                
+                    <a href="./案例03-控制蜂鸣器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        控制蜂鸣器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="案例04-控制小车的轮子.html">
+            
+                
+                    <a href="./案例04-控制小车的轮子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        控制小车的轮子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="案例05-树莓派扫码连接无线网络.html">
+            
+                
+                    <a href="./案例05-树莓派扫码连接无线网络.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        扫码连接无线网络
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="案例06-树莓派开机启动.html">
+            
+                
+                    <a href="./案例06-树莓派开机启动.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        开机启动
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Python操作树莓派</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x626B;&#x4E8C;&#x7EF4;&#x7801;&#x6D4B;&#x8BD5;">&#x626B;&#x4E8C;&#x7EF4;&#x7801;&#x6D4B;&#x8BD5;</h1>
+<h2 id="1&#x751F;&#x6210;&#x4E8C;&#x7EF4;&#x7801;">1.&#x751F;&#x6210;&#x4E8C;&#x7EF4;&#x7801;</h2>
+<blockquote>
+<p>&#x7F51;&#x7AD9;<a href="https://cli.im/" target="_blank">https://cli.im/</a> &#x53EF;&#x4EE5;&#x751F;&#x6210;&#x4E8C;&#x7EF4;&#x7801;</p>
+</blockquote>
+<p><img src="assets/1547121137176.png" alt="1547121137176"></p>
+<p><img src="assets/1547121166966.png" alt="1547121166966"></p>
+<h2 id="2&#x6444;&#x50CF;&#x5934;&#x626B;&#x63CF;&#x4E8C;&#x7EF4;&#x7801;&#x8FDE;&#x63A5;wifi">2.&#x6444;&#x50CF;&#x5934;&#x626B;&#x63CF;&#x4E8C;&#x7EF4;&#x7801;&#x8FDE;&#x63A5;wifi</h2>
+<blockquote>
+<ol>
+<li>&#x628A;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x7684;wifi&#x7684;&#x8D26;&#x53F7;&#x548C;&#x5BC6;&#x7801;&#x5199;&#x6210;json&#x6570;&#x636E;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x7801;</li>
+</ol>
+</blockquote>
+<p><img src="assets/1547121292183.png" alt="1547121292183"></p>
+<blockquote>
+<ol>
+<li>&#x5B89;&#x88C5;&#x8BC6;&#x522B;&#x4E8C;&#x7EF4;&#x7801;&#x7684;&#x5305;</li>
+</ol>
+</blockquote>
+<pre><code class="lang-shell">sudo apt-get install libzbar0 libzbar-dev
+
+(&#x5982;&#x679C;&#x662F;&#x5728;ubuntu &#x8FD8;&#x8981;&#x6267;&#x884C;sudo apt install python3-dev&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x5C0F;&#x8F66; &#x4E0D;&#x9700;&#x8981;)
+
+sudo pip3 install zbarlight
+</code></pre>
+<h2 id="3-&#x626B;&#x63CF;&#x548C;&#x8BBE;&#x7F6E;&#x4E8C;&#x7EF4;&#x7801;&#x7684;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x4EE3;&#x7801;">3. &#x626B;&#x63CF;&#x548C;&#x8BBE;&#x7F6E;&#x4E8C;&#x7EF4;&#x7801;&#x7684;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x4EE3;&#x7801;</h2>
+<h4 id="scanqrsetwifipy"><code>scan_qr_set_wifi.py</code></h4>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> cv2
+<span class="hljs-keyword">import</span> zbarlight
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+<span class="hljs-keyword">import</span> RPi.GPIO <span class="hljs-keyword">as</span> GPIO
+<span class="hljs-keyword">from</span> os <span class="hljs-keyword">import</span> system
+
+<span class="hljs-comment"># &#x6B65;&#x9AA4;1:&#x8BC6;&#x522B;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x4E8C;&#x7EF4;&#x7801;</span>
+Rpin = <span class="hljs-number">5</span>  <span class="hljs-comment"># &#x7EA2;&#x706F;</span>
+Gpin = <span class="hljs-number">6</span>  <span class="hljs-comment"># &#x7EFF;&#x706F;</span>
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(Rpin, GPIO.OUT)
+GPIO.setup(Gpin, GPIO.OUT)
+
+led_flag = <span class="hljs-keyword">False</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">led_on_off</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7EA2;&#x706F;&#x95EA;&#x70C1;  &#x626B;&#x63CF;&#x671F;&#x95F4;&#x8C03;&#x7528;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">global</span> led_flag
+    <span class="hljs-keyword">if</span> led_flag:
+        GPIO.output(Rpin, GPIO.HIGH)
+        led_flag = <span class="hljs-keyword">False</span>
+    <span class="hljs-keyword">else</span>:
+        GPIO.output(Rpin, GPIO.LOW)
+        led_flag = <span class="hljs-keyword">True</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_wifi_info_from_img</span><span class="hljs-params">(file_name)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8BC6;&#x522B;&#x4E8C;&#x7EF4;&#x7801;&#x8FD4;&#x56DE;&#x6570;&#x636E;
+    :param file_name:
+    :return:
+    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">with</span> open(file_name, <span class="hljs-string">&apos;rb&apos;</span>) <span class="hljs-keyword">as</span> image_file:
+        <span class="hljs-comment"># &#x6253;&#x5F00;&#x83B7;&#x53D6;&#x56FE;&#x7247;&#x5BF9;&#x8C61;</span>
+        image = Image.open(image_file)
+        <span class="hljs-comment"># &#x5206;&#x914D;&#x5B58;&#x50A8;&#x5E76;&#x52A0;&#x8F7D;&#x5B83;</span>
+        image.load()
+    <span class="hljs-comment"># &#x8BC6;&#x522B;&#x56FE;&#x50CF;&#x8FD4;&#x56DE;&#x6570;&#x636E; &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;</span>
+    codes = zbarlight.scan_codes(<span class="hljs-string">&apos;qrcode&apos;</span>, image)
+    <span class="hljs-keyword">if</span> codes:
+        <span class="hljs-keyword">return</span> codes[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cv2_qr</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8C03;&#x7528;opencv&#x901A;&#x8FC7;zbarlight&#x5B8C;&#x6210;&#x4E8C;&#x7EF4;&#x7801;&#x8BC6;&#x522B;&quot;&quot;&quot;</span>
+    cap = cv2.VideoCapture(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x4E00;&#x5E27;&#x7684;&#x6570;&#x636E;</span>
+        _, frame = cap.read()
+        <span class="hljs-comment"># show a frame</span>
+        <span class="hljs-comment"># cv2.imshow(&quot;capture&quot;, frame)</span>
+        file_name = <span class="hljs-string">&quot;login_QR.jpg&quot;</span>
+        <span class="hljs-comment"># &#x4FDD;&#x5B58;&#x4E8C;&#x7EF4;&#x7801;&#x56FE;&#x7247;</span>
+        cv2.imwrite(file_name, frame)
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x4E8C;&#x7EF4;&#x7801;&#x56FE;&#x7247;&#x4FE1;&#x606F;</span>
+        ret = get_wifi_info_from_img(file_name)
+        <span class="hljs-keyword">if</span> ret:
+            <span class="hljs-comment"># &#x5982;&#x679C;&#x626B;&#x63CF;&#x5230; &#x7EA2;&#x7EFF;&#x706F;&#x5168;&#x4EAE;</span>
+            GPIO.output(Gpin, GPIO.HIGH)
+            GPIO.output(Rpin, GPIO.HIGH)
+            time.sleep(<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">if</span> cv2.waitKey(<span class="hljs-number">1</span>) &amp; <span class="hljs-number">0xFF</span> == ord(<span class="hljs-string">&apos;q&apos;</span>):
+            <span class="hljs-keyword">break</span>
+        led_on_off()  <span class="hljs-comment"># &#x626B;&#x63CF;&#x671F;&#x95F4;&#x7EA2;&#x706F;&#x95EA;&#x70C1;</span>
+        time.sleep(<span class="hljs-number">0.5</span>)
+
+    <span class="hljs-comment"># &#x91CA;&#x653E;&#x8D44;&#x6E90;</span>
+    cap.release()
+    cv2.destroyAllWindows()
+
+    <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5B8C;&#x5173;&#x95ED;&#x7EA2;&#x7EFF;&#x706F;</span>
+    GPIO.output(Gpin, GPIO.LOW)
+    GPIO.output(Rpin, GPIO.LOW)
+
+    <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x8BC6;&#x522B;&#x5230;&#x7684;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">return</span> ret
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_wifi_config</span><span class="hljs-params">(wifi_pass_str)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x8BBE;&#x7F6E;wifi&#x7684;&#x914D;&#x7F6E;
+    &#x914D;&#x7F6E;&#x7684;&#x5927;&#x4F53;&#x539F;&#x7406;&#xFF1A;Linux&#x914D;&#x7F6E;WiFi&#x4EE5;&#x53CA;&#x8BB0;&#x5F55;&#x5BC6;&#x7801;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x8BB0;&#x5F55;&#x7684;
+                &#x53EA;&#x8981;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6309;&#x7167;&#x5B83;&#x7684;&#x8981;&#x6C42;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;wifi&#x7684;&#x8BBE;&#x5B9A;
+                &#x6240;&#x4EE5;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5728;&#x7EC4;&#x7EC7;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x5199;&#x5165;&#x5230;&#x8FD9;&#x4E2A;&#x7279;&#x5B9A;
+                &#x7684;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4ECE;&#x800C;&#x5B8C;&#x6210;&#x914D;&#x7F6E;WiFi&#x7684;&#x76EE;&#x7684;
+    &quot;&quot;&quot;</span>
+    wifi_config = <span class="hljs-string">&quot;&quot;&quot;
+    country=GB
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    network={
+        ssid=&quot;%s&quot;
+        psk=&quot;%s&quot;
+    }&quot;&quot;&quot;</span>
+    print(<span class="hljs-string">&quot;----------&gt;&gt;&gt;&gt;&gt;&gt;%s&quot;</span> % wifi_pass_str)  <span class="hljs-comment"># {&apos;name&apos;:&apos;python&apos;,&apos;psw&apos;:&apos;12345678&apos;}</span>
+    <span class="hljs-comment"># &#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5B57;&#x5178;</span>
+    wifi_dict = eval(wifi_pass_str)
+    print(<span class="hljs-string">&apos;&#x8F6C;&#x4E3A;&#x5B57;&#x5178;:%s&apos;</span> % wifi_dict)
+    <span class="hljs-keyword">if</span> wifi_dict:
+        <span class="hljs-comment"># &#x83B7;&#x53D6;wifi&#x540D;&#x5B57;</span>
+        wifi = wifi_dict[<span class="hljs-string">&apos;name&apos;</span>]
+        <span class="hljs-comment"># &#x83B7;&#x53D6;fwifi&#x5BC6;&#x7801;</span>
+        passwd = wifi_dict[<span class="hljs-string">&apos;psw&apos;</span>]
+        wifi_configed = wifi_config % (wifi, passwd)
+        print(<span class="hljs-string">&quot;-------&gt;&gt;&gt;&gt;&gt;&#x5373;&#x5C06;&#x8981;&#x914D;&#x7F6E;&#x7684;&#x6570;&#x636E;&#x4E3A;:----%s&quot;</span> % wifi_configed)
+        <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;/etc/wpa_supplicant/wpa_supplicant.conf&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:
+            f.write(wifi_configed)
+    <span class="hljs-keyword">else</span>:
+        print(<span class="hljs-string">&quot;&#x4E8C;&#x7EF4;&#x7801;&#x5F02;&#x5E38;&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reboot_pi</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x91CD;&#x542F;
+    &quot;&quot;&quot;</span>
+    system(<span class="hljs-string">&quot;reboot&quot;</span>)
+</code></pre>
+<ul>
+<li>&#x6309;&#x952E;&#x6309;&#x4E0B;&#xFF0C;&#x5F00;&#x59CB;&#x626B;&#x63CF;&#x7684;&#x4EE3;&#x7801; <code>set_wifi_main.py</code></li>
+</ul>
+<pre><code class="lang-python">
+<span class="hljs-comment"># coding=utf-8</span>
+<span class="hljs-keyword">import</span> RPi.GPIO <span class="hljs-keyword">as</span> GPIO
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> scan_qr_set_wifi
+
+BtnPin = <span class="hljs-number">19</span>  <span class="hljs-comment"># &#x6309;&#x94AE;&#x5F15;&#x811A;&#x53F7;</span>
+Rpin = <span class="hljs-number">5</span>  <span class="hljs-comment"># &#x7EA2;&#x706F;&#x5F15;&#x811A;&#x53F7;</span>
+Gpin = <span class="hljs-number">6</span>  <span class="hljs-comment"># &#x7EFF;&#x706F;&#x5F15;&#x811A;&#x53F7;</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;&#x8BBE;&#x7F6E;&#x7EA2;&#x7EFF;&#x706F;&#x548C;&#x6309;&#x94AE;&#x521D;&#x59CB;&#x5316;&apos;</span>)
+    GPIO.setwarnings(<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># &#x53D6;&#x6D88;&#x5F15;&#x811A;&#x590D;&#x7528;&#x8B66;&#x544A;</span>
+    GPIO.setmode(GPIO.BCM)  <span class="hljs-comment"># Numbers GPIOs by physical location</span>
+    GPIO.setup(Gpin, GPIO.OUT)  <span class="hljs-comment"># Set Green Led Pin mode to output</span>
+    GPIO.setup(Rpin, GPIO.OUT)  <span class="hljs-comment"># Set Red Led Pin mode to output</span>
+    GPIO.setup(BtnPin, GPIO.IN,
+               pull_up_down=GPIO.PUD_UP)  <span class="hljs-comment"># Set BtnPin&apos;s mode is input, and pull up to high level(3.3V)</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>:</span>
+    setup()
+    GPIO.output(Gpin, GPIO.HIGH)  <span class="hljs-comment"># &#x521D;&#x59CB;&#x7EFF;&#x706F;&#x4EAE;&#x8D77; &#x6807;&#x8BC6;&#x53EF;&#x4EE5;&#x6309;&#x4E0B;&#x6309;&#x94AE;&#x4E86;</span>
+    <span class="hljs-keyword">try</span>:
+        print(<span class="hljs-string">&apos;&#x5F00;&#x59CB;&#x6309;&#x94AE;&#x8FDE;&#x63A5;&#x529F;&#x80FD;&apos;</span>)
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            <span class="hljs-comment"># &#x5982;&#x679C; &#x6309;&#x4E0B;&#x6309;&#x952E;</span>
+            <span class="hljs-keyword">if</span> GPIO.input(BtnPin):
+                time.sleep(<span class="hljs-number">3</span>)
+                <span class="hljs-comment"># &#x5982;&#x679C;&#x6309;&#x4E0B;&#x6309;&#x952E;&#x7B2C;3&#x79D2;&#x949F;&#x8FD8;&#x68C0;&#x6D4B;&#x5230;&#x6309;&#x952E;</span>
+                <span class="hljs-keyword">if</span> GPIO.input(BtnPin):
+                    GPIO.output(Rpin, <span class="hljs-number">0</span>)  <span class="hljs-comment"># &#x7EA2;&#x706F;&#x706D;</span>
+                    GPIO.output(Gpin, <span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x7EFF;&#x706F;&#x4EAE;</span>
+                    print(<span class="hljs-string">&quot;&#x6309;&#x952E;&#x88AB;&#x6309;&#x4E0B;&#x4E86;...&quot;</span>)
+                    print(<span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x626B;&#x63CF;&#x4E8C;&#x7EF4;&#x7801;&quot;</span>)
+                    ret = scan_qr_set_wifi.cv2_qr()  <span class="hljs-comment"># &#x83B7;&#x53D6;&#x626B;&#x63CF;&#x7ED3;&#x679C;</span>
+                    print(ret)
+                    scan_qr_set_wifi.set_wifi_config(ret)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x65E0;&#x7EBF;wifi</span>
+                    scan_qr_set_wifi.reboot_pi()  <span class="hljs-comment"># &#x91CD;&#x542F;&#x8BA9;&#x65E0;&#x7EBF;wifi&#x81EA;&#x52A8;&#x8FDE;&#x63A5;</span>
+                    <span class="hljs-keyword">break</span>
+            <span class="hljs-keyword">elif</span> <span class="hljs-keyword">not</span> GPIO.input(BtnPin):
+                time.sleep(<span class="hljs-number">0.01</span>)
+                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> GPIO.input(BtnPin):
+                    GPIO.output(Rpin, <span class="hljs-number">1</span>)<span class="hljs-comment"># &#x7EA2;&#x706F;&#x4EAE;</span>
+                    GPIO.output(Gpin, <span class="hljs-number">0</span>)<span class="hljs-comment"># &#x7EFF;&#x706F;&#x706D;</span>
+            time.sleep(<span class="hljs-number">0.3</span>)
+    <span class="hljs-keyword">except</span> KeyboardInterrupt:  <span class="hljs-comment"># When &apos;Ctrl+C&apos; is pressed, the child program destroy() will be  executed.</span>
+        GPIO.cleanup()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:  <span class="hljs-comment"># Program start from here</span>
+    run()
+    GPIO.cleanup()
+    <span class="hljs-comment"># print(&apos;&#x6D4B;&#x8BD5;&#x7ED3;&#x675F;&apos;)</span>
+</code></pre>
+<ul>
+<li>&#x6D4B;&#x8BD5;&#x6B65;&#x9AA4;<ol>
+<li>&#x8FD0;&#x884C;set_wifi_main.py</li>
+<li>&#x6267;&#x884C;&#x540E;&#x7B49;&#x51E0;&#x79D2;&#x949F;&#xFF0C;&#x62FF;&#x6444;&#x50CF;&#x5934;&#x5BF9;&#x51C6;&#x4E8C;&#x7EF4;&#x7801;&#xFF0C;&#x6309;&#x94AE;&#x6269;&#x5C55;&#x677F;&#x7684;&#x6309;&#x94AE;&#xFF0C;&#x5F53;&#x6309;&#x94AE;&#x7EA2;&#x7EFF;&#x706F;&#x5F00;&#x59CB;&#x95EA;&#x70C1;&#x65F6;&#x677E;&#x5F00;&#xFF0C;&#x5F53;&#x7EA2;&#x7EFF;&#x706F;&#x5168;&#x90E8;&#x4EAE;&#x65F6;&#xFF0C;&#x8BF4;&#x660E;&#x8BBE;&#x7F6E;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x662F;&#x6811;&#x8393;&#x6D3E;&#x4F1A;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#xFF0C;&#x542F;&#x52A8;&#x540E;&#xFF0C;wifi&#x4F1A;&#x81EA;&#x52A8;&#x8FDE;&#x63A5;&#x4E0A;&#x3002;</li>
+</ol>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./案例04-控制小车的轮子.html" class="navigation navigation-prev " aria-label="Previous page: 控制小车的轮子"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./案例06-树莓派开机启动.html" class="navigation navigation-next " aria-label="Next page: 开机启动"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python操作树莓派 -->
+<!-- End of book Python操作树莓派 -->
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python操作树莓派 -->
+<!-- Start book Python操作树莓派 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>控制LED灯 | Python操作树莓派</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./案例02-按键检测.html" />
+    
+    
+    <link rel="prev" href="./README3.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.1"
+        data-chapter-title="控制LED灯"
+        data-filepath="案例01-控制LED灯.md"
+        data-basepath="."
+        data-revision="Thu Sep 05 2019 10:16:32 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="README2.html">
+            
+                
+                    <a href="./README2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        树莓派基本操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-树莓派-是什么.html">
+            
+                
+                    <a href="./01-树莓派-是什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        树莓派-是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="02-树莓派-能做什么.html">
+            
+                
+                    <a href="./02-树莓派-能做什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        树莓派-能做什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="03-树莓派-怎样做.html">
+            
+                
+                    <a href="./03-树莓派-怎样做.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        树莓派-怎样做
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="04-一步步搭建树莓派/index.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        一步步搭建树莓派
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="04-一步步搭建树莓派/01-树莓派以及SD卡.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/01-树莓派以及SD卡.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        树莓派以及SD卡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-linux、mac版.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-linux、mac版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        烧录镜像到SD卡(Linux、mac版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-windows版.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/02-下载树莓派镜像以及烧录到SD卡-windows版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        烧录镜像到SD卡(Windows版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="04-一步步搭建树莓派/03-HDMI链接显示器及开机.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/03-HDMI链接显示器及开机.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        HDMI链接显示器及开机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="04-一步步搭建树莓派/04-树莓派基本配置.html">
+            
+                
+                    <a href="./04-一步步搭建树莓派/04-树莓派基本配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        树莓派基本配置
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="README3.html">
+            
+                
+                    <a href="./README3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        树莓派基本配置
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="案例01-控制LED灯.html">
+            
+                
+                    <a href="./案例01-控制LED灯.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        控制LED灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="案例02-按键检测.html">
+            
+                
+                    <a href="./案例02-按键检测.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        按键控制LED灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="案例03-控制蜂鸣器.html">
+            
+                
+                    <a href="./案例03-控制蜂鸣器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        控制蜂鸣器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="案例04-控制小车的轮子.html">
+            
+                
+                    <a href="./案例04-控制小车的轮子.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        控制小车的轮子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="案例05-树莓派扫码连接无线网络.html">
+            
+                
+                    <a href="./案例05-树莓派扫码连接无线网络.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        扫码连接无线网络
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="案例06-树莓派开机启动.html">
+            
+                
+                    <a href="./案例06-树莓派开机启动.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        开机启动
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Python操作树莓派</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6811;&#x8393;&#x6D3E;&#x63A7;&#x5236;led&#x706F;">&#x6811;&#x8393;&#x6D3E;&#x63A7;&#x5236;led&#x706F;</h1>
+<ul>
+<li><p>&#x6548;&#x679C;(&#x7EA2;&#x7EFF;&#x706F;&#x5207;&#x6362;)</p>
+<p><img src="assets/led.gif" alt="led"></p>
+</li>
+</ul>
+<ul>
+<li>&#x4EE3;&#x7801;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+<span class="hljs-keyword">import</span> RPi.GPIO <span class="hljs-keyword">as</span> GPIO
+<span class="hljs-keyword">import</span> time
+
+RLED = <span class="hljs-number">5</span>  <span class="hljs-comment"># &#x7EA2;&#x706F;&#x5F15;&#x811A;</span>
+GLED = <span class="hljs-number">6</span>  <span class="hljs-comment"># &#x7EFF;&#x706F;&#x5F15;&#x811A;</span>
+
+GPIO.setmode(GPIO.BCM)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x9488;&#x811A;&#x6A21;&#x5F0F;&#x4E3A;BCM&#x6A21;&#x5F0F;</span>
+GPIO.setup(RLED, GPIO.OUT)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;</span>
+GPIO.setup(GLED, GPIO.OUT)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;</span>
+<span class="hljs-keyword">try</span>:
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        GPIO.output(RLED, GPIO.HIGH)  <span class="hljs-comment"># &#x7EA2;&#x706F;&#x8BBE;&#x7F6E;&#x9AD8;&#x7535;&#x5E73; &#x4F1A;&#x4EAE;</span>
+        GPIO.output(GLED, GPIO.LOW)  <span class="hljs-comment"># &#x7EFF;&#x706F;&#x8BBE;&#x7F6E;&#x4F4E;&#x7535;&#x5E73; &#x4E0D;&#x4F1A;&#x4EAE;</span>
+        time.sleep(<span class="hljs-number">1</span>)
+        GPIO.output(RLED, GPIO.LOW)  <span class="hljs-comment"># &#x7EA2;&#x706F;&#x8BBE;&#x7F6E;&#x4F4E;&#x7535;&#x5E73; &#x4E0D;&#x4F1A;&#x4EAE;</span>
+        GPIO.output(GLED, GPIO.HIGH)  <span class="hljs-comment"># &#x7EFF;&#x706F;&#x8BBE;&#x7F6E;&#x9AD8;&#x7535;&#x5E73; &#x4F1A;&#x4EAE;</span>
+        time.sleep(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">except</span>:
+    <span class="hljs-comment"># &#x6E05;&#x9664;&#x5F15;&#x811A;</span>
+    GPIO.cleanup()
+</code></pre>
+<h3 id="&#x8865;&#x5145;&#x77E5;&#x8BC6;&#xFF1A;">&#x8865;&#x5145;&#x77E5;&#x8BC6;&#xFF1A;</h3>
+<p><img src="assets/1546764064939.png" alt="1546764064939"></p>
+<ul>
+<li>&#x6811;&#x8393;&#x6D3E;&#x5F15;&#x811A;&#x5982;&#x4E0B;</li>
+</ul>
+<p><img src="assets/1546764174153.png" alt="1546764174153"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./README3.html" class="navigation navigation-prev " aria-label="Previous page: 树莓派基本配置"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./案例02-按键检测.html" class="navigation navigation-next " aria-label="Next page: 按键控制LED灯"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python操作树莓派 -->
+<!-- End of book Python操作树莓派 -->
+</html>
