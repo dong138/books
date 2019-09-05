@@ -1,0 +1,1319 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python高级 -->
+<!-- Start book Python高级 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>元类 | Python高级</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../06-描述符/index.html" />
+    
+    
+    <link rel="prev" href="../04-面向对象提高2/05-私有化.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="5"
+        data-chapter-title="元类"
+        data-filepath="05-元类/01-元类.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:20:52 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-三器一闭/index.html">
+            
+                
+                    <a href="../01-三器一闭/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python高级1(三器一闭)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-三器一闭/01-迭代器.html">
+            
+                
+                    <a href="../01-三器一闭/01-迭代器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        迭代器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-三器一闭/02-生成器.html">
+            
+                
+                    <a href="../01-三器一闭/02-生成器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        生成器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-三器一闭/03-闭包.html">
+            
+                
+                    <a href="../01-三器一闭/03-闭包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-三器一闭/04-装饰器.html">
+            
+                
+                    <a href="../01-三器一闭/04-装饰器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        装饰器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-深、浅拷贝、with/index.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        拷贝、with
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-深、浅拷贝、with/01-==、is.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/01-==、is.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        ==、is
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-深、浅拷贝、with/02-深拷贝、浅拷贝.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/02-深拷贝、浅拷贝.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        深拷贝、浅拷贝
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-深、浅拷贝、with/03-with的使用.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/03-with的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        with的使用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-面向对象提高1/index.html">
+            
+                
+                    <a href="../03-面向对象提高1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        面向对象提高1
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="03-面向对象提高1/01-再议 封装、继承、多态.html">
+            
+                
+                    <a href="../03-面向对象提高1/01-再议 封装、继承、多态.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        再议 封装、继承、多态
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03-面向对象提高1/02-再议静态方法、类方法.html">
+            
+                
+                    <a href="../03-面向对象提高1/02-再议静态方法、类方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        再议静态方法、类方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03-面向对象提高1/03-多继承以及MRO顺序.html">
+            
+                
+                    <a href="../03-面向对象提高1/03-多继承以及MRO顺序.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        多继承以及MRO顺序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03-面向对象提高1/04-内建属性.html">
+            
+                
+                    <a href="../03-面向对象提高1/04-内建属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        内建属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="03-面向对象提高1/05-魔法属性.html">
+            
+                
+                    <a href="../03-面向对象提高1/05-魔法属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        魔法属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="03-面向对象提高1/06-内建函数.html">
+            
+                
+                    <a href="../03-面向对象提高1/06-内建函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        内建函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04-面向对象提高2/index.html">
+            
+                
+                    <a href="../04-面向对象提高2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        面向对象提高2
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="04-面向对象提高2/01-Python动态绑定.html">
+            
+                
+                    <a href="../04-面向对象提高2/01-Python动态绑定.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Python动态绑定
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="04-面向对象提高2/02-__slots__.html">
+            
+                
+                    <a href="../04-面向对象提高2/02-__slots__.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        __slots__
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="04-面向对象提高2/03-property属性.html">
+            
+                
+                    <a href="../04-面向对象提高2/03-property属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        property属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="04-面向对象提高2/04-property属性2.html">
+            
+                
+                    <a href="../04-面向对象提高2/04-property属性2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        property属性2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="04-面向对象提高2/05-私有化.html">
+            
+                
+                    <a href="../04-面向对象提高2/05-私有化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        私有化
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="5" data-path="05-元类/01-元类.html">
+            
+                
+                    <a href="../05-元类/01-元类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        元类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="06-描述符/index.html">
+            
+                
+                    <a href="../06-描述符/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        描述符
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="06-描述符/01-__getattr__和__getattribute__.html">
+            
+                
+                    <a href="../06-描述符/01-__getattr__和__getattribute__.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        __getattr__和__getattribute__
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="06-描述符/02-描述符.html">
+            
+                
+                    <a href="../06-描述符/02-描述符.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        描述符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="06-描述符/03-描述符调用机制.html">
+            
+                
+                    <a href="../06-描述符/03-描述符调用机制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        描述符调用机制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="06-描述符/04-描述符注意点.html">
+            
+                
+                    <a href="../06-描述符/04-描述符注意点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        描述符注意点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="06-描述符/05-描述符应用.html">
+            
+                
+                    <a href="../06-描述符/05-描述符应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        描述符应用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="06-描述符/06-总结.html">
+            
+                
+                    <a href="../06-描述符/06-总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="07-协程、GIL/index.html">
+            
+                
+                    <a href="../07-协程、GIL/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        协程
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="07-协程、GIL/01-协程-yield.html">
+            
+                
+                    <a href="../07-协程、GIL/01-协程-yield.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        协程-yield
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="07-协程、GIL/02-协程-greenlet.html">
+            
+                
+                    <a href="../07-协程、GIL/02-协程-greenlet.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        协程-greenlet
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="07-协程、GIL/03-协程-gevent.html">
+            
+                
+                    <a href="../07-协程、GIL/03-协程-gevent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        协程-gevent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="07-协程、GIL/04-并发下载器.html">
+            
+                
+                    <a href="../07-协程、GIL/04-并发下载器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        并发下载器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="07-协程、GIL/05-进程、线程、协程对比.html">
+            
+                
+                    <a href="../07-协程、GIL/05-进程、线程、协程对比.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        进程、线程、协程对比
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="07-协程、GIL/06-GIL.html">
+            
+                
+                    <a href="../07-协程、GIL/06-GIL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        GIL全局解释器锁
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="08-垃圾回收、log日志/index.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        垃圾回收、log日志
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="08-垃圾回收、log日志/01-垃圾回收（一）.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/01-垃圾回收（一）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        垃圾回收（一）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="08-垃圾回收、log日志/02-垃圾回收（二）.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/02-垃圾回收（二）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        垃圾回收（二）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="08-垃圾回收、log日志/03-垃圾回收（三）.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/03-垃圾回收（三）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        垃圾回收（三）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="08-垃圾回收、log日志/04-logging日志模块.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/04-logging日志模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        logging日志模块
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python高级</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x5143;&#x7C7B;">&#x5143;&#x7C7B;</h1>
+<h2 id="1-&#x7C7B;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;">1. &#x7C7B;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;</h2>
+<p>&#x5728;&#x5927;&#x591A;&#x6570;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;<span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">&#x7C7B;&#x5C31;&#x662F;&#x4E00;&#x7EC4;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x5982;&#x4F55;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x4EE3;&#x7801;&#x6BB5;</span>&#x3002;&#x5728;Python&#x4E2D;&#x8FD9;&#x4E00;&#x70B9;&#x4ECD;&#x7136;&#x6210;&#x7ACB;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ObjectCreator</span><span class="hljs-params">(object)</span>:</span>
+&#x2026;       <span class="hljs-keyword">pass</span>
+&#x2026;
+<span class="hljs-prompt">&gt;&gt;&gt; </span>my_object = ObjectCreator()
+<span class="hljs-prompt">&gt;&gt;&gt; </span>print(my_object)
+&lt;__main__.ObjectCreator object at <span class="hljs-number">0x8974f2c</span>&gt;
+</code></pre>
+<p>&#x4F46;&#x662F;&#xFF0C;Python&#x4E2D;&#x7684;&#x7C7B;&#x8FD8;&#x8FDC;&#x4E0D;&#x6B62;&#x5982;&#x6B64;&#x3002;<span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">&#x7C7B;&#x540C;&#x6837;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;</span>&#x3002;&#x662F;&#x7684;&#xFF0C;&#x6CA1;&#x9519;&#xFF0C;&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x3002;&#x53EA;&#x8981;&#x4F60;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;<code>class</code>&#xFF0C;Python&#x89E3;&#x91CA;&#x5668;&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6BB5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ObjectCreator</span><span class="hljs-params">(object)</span>:</span>
+&#x2026;       <span class="hljs-keyword">pass</span>
+&#x2026;
+</code></pre>
+<p>&#x5C06;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x540D;&#x5B57;&#x5C31;&#x662F;<code>ObjectCreator</code>&#x3002;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF08;<code>&#x7C7B;&#x5BF9;&#x8C61;ObjectCreator</code>&#xFF09;&#x62E5;&#x6709;<span class="pg-emphasize pg-emphasize-yellow" style="background: #2ff700;">&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF08;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#x80FD;&#x529B;</span>&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x7684;&#x672C;&#x8D28;&#x4ECD;&#x7136;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E8E;&#x662F;&#x4E4E;&#x4F60;&#x53EF;&#x4EE5;&#x5BF9;&#x5B83;&#x505A;&#x5982;&#x4E0B;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ol>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x8D4B;&#x503C;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x62F7;&#x8D1D;&#x5B83;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x4E3A;&#x5B83;&#x589E;&#x52A0;&#x5C5E;&#x6027;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4F20;&#x9012;</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x662F;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-python">&gt;&gt;&gt; print(ObjectCreator)  # &#x4F60;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
+&lt;class &apos;__main__.ObjectCreator&apos;&gt;
+&gt;&gt;&gt; def echo(o):
+&#x2026;       print(o)
+&#x2026;
+&gt;&gt;&gt; echo(ObjectCreator)  # &#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x7C7B;&#x505A;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x7ED9;&#x51FD;&#x6570;
+&lt;class &apos;__main__.ObjectCreator&apos;&gt;
+&gt;&gt;&gt; print(hasattr(ObjectCreator, &apos;new_attribute&apos;))
+Fasle
+&gt;&gt;&gt; ObjectCreator.new_attribute = &apos;foo&apos;  # &#x4F60;&#x53EF;&#x4EE5;&#x4E3A;&#x7C7B;&#x589E;&#x52A0;&#x5C5E;&#x6027;
+&gt;&gt;&gt; print(hasattr(ObjectCreator, &apos;new_attribute&apos;))
+True
+&gt;&gt;&gt; print(ObjectCreator.new_attribute)
+foo
+&gt;&gt;&gt; ObjectCreatorMirror = ObjectCreator  # &#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x7C7B;&#x8D4B;&#x503C;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;
+&gt;&gt;&gt; print(ObjectCreatorMirror())
+&lt;__main__.ObjectCreator object at 0x8997b4c&gt;
+</code></pre>
+<h2 id="2-&#x52A8;&#x6001;&#x5730;&#x521B;&#x5EFA;&#x7C7B;">2. &#x52A8;&#x6001;&#x5730;&#x521B;&#x5EFA;&#x7C7B;</h2>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">&#x7C7B;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x5B83;&#x4EEC;&#xFF0C;&#x5C31;&#x50CF;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;&#x4E00;&#x6837;</span>&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x521B;&#x5EFA;&#x7C7B;&#xFF0C;&#x4F7F;&#x7528;<code>class</code>&#x5173;&#x952E;&#x5B57;&#x5373;&#x53EF;</p>
+<pre><code class="lang-python">&gt;&gt;&gt; def choose_class(name):
+&#x2026;       if name == &apos;foo&apos;:
+&#x2026;           class Foo(object):
+&#x2026;               pass
+&#x2026;           return Foo     # &#x8FD4;&#x56DE;&#x7684;&#x662F;&#x7C7B;&#xFF0C;&#x4E0D;&#x662F;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
+&#x2026;       else:
+&#x2026;           class Bar(object):
+&#x2026;               pass
+&#x2026;           return Bar
+&#x2026;
+&gt;&gt;&gt; MyClass = choose_class(&apos;foo&apos;)
+&gt;&gt;&gt; print(MyClass)  # &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x7C7B;&#xFF0C;&#x4E0D;&#x662F;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;
+&lt;class &apos;__main__&apos;.Foo&gt;
+&gt;&gt;&gt; print(MyClass())  # &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x7C7B;&#x521B;&#x5EFA;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x8C61;
+&lt;__main__.Foo object at 0x89c6d4c&gt;
+</code></pre>
+<p>&#x4F46;&#x8FD9;&#x8FD8;&#x4E0D;&#x591F;&#x52A8;&#x6001;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x7F16;&#x5199;&#x6574;&#x4E2A;&#x7C7B;&#x7684;&#x4EE3;&#x7801;</p>
+<p>&#x7531;&#x4E8E;&#x7C7B;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x80AF;&#x5B9A;&#x662F;&#x901A;&#x8FC7;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x6765;&#x751F;&#x6210;&#x7684;&#x624D;&#x5BF9;</p>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">&#x5F53;&#x4F7F;&#x7528;class&#x5173;&#x952E;&#x5B57;&#x65F6;&#xFF0C;Python&#x89E3;&#x91CA;&#x5668;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</span>&#x4F46;&#x548C;Python&#x4E2D;&#x7684;&#x5927;&#x591A;&#x6570;&#x4E8B;&#x60C5;&#x4E00;&#x6837;&#xFF0C;Python&#x4ECD;&#x7136;&#x63D0;&#x4F9B;&#x7ED9;&#x4F60;&#x624B;&#x52A8;&#x5904;&#x7406;&#x7684;&#x65B9;&#x6CD5;</p>
+<p>&#x8FD8;&#x8BB0;&#x5F97;&#x5185;&#x5EFA;&#x51FD;&#x6570;<code>type</code>&#x5417;&#xFF1F;&#x8FD9;&#x4E2A;&#x53E4;&#x8001;&#x4F46;&#x5F3A;&#x5927;&#x7684;&#x51FD;&#x6570;&#x80FD;&#x591F;&#x8BA9;&#x4F60;&#x77E5;&#x9053;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x5C31;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-python">&gt;&gt;&gt; print(type(1))  # &#x6570;&#x503C;&#x7684;&#x7C7B;&#x578B;
+&lt;type &apos;int&apos;&gt;
+&gt;&gt;&gt; print(type(&quot;1&quot;))  # &#x5B57;&#x7B26;&#x4E32;&#x7684;&#x7C7B;&#x578B;
+&lt;type &apos;str&apos;&gt;
+&gt;&gt;&gt; print(type(ObjectCreator()))  # &#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;
+&lt;class &apos;__main__.ObjectCreator&apos;&gt;
+&gt;&gt;&gt; print(type(ObjectCreator))  # &#x7C7B;&#x7684;&#x7C7B;&#x578B;
+&lt;type &apos;type&apos;&gt;
+</code></pre>
+<p>&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x4E0A;&#x9762;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF0C;&#x53D1;&#x73B0;&#x4F7F;&#x7528;<code>type</code>&#x5BF9;<code>ObjectCreator</code>&#x67E5;&#x770B;&#x7C7B;&#x578B;&#x662F;&#xFF0C;&#x7B54;&#x6848;&#x4E3A;<code>type</code>&#xFF0C; &#x662F;&#x4E0D;&#x662F;&#x6709;&#x4E9B;&#x60CA;&#x8BB6;&#x3002;&#x3002;&#x3002;&#x770B;&#x4E0B;&#x9762;</p>
+<h2 id="3-&#x4F7F;&#x7528;type&#x521B;&#x5EFA;&#x7C7B;">3. &#x4F7F;&#x7528;<code>type</code>&#x521B;&#x5EFA;&#x7C7B;</h2>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">type&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;&#xFF1A;&#x521B;&#x5EFA;&#x7C7B;</span></p>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #2ff700;">type&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x63CF;&#x8FF0;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7C7B;</span>&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<blockquote>
+<p>type&#x4F1A;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x4F8B;&#x5982;type(&quot;hello&quot;)&#x8868;&#x793A;&#x83B7;&#x53D6;&quot;hello&quot;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#x8FD8;&#x80FD;&#x591F;&#x8868;&#x793A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;</p>
+<p>&#x6240;&#x4EE5;&#x5927;&#x5BB6;&#x8981;&#x6CE8;&#x610F;&#xFF1A;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x8BA9;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x62E5;&#x6709;2&#x79CD;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x5F88;&#x50BB;&#xFF0C;Python&#x4E4B;&#x6240;&#x4EE5;&#x5C06;type&#x8BBE;&#x8BA1;&#x4E3A;2&#x4E2A;&#x529F;&#x80FD;&#x662F;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x6027;</p>
+</blockquote>
+<p><code>type</code>&#x53EF;&#x4EE5;&#x50CF;&#x8FD9;&#x6837;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">
+type(&#x7C7B;&#x540D;, &#x7531;&#x7236;&#x7C7B;&#x540D;&#x79F0;&#x7EC4;&#x6210;&#x7684;&#x5143;&#x7EC4;&#xFF08;&#x9488;&#x5BF9;&#x65E0;&#x7EE7;&#x627F;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#xFF09;&#xFF0C;&#x5305;&#x542B;&#x5C5E;&#x6027;&#x7684;&#x5B57;&#x5178;&#xFF08;&#x540D;&#x79F0;&#x548C;&#x503C;&#xFF09;)
+</span></p>
+<p>&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6309;&#x7167;&#x666E;&#x901A;&#x5B9A;&#x4E49;&#x7C7B;&#x7684;&#x65B9;&#x5F0F;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+
+print(help(A))
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;type&#x8FD9;&#x79CD;&#x7279;&#x6B8A;&#x65B9;&#x5F0F;</span>
+B = type(<span class="hljs-string">&quot;B&quot;</span>, (), {})
+
+print(help(B))
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190307202407425.png" alt="image-20190307202407425"></p>
+<h2 id="4-&#x4F7F;&#x7528;type&#x521B;&#x5EFA;&#x5E26;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x7C7B;">4. &#x4F7F;&#x7528;type&#x521B;&#x5EFA;&#x5E26;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x7C7B;</h2>
+<p>type &#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x6765;&#x4E3A;&#x7C7B;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF0C;&#x56E0;&#x6B64;</p>
+<pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span>Foo = type(<span class="hljs-string">&apos;Foo&apos;</span>, (), {<span class="hljs-string">&apos;bar&apos;</span>: <span class="hljs-keyword">True</span>})
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x7FFB;&#x8BD1;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object)</span>:</span>
+&#x2026;       bar = <span class="hljs-keyword">True</span>
+</code></pre>
+<p>&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5C06;Foo&#x5F53;&#x6210;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x7C7B;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-python">&gt;&gt;&gt; print(Foo)
+&lt;class &apos;__main__.Foo&apos;&gt;
+&gt;&gt;&gt; print(Foo.bar)
+True
+&gt;&gt;&gt; f = Foo()
+&gt;&gt;&gt; print(f)
+&lt;__main__.Foo object at 0x8a9b84c&gt;
+&gt;&gt;&gt; print(f.bar)
+True
+</code></pre>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-prompt">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FooChild</span><span class="hljs-params">(Foo)</span>:</span>
+&#x2026;       <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-python">&gt;&gt;&gt; FooChild = type(&apos;FooChild&apos;, (Foo,), {})
+&gt;&gt;&gt; print(FooChild)
+&lt;class &apos;__main__.FooChild&apos;&gt;
+&gt;&gt;&gt; print(FooChild.bar)  # bar&#x5C5E;&#x6027;&#x662F;&#x7531;Foo&#x7EE7;&#x627F;&#x800C;&#x6765;
+True
+</code></pre>
+<h4 id="&#x6CE8;&#x610F;&#xFF1A;">&#x6CE8;&#x610F;&#xFF1A;</h4>
+<ul>
+<li>type&#x7684;&#x7B2C;2&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5143;&#x7EC4;&#x4E2D;&#x662F;&#x7236;&#x7C7B;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x7C7B;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;</li>
+</ul>
+<h2 id="5-&#x4F7F;&#x7528;type&#x521B;&#x5EFA;&#x5E26;&#x6709;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;">5. &#x4F7F;&#x7528;type&#x521B;&#x5EFA;&#x5E26;&#x6709;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;</h2>
+<p>&#x6700;&#x7EC8;&#x4F60;&#x4F1A;&#x5E0C;&#x671B;&#x4E3A;&#x4F60;&#x7684;&#x7C7B;&#x589E;&#x52A0;&#x65B9;&#x6CD5;&#x3002;&#x53EA;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6709;&#x7740;&#x6070;&#x5F53;&#x7B7E;&#x540D;&#x7684;&#x51FD;&#x6570;&#x5E76;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<h5 id="&#x6DFB;&#x52A0;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;">&#x6DFB;&#x52A0;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</h5>
+<pre><code class="lang-python">In [<span class="hljs-number">46</span>]: <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">echo_bar</span><span class="hljs-params">(self)</span>:</span>  <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x51FD;&#x6570;</span>
+    ...:     print(self.bar)
+    ...:
+
+In [<span class="hljs-number">47</span>]: FooChild = type(<span class="hljs-string">&apos;FooChild&apos;</span>, (Foo,), {<span class="hljs-string">&apos;echo_bar&apos;</span>: echo_bar})  <span class="hljs-comment"># &#x8BA9;FooChild&#x7C7B;&#x4E2D;&#x7684;echo_bar&#x5C5E;&#x6027;&#xFF0C;&#x6307;&#x5411;&#x4E86;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;</span>
+
+In [<span class="hljs-number">48</span>]: hasattr(Foo, <span class="hljs-string">&apos;echo_bar&apos;</span>)  <span class="hljs-comment"># &#x5224;&#x65AD;Foo&#x7C7B;&#x4E2D; &#x662F;&#x5426;&#x6709;echo_bar&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;</span>
+Out[<span class="hljs-number">48</span>]: <span class="hljs-keyword">False</span>
+
+In [<span class="hljs-number">49</span>]:
+
+In [<span class="hljs-number">49</span>]: hasattr(FooChild, <span class="hljs-string">&apos;echo_bar&apos;</span>)  <span class="hljs-comment"># &#x5224;&#x65AD;FooChild&#x7C7B;&#x4E2D; &#x662F;&#x5426;&#x6709;echo_bar&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;</span>
+Out[<span class="hljs-number">49</span>]: <span class="hljs-keyword">True</span>
+
+In [<span class="hljs-number">50</span>]: my_foo = FooChild()
+
+In [<span class="hljs-number">51</span>]: my_foo.echo_bar()
+<span class="hljs-keyword">True</span>
+</code></pre>
+<h5 id="&#x6DFB;&#x52A0;&#x9759;&#x6001;&#x65B9;&#x6CD5;">&#x6DFB;&#x52A0;&#x9759;&#x6001;&#x65B9;&#x6CD5;</h5>
+<pre><code class="lang-python">In [<span class="hljs-number">36</span>]: @staticmethod
+    ...: <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_static</span><span class="hljs-params">()</span>:</span>
+    ...:     print(<span class="hljs-string">&quot;static method ....&quot;</span>)
+    ...:
+
+In [<span class="hljs-number">37</span>]: Foochild = type(<span class="hljs-string">&apos;Foochild&apos;</span>, (Foo,), {<span class="hljs-string">&quot;echo_bar&quot;</span>: echo_bar, <span class="hljs-string">&quot;test_static&quot;</span>: test_static})
+
+In [<span class="hljs-number">38</span>]: fooclid = Foochild()
+
+In [<span class="hljs-number">39</span>]: fooclid.test_static
+Out[<span class="hljs-number">39</span>]: &lt;function __main__.test_static&gt;
+
+In [<span class="hljs-number">40</span>]: fooclid.test_static()
+static method ....
+
+In [<span class="hljs-number">41</span>]: fooclid.echo_bar()
+<span class="hljs-keyword">True</span>
+</code></pre>
+<h5 id="&#x6DFB;&#x52A0;&#x7C7B;&#x65B9;&#x6CD5;">&#x6DFB;&#x52A0;&#x7C7B;&#x65B9;&#x6CD5;</h5>
+<pre><code class="lang-python">In [<span class="hljs-number">42</span>]: @classmethod
+    ...: <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_class</span><span class="hljs-params">(cls)</span>:</span>
+    ...:     print(cls.bar)
+    ...:
+
+In [<span class="hljs-number">43</span>]:
+
+In [<span class="hljs-number">43</span>]: Foochild = type(<span class="hljs-string">&apos;Foochild&apos;</span>, (Foo,), {<span class="hljs-string">&quot;echo_bar&quot;</span>:echo_bar, <span class="hljs-string">&quot;test_static&quot;</span>: test_static, <span class="hljs-string">&quot;test_class&quot;</span>: test_class})
+
+In [<span class="hljs-number">44</span>]:
+
+In [<span class="hljs-number">44</span>]: fooclid = Foochild()
+
+In [<span class="hljs-number">45</span>]: fooclid.test_class()
+<span class="hljs-keyword">True</span>
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5728;Python&#x4E2D;&#xFF0C;&#x7C7B;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x7684;&#x521B;&#x5EFA;&#x7C7B;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x5F53;&#x4F60;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;class&#x65F6;Python&#x5728;&#x5E55;&#x540E;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x800C;&#x8FD9;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5143;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x8F83;&#x4E3A;&#x5B8C;&#x6574;&#x7684;&#x4F7F;&#x7528;type&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x65B9;&#x5F0F;:</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span><span class="hljs-params">(object)</span>:</span>
+    num = <span class="hljs-number">100</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_b</span><span class="hljs-params">(self)</span>:</span>
+    print(self.num)
+
+
+<span class="hljs-decorator">@staticmethod</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_static</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;----haha-----&quot;</span>)
+
+
+<span class="hljs-decorator">@classmethod</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_class</span><span class="hljs-params">(cls)</span>:</span>
+    print(cls.num)
+
+
+<span class="hljs-comment"># &#x4E0B;&#x9762;&#x901A;&#x8FC7;type&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;</span>
+<span class="hljs-comment"># &#x540D;&#x5B57;&#x662F;B</span>
+<span class="hljs-comment"># &#x7EE7;&#x627F;A</span>
+<span class="hljs-comment"># &#x6709;3&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x6307;&#x5411;&#x51FD;&#x6570;&#xFF08;&#x7B2C;5&#x3001;10&#xFF0C;15&#x884C;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x79F0;&#x4E4B;&#x4E3A;&#x5B9A;&#x4E49;&#x4E86;3&#x4E2A;&#x65B9;&#x6CD5;</span>
+B = type(<span class="hljs-string">&quot;B&quot;</span>, (A,), {<span class="hljs-string">&quot;print_b&quot;</span>: print_b, <span class="hljs-string">&quot;print_static&quot;</span>: print_static, <span class="hljs-string">&quot;print_class&quot;</span>: print_class})
+b = B()  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
+b.print_b()  <span class="hljs-comment"># &#x8C03;&#x7528;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</span>
+b.print_static()  <span class="hljs-comment"># &#x8C03;&#x7528;&#x9759;&#x6001;&#x65B9;&#x6CD5;</span>
+b.print_class()  <span class="hljs-comment"># &#x8C03;&#x7528;&#x7C7B;&#x65B9;&#x6CD5;</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190307203041378.png" alt="image-20190307203041378"></p>
+<h2 id="6-&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;&#x5143;&#x7C7B;&#xFF08;&#x7EC8;&#x4E8E;&#x5230;&#x4E3B;&#x9898;&#x4E86;&#xFF09;">6. &#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;&#x5143;&#x7C7B;&#xFF08;&#x7EC8;&#x4E8E;&#x5230;&#x4E3B;&#x9898;&#x4E86;&#xFF09;</h2>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">&#x5143;&#x7C7B;&#x5C31;&#x662F;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x201C;&#x4E1C;&#x897F;&#x201D;&#x3002;</span>&#x4F60;&#x521B;&#x5EFA;&#x7C7B;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x662F;&#x5417;&#xFF1F;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B66;&#x4E60;&#x5230;&#x4E86;Python&#x4E2D;&#x7684;&#x7C7B;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5143;&#x7C7B;&#x5C31;&#x662F;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x8FD9;&#x4E9B;&#x7C7B;&#xFF08;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#xFF0C;<span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">&#x5143;&#x7C7B;&#x5C31;&#x662F;&#x7C7B;&#x7684;&#x7C7B;</span>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-python">MyClass = MetaClass()  <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5143;&#x7C7B;&#x521B;&#x5EFA;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x79F0;&#x4E3A;&#x201C;&#x7C7B;&#x201D;</span>
+my_object = MyClass()  <span class="hljs-comment"># &#x4F7F;&#x7528;&#x201C;&#x7C7B;&#x201D;&#x6765;&#x521B;&#x5EFA;&#x51FA;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
+</code></pre>
+<p>&#x4F60;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x4E86;type&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x50CF;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-python">MyClass = type(<span class="hljs-string">&apos;MyClass&apos;</span>, (), {})
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x51FD;&#x6570;type&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7C7B;&#x3002;<span class="pg-emphasize pg-emphasize-yellow" style="background: #2ff700;">type&#x5C31;&#x662F;Python&#x5728;&#x80CC;&#x540E;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x6240;&#x6709;&#x7C7B;&#x7684;&#x5143;&#x7C7B;</span>&#x3002;&#x73B0;&#x5728;&#x4F60;&#x60F3;&#x77E5;&#x9053;&#x90A3;&#x4E3A;&#x4EC0;&#x4E48;type&#x4F1A;&#x5168;&#x90E8;&#x91C7;&#x7528;&#x5C0F;&#x5199;&#x5F62;&#x5F0F;&#x800C;&#x4E0D;&#x662F;Type&#x5462;&#xFF1F;&#x597D;&#x5427;&#xFF0C;&#x6211;&#x731C;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x548C;str&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x6027;&#xFF0C;str&#x662F;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#xFF0C;&#x800C;int&#x662F;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x6574;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x3002;type&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x68C0;&#x67E5;__class__&#x5C5E;&#x6027;&#x6765;&#x770B;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#x3002;<span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">Python&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x662F;&#x6307;&#x6240;&#x6709;&#x7684;&#x4E1C;&#x897F;&#x2014;&#x2014;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#x6574;&#x6570;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x7C7B;</span>&#x3002;&#x5B83;&#x4EEC;&#x5168;&#x90E8;&#x90FD;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x4ECE;&#x4E00;&#x4E2A;&#x7C7B;&#x521B;&#x5EFA;&#x800C;&#x6765;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;type&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x6570;&#x5B57;&#x7684;&#x7C7B;</span>
+age = <span class="hljs-number">35</span>
+print(age.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x7C7B;</span>
+name = <span class="hljs-string">&apos;bob&apos;</span>
+print(name.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x7684;&#x7C7B;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Foo</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+print(Foo.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684;&#x7684;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+b = Bar()
+print(b.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+
+print(Bar.__class__)
+</code></pre>
+<p><img src="assets/image-20190307203600726.png" alt="image-20190307203600726"></p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;__class__&#x7684;__class__&#x5C5E;&#x6027;&#x53C8;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x6570;&#x5B57;&#x7684;&#x7C7B;</span>
+age = <span class="hljs-number">35</span>
+print(age.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x7C7B;</span>
+name = <span class="hljs-string">&apos;bob&apos;</span>
+print(name.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x7684;&#x7C7B;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Foo</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+print(Foo.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684;&#x7684;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+b = Bar()
+print(b.__class__)
+
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+
+print(Bar.__class__)
+
+print(<span class="hljs-string">&quot;------&#x5206;&#x5272;&#x7EBF;-------&quot;</span>)
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x7C7B;&#x578B;&#x7684;&#x7C7B;</span>
+print(age.__class__.__class__)
+print(name.__class__.__class__)
+print(Foo.__class__.__class__)
+print(b.__class__.__class__)
+print(Bar.__class__.__class__)  <span class="hljs-comment"># type&#x7C7B;&#x7684;&#x5143;&#x7C7B;&#x662F;type&#x3002;&#x3002;&#x3002;&#x3002;</span>
+</code></pre>
+<p><img src="assets/image-20190307204855921.png" alt="image-20190307204855921"></p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5143;&#x7C7B;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x7C7B;&#x8FD9;&#x79CD;&#x5BF9;&#x8C61;&#x7684;&#x4E1C;&#x897F;&#x3002;type&#x5C31;&#x662F;Python&#x7684;&#x5185;&#x5EFA;&#x5143;&#x7C7B;&#xFF0C;&#x5F53;&#x7136;&#x4E86;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x5143;&#x7C7B;&#x3002;</p>
+<h2 id="7-metaclass&#x5C5E;&#x6027;">7. __metaclass__&#x5C5E;&#x6027;</h2>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;<code>__metaclass__</code>&#x5C5E;&#x6027;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object)</span>:</span>
+    __metaclass__ = something&#x2026;
+    ...&#x7701;&#x7565;...
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x8FD9;&#x4E48;&#x505A;&#x4E86;&#xFF0C;Python&#x5C31;&#x4F1A;&#x7528;&#x5143;&#x7C7B;&#x6765;&#x521B;&#x5EFA;&#x7C7B;<code>Foo</code>&#x3002;&#x5C0F;&#x5FC3;&#x70B9;&#xFF0C;&#x8FD9;&#x91CC;&#x9762;&#x6709;&#x4E9B;&#x6280;&#x5DE7;&#x3002;&#x4F60;&#x9996;&#x5148;&#x5199;&#x4E0B;<code>class Foo(object)</code>&#xFF0C;&#x4F46;&#x662F;&#x7C7B;<code>Foo</code>&#x8FD8;&#x6CA1;&#x6709;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x521B;&#x5EFA;&#x3002;Python&#x4F1A;&#x5728;&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x5BFB;&#x627E;<code>__metaclass__</code>&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x627E;&#x5230;&#x4E86;&#xFF0C;Python&#x5C31;&#x4F1A;&#x7528;&#x5B83;&#x6765;&#x521B;&#x5EFA;&#x7C7B;<code>Foo</code>&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x5C31;&#x4F1A;&#x7528;&#x5185;&#x5EFA;&#x7684;<code>type</code>&#x6765;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7C7B;&#x3002;</p>
+<p>&#x628A;&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x8BDD;&#x53CD;&#x590D;&#x8BFB;&#x51E0;&#x6B21;</p>
+<p>&#x5F53;&#x4F60;&#x5199;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x65F6; :</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(Bar)</span>:</span>
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>Python&#x505A;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ol>
+<li><code>Foo</code>&#x4E2D;&#x6709;<code>__metaclass__</code>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5417;&#xFF1F;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x5219;Python&#x4F1A;&#x901A;&#x8FC7;<code>__metaclass__</code>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x4E3A;<code>Foo</code>&#x7684;&#x7C7B;</li>
+<li>&#x5982;&#x679C;Python&#x6CA1;&#x6709;&#x627E;&#x5230;<code>__metaclass__</code>&#xFF0C;&#x5B83;&#x4F1A;&#x7EE7;&#x7EED;&#x5728;<code>Bar</code>&#xFF08;&#x7236;&#x7C7B;&#xFF09;&#x4E2D;&#x5BFB;&#x627E;<code>__metaclass__</code>&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x5C1D;&#x8BD5;&#x505A;&#x548C;&#x524D;&#x9762;&#x540C;&#x6837;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x5982;&#x679C;Python&#x5728;&#x4EFB;&#x4F55;&#x7236;&#x7C7B;&#x4E2D;&#x90FD;&#x627E;&#x4E0D;&#x5230;<code>__metaclass__</code>&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x5728;&#x6A21;&#x5757;&#x5C42;&#x6B21;&#x4E2D;&#x53BB;&#x5BFB;&#x627E;<code>__metaclass__</code>&#xFF0C;&#x5E76;&#x5C1D;&#x8BD5;&#x505A;&#x540C;&#x6837;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x5982;&#x679C;&#x8FD8;&#x662F;&#x627E;&#x4E0D;&#x5230;<code>__metaclass__</code>,Python&#x5C31;&#x4F1A;&#x7528;&#x5185;&#x7F6E;&#x7684;<code>type</code>&#x6765;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7C7B;&#x5BF9;&#x8C61;</li>
+</ol>
+<p>&#x73B0;&#x5728;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<code>__metaclass__</code>&#x4E2D;&#x653E;&#x7F6E;&#x4E9B;&#x4EC0;&#x4E48;&#x4EE3;&#x7801;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#xFF1A;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x4E1C;&#x897F;</p>
+<p>&#x90A3;&#x4E48;&#x4EC0;&#x4E48;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x5462;&#xFF1F;</p>
+<p>&#x7B54;&#xFF1A;<code>type</code>&#xFF0C;&#x6216;&#x8005;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5230;<code>type</code>&#x6216;&#x8005;&#x5B50;&#x7C7B;&#x5316;<code>type</code>&#x7684;&#x4E1C;&#x4E1C;&#x90FD;&#x53EF;&#x4EE5;</p>
+<h2 id="8-&#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x7C7B;">8. &#x81EA;&#x5B9A;&#x4E49;&#x5143;&#x7C7B;</h2>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #2ff700;">&#x5143;&#x7C7B;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x5F53;&#x521B;&#x5EFA;&#x7C7B;&#x65F6;&#x80FD;&#x591F;&#x81EA;&#x52A8;&#x5730;&#x6539;&#x53D8;&#x7C7B;</span>&#x3002;</p>
+<p>&#x5047;&#x60F3;&#x4E00;&#x4E2A;&#x5F88;&#x50BB;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4F60;&#x51B3;&#x5B9A;&#x5728;&#x4F60;&#x7684;&#x6A21;&#x5757;&#x91CC;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x5E94;&#x8BE5;&#x662F;&#x5927;&#x5199;&#x5F62;&#x5F0F;&#x3002;&#x6709;&#x597D;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x529E;&#x5230;&#xFF0C;&#x4F46;&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5728;&#x6A21;&#x5757;&#x7EA7;&#x522B;&#x8BBE;&#x5B9A;<code>__metaclass__</code>&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x90FD;&#x4F1A;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5143;&#x7C7B;&#x6765;&#x521B;&#x5EFA;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x544A;&#x8BC9;&#x5143;&#x7C7B;&#x628A;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x6539;&#x6210;&#x5927;&#x5199;&#x5F62;&#x5F0F;&#x5C31;&#x4E07;&#x4E8B;&#x5927;&#x5409;&#x4E86;&#x3002;</p>
+<p>&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;<code>__metaclass__</code>&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x88AB;&#x4EFB;&#x610F;&#x8C03;&#x7528;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x5F0F;&#x7684;&#x7C7B;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x5C31;&#x5148;&#x4EE5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x4F8B;&#x5B50;&#x5F00;&#x59CB;&#xFF0C;&#x770B;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<h5 id="python2&#x4E2D;">Python2&#x4E2D;</h5>
+<pre><code class="lang-python"><span class="hljs-comment">#-*- coding:utf-8 -*-</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">upper_attr</span><span class="hljs-params">(class_name, class_parents, class_attr)</span>:</span>
+    <span class="hljs-comment"># class_name &#x4F1A;&#x4FDD;&#x5B58;&#x7C7B;&#x7684;&#x540D;&#x5B57; Foo</span>
+    <span class="hljs-comment"># class_parents &#x4F1A;&#x4FDD;&#x5B58;&#x7C7B;&#x7684;&#x7236;&#x7C7B; object</span>
+    <span class="hljs-comment"># class_attr &#x4F1A;&#x4EE5;&#x5B57;&#x5178;&#x7684;&#x65B9;&#x5F0F;&#x4FDD;&#x5B58;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x5C5E;&#x6027;</span>
+
+    <span class="hljs-comment"># &#x904D;&#x5386;&#x5C5E;&#x6027;&#x5B57;&#x5178;&#xFF0C;&#x628A;&#x4E0D;&#x662F;__&#x5F00;&#x5934;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x5B57;&#x53D8;&#x4E3A;&#x5927;&#x5199;</span>
+    new_attr = {}
+    <span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">in</span> class_attr.items():
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> name.startswith(<span class="hljs-string">&quot;__&quot;</span>):
+            new_attr[name.upper()] = value
+
+    <span class="hljs-comment"># &#x8C03;&#x7528;type&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;</span>
+    <span class="hljs-keyword">return</span> type(class_name, class_parents, new_attr)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object)</span>:</span>
+    __metaclass__ = upper_attr  <span class="hljs-comment"># &#x8BBE;&#x7F6E;Foo&#x7C7B;&#x7684;&#x5143;&#x7C7B;&#x4E3A;upper_attr</span>
+    bar = <span class="hljs-string">&apos;bip&apos;</span>
+
+print(hasattr(Foo, <span class="hljs-string">&apos;bar&apos;</span>))
+print(hasattr(Foo, <span class="hljs-string">&apos;BAR&apos;</span>))
+
+f = Foo()
+print(f.BAR)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190307204928221.png" alt="image-20190307204928221"></p>
+<h5 id="python3&#x4E2D;">Python3&#x4E2D;</h5>
+<pre><code class="lang-python"><span class="hljs-comment">#-*- coding:utf-8 -*-</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">upper_attr</span><span class="hljs-params">(class_name, class_parents, class_attr)</span>:</span>
+
+    <span class="hljs-comment"># &#x904D;&#x5386;&#x5C5E;&#x6027;&#x5B57;&#x5178;&#xFF0C;&#x628A;&#x4E0D;&#x662F;__&#x5F00;&#x5934;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x5B57;&#x53D8;&#x4E3A;&#x5927;&#x5199;</span>
+    new_attr = {}
+    <span class="hljs-keyword">for</span> name,value <span class="hljs-keyword">in</span> class_attr.items():
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> name.startswith(<span class="hljs-string">&quot;__&quot;</span>):
+            new_attr[name.upper()] = value
+
+    <span class="hljs-comment"># &#x8C03;&#x7528;type&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;</span>
+    <span class="hljs-keyword">return</span> type(class_name, class_parents, new_attr)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object, metaclass=upper_attr)</span>:</span>
+    bar = <span class="hljs-string">&apos;bip&apos;</span>
+
+print(hasattr(Foo, <span class="hljs-string">&apos;bar&apos;</span>))
+print(hasattr(Foo, <span class="hljs-string">&apos;BAR&apos;</span>))
+
+f = Foo()
+print(f.BAR)
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190307204953827.png" alt="image-20190307204953827"></p>
+<p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x7684;<code>class</code>&#x6765;&#x5F53;&#x505A;&#x5143;&#x7C7B;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#coding=utf-8</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UpperAttrMetaClass</span><span class="hljs-params">(type)</span>:</span>
+    <span class="hljs-comment"># __new__ &#x662F;&#x5728;__init__&#x4E4B;&#x524D;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x7279;&#x6B8A;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment"># __new__&#x662F;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5E76;&#x8FD4;&#x56DE;&#x4E4B;&#x7684;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment"># &#x800C;__init__&#x53EA;&#x662F;&#x7528;&#x6765;&#x5C06;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x521D;&#x59CB;&#x5316;&#x7ED9;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment"># &#x4F60;&#x5F88;&#x5C11;&#x7528;&#x5230;__new__&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x63A7;&#x5236;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;</span>
+    <span class="hljs-comment"># &#x8FD9;&#x91CC;&#xFF0C;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x81EA;&#x5B9A;&#x4E49;&#x5B83;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x6539;&#x5199;__new__</span>
+    <span class="hljs-comment"># &#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;__init__&#x4E2D;&#x505A;&#x4E9B;&#x4E8B;&#x60C5;</span>
+    <span class="hljs-comment"># &#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x9AD8;&#x7EA7;&#x7684;&#x7528;&#x6CD5;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x6539;&#x5199;__call__&#x7279;&#x6B8A;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x4E0D;&#x7528;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__new__</span><span class="hljs-params">(cls, class_name, class_parents, class_attr)</span>:</span>
+        <span class="hljs-comment"># &#x904D;&#x5386;&#x5C5E;&#x6027;&#x5B57;&#x5178;&#xFF0C;&#x628A;&#x4E0D;&#x662F;__&#x5F00;&#x5934;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x5B57;&#x53D8;&#x4E3A;&#x5927;&#x5199;</span>
+        new_attr = {}
+        <span class="hljs-keyword">for</span> name, value <span class="hljs-keyword">in</span> class_attr.items():
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> name.startswith(<span class="hljs-string">&quot;__&quot;</span>):
+                new_attr[name.upper()] = value
+
+        <span class="hljs-comment"># &#x65B9;&#x6CD5;1&#xFF1A;&#x901A;&#x8FC7;&apos;type&apos;&#x6765;&#x505A;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;</span>
+        <span class="hljs-keyword">return</span> type(class_name, class_parents, new_attr)
+
+        <span class="hljs-comment"># &#x65B9;&#x6CD5;2&#xFF1A;&#x590D;&#x7528;type.__new__&#x65B9;&#x6CD5;</span>
+        <span class="hljs-comment"># &#x8FD9;&#x5C31;&#x662F;&#x57FA;&#x672C;&#x7684;OOP&#x7F16;&#x7A0B;&#xFF0C;&#x6CA1;&#x4EC0;&#x4E48;&#x9B54;&#x6CD5;</span>
+        <span class="hljs-comment"># return type.__new__(cls, class_name, class_parents, new_attr)</span>
+
+<span class="hljs-comment"># python3&#x7684;&#x7528;&#x6CD5;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span><span class="hljs-params">(object, metaclass=UpperAttrMetaClass)</span>:</span>
+    bar = <span class="hljs-string">&apos;bip&apos;</span>
+
+<span class="hljs-comment"># python2&#x7684;&#x7528;&#x6CD5;</span>
+<span class="hljs-comment"># class Foo(object):</span>
+<span class="hljs-comment">#     __metaclass__ = UpperAttrMetaClass</span>
+<span class="hljs-comment">#     bar = &apos;bip&apos;</span>
+
+
+print(hasattr(Foo, <span class="hljs-string">&apos;bar&apos;</span>))
+<span class="hljs-comment"># &#x8F93;&#x51FA;: False</span>
+print(hasattr(Foo, <span class="hljs-string">&apos;BAR&apos;</span>))
+<span class="hljs-comment"># &#x8F93;&#x51FA;:True</span>
+
+f = Foo()
+print(f.BAR)
+<span class="hljs-comment"># &#x8F93;&#x51FA;:&apos;bip&apos;</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190307205008781.png" alt="image-20190307205008781"></p>
+<p>&#x5C31;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5173;&#x4E8E;&#x5143;&#x7C7B;&#x771F;&#x7684;&#x6CA1;&#x6709;&#x522B;&#x7684;&#x53EF;&#x8BF4;&#x7684;&#x4E86;</p>
+<p>&#x4F46;&#x5C31;&#x5143;&#x7C7B;&#x672C;&#x8EAB;&#x800C;&#x8A00;&#xFF0C;&#x5B83;&#x4EEC;&#x5176;&#x5B9E;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x7684;&#xFF1A;</p>
+<ol>
+<li>&#x62E6;&#x622A;&#x7C7B;&#x7684;&#x521B;&#x5EFA;</li>
+<li>&#x4FEE;&#x6539;&#x7C7B;</li>
+<li>&#x8FD4;&#x56DE;&#x4FEE;&#x6539;&#x4E4B;&#x540E;&#x7684;&#x7C7B;</li>
+</ol>
+<h2 id="9-&#x7A76;&#x7ADF;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;&#x5143;&#x7C7B;&#xFF1F;">9. &#x7A76;&#x7ADF;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;&#x5143;&#x7C7B;&#xFF1F;</h2>
+<p>&#x73B0;&#x5728;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x5927;&#x4E3B;&#x9898;&#x4E0A;&#x6765;&#xFF0C;&#x7A76;&#x7ADF;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x4F60;&#x4F1A;&#x53BB;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x4E14;&#x6666;&#x6DA9;&#x7684;&#x7279;&#x6027;&#xFF1F;&#x597D;&#x5427;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x4F60;&#x6839;&#x672C;&#x5C31;&#x7528;&#x4E0D;&#x4E0A;&#x5B83;&#xFF1A;</p>
+<p>&#x201C;&#x5143;&#x7C7B;&#x5C31;&#x662F;&#x6DF1;&#x5EA6;&#x7684;&#x9B54;&#x6CD5;&#xFF0C;<span class="pg-emphasize pg-emphasize-yellow" style="background: #fff700;">99%&#x7684;&#x7528;&#x6237;&#x5E94;&#x8BE5;&#x6839;&#x672C;&#x4E0D;&#x5FC5;&#x4E3A;&#x6B64;&#x64CD;&#x5FC3;</span>&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x641E;&#x6E05;&#x695A;&#x7A76;&#x7ADF;&#x662F;&#x5426;&#x9700;&#x8981;&#x7528;&#x5230;&#x5143;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5B83;&#x3002;&#x90A3;&#x4E9B;&#x5B9E;&#x9645;&#x7528;&#x5230;&#x5143;&#x7C7B;&#x7684;&#x4EBA;&#x90FD;&#x975E;&#x5E38;&#x6E05;&#x695A;&#x5730;&#x77E5;&#x9053;&#x4ED6;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x800C;&#x4E14;&#x6839;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x5143;&#x7C7B;&#x3002;&#x201D;  &#x2014;&#x2014; Python&#x754C;&#x7684;&#x9886;&#x8896; Tim Peters</p>
+<p>&#x5F53;&#x7136;&#x4E86;&#x4E5F;&#x4E0D;&#x662F;&#x8BF4;&#x5143;&#x7C7B;&#x771F;&#x7684;&#x6CA1;&#x6709;&#x7528;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x540E;&#x9762;&#x5B66;&#x4E60;MySQL&#x6570;&#x636E;&#x5E93;&#x540E;&#xFF0C;&#x4F1A;&#x5B66;&#x4E60;&#x4F7F;&#x7528;&#x5143;&#x7C7B;&#x6765;&#x81EA;&#x5DF1;&#x6A21;&#x62DF;ORM&#xFF0C;&#x5230;&#x65F6;&#x5C31;&#x8981;&#x7528;&#x5230;&#x5143;&#x7C7B;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../04-面向对象提高2/05-私有化.html" class="navigation navigation-prev " aria-label="Previous page: 私有化"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../06-描述符/index.html" class="navigation navigation-next " aria-label="Next page: 描述符"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python高级 -->
+<!-- End of book Python高级 -->
+</html>

@@ -1,0 +1,971 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python高级 -->
+<!-- Start book Python高级 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>GIL全局解释器锁 | Python高级</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../08-垃圾回收、log日志/index.html" />
+    
+    
+    <link rel="prev" href="../07-协程、GIL/05-进程、线程、协程对比.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="7.6"
+        data-chapter-title="GIL全局解释器锁"
+        data-filepath="07-协程、GIL/06-GIL.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:20:52 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-三器一闭/index.html">
+            
+                
+                    <a href="../01-三器一闭/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Python高级1(三器一闭)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-三器一闭/01-迭代器.html">
+            
+                
+                    <a href="../01-三器一闭/01-迭代器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        迭代器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-三器一闭/02-生成器.html">
+            
+                
+                    <a href="../01-三器一闭/02-生成器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        生成器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-三器一闭/03-闭包.html">
+            
+                
+                    <a href="../01-三器一闭/03-闭包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-三器一闭/04-装饰器.html">
+            
+                
+                    <a href="../01-三器一闭/04-装饰器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        装饰器
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-深、浅拷贝、with/index.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        拷贝、with
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-深、浅拷贝、with/01-==、is.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/01-==、is.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        ==、is
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-深、浅拷贝、with/02-深拷贝、浅拷贝.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/02-深拷贝、浅拷贝.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        深拷贝、浅拷贝
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-深、浅拷贝、with/03-with的使用.html">
+            
+                
+                    <a href="../02-深、浅拷贝、with/03-with的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        with的使用
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-面向对象提高1/index.html">
+            
+                
+                    <a href="../03-面向对象提高1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        面向对象提高1
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="03-面向对象提高1/01-再议 封装、继承、多态.html">
+            
+                
+                    <a href="../03-面向对象提高1/01-再议 封装、继承、多态.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        再议 封装、继承、多态
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03-面向对象提高1/02-再议静态方法、类方法.html">
+            
+                
+                    <a href="../03-面向对象提高1/02-再议静态方法、类方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        再议静态方法、类方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03-面向对象提高1/03-多继承以及MRO顺序.html">
+            
+                
+                    <a href="../03-面向对象提高1/03-多继承以及MRO顺序.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        多继承以及MRO顺序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03-面向对象提高1/04-内建属性.html">
+            
+                
+                    <a href="../03-面向对象提高1/04-内建属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        内建属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="03-面向对象提高1/05-魔法属性.html">
+            
+                
+                    <a href="../03-面向对象提高1/05-魔法属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        魔法属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="03-面向对象提高1/06-内建函数.html">
+            
+                
+                    <a href="../03-面向对象提高1/06-内建函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        内建函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04-面向对象提高2/index.html">
+            
+                
+                    <a href="../04-面向对象提高2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        面向对象提高2
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="04-面向对象提高2/01-Python动态绑定.html">
+            
+                
+                    <a href="../04-面向对象提高2/01-Python动态绑定.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Python动态绑定
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="04-面向对象提高2/02-__slots__.html">
+            
+                
+                    <a href="../04-面向对象提高2/02-__slots__.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        __slots__
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="04-面向对象提高2/03-property属性.html">
+            
+                
+                    <a href="../04-面向对象提高2/03-property属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        property属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="04-面向对象提高2/04-property属性2.html">
+            
+                
+                    <a href="../04-面向对象提高2/04-property属性2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        property属性2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="04-面向对象提高2/05-私有化.html">
+            
+                
+                    <a href="../04-面向对象提高2/05-私有化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        私有化
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-元类/01-元类.html">
+            
+                
+                    <a href="../05-元类/01-元类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        元类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="06-描述符/index.html">
+            
+                
+                    <a href="../06-描述符/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        描述符
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="06-描述符/01-__getattr__和__getattribute__.html">
+            
+                
+                    <a href="../06-描述符/01-__getattr__和__getattribute__.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        __getattr__和__getattribute__
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="06-描述符/02-描述符.html">
+            
+                
+                    <a href="../06-描述符/02-描述符.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        描述符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="06-描述符/03-描述符调用机制.html">
+            
+                
+                    <a href="../06-描述符/03-描述符调用机制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        描述符调用机制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="06-描述符/04-描述符注意点.html">
+            
+                
+                    <a href="../06-描述符/04-描述符注意点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        描述符注意点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="06-描述符/05-描述符应用.html">
+            
+                
+                    <a href="../06-描述符/05-描述符应用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        描述符应用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="06-描述符/06-总结.html">
+            
+                
+                    <a href="../06-描述符/06-总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="07-协程、GIL/index.html">
+            
+                
+                    <a href="../07-协程、GIL/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        协程
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="07-协程、GIL/01-协程-yield.html">
+            
+                
+                    <a href="../07-协程、GIL/01-协程-yield.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        协程-yield
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="07-协程、GIL/02-协程-greenlet.html">
+            
+                
+                    <a href="../07-协程、GIL/02-协程-greenlet.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        协程-greenlet
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="07-协程、GIL/03-协程-gevent.html">
+            
+                
+                    <a href="../07-协程、GIL/03-协程-gevent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        协程-gevent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="07-协程、GIL/04-并发下载器.html">
+            
+                
+                    <a href="../07-协程、GIL/04-并发下载器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        并发下载器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="07-协程、GIL/05-进程、线程、协程对比.html">
+            
+                
+                    <a href="../07-协程、GIL/05-进程、线程、协程对比.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        进程、线程、协程对比
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.6" data-path="07-协程、GIL/06-GIL.html">
+            
+                
+                    <a href="../07-协程、GIL/06-GIL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        GIL全局解释器锁
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="08-垃圾回收、log日志/index.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        垃圾回收、log日志
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="08-垃圾回收、log日志/01-垃圾回收（一）.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/01-垃圾回收（一）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        垃圾回收（一）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="08-垃圾回收、log日志/02-垃圾回收（二）.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/02-垃圾回收（二）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        垃圾回收（二）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="08-垃圾回收、log日志/03-垃圾回收（三）.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/03-垃圾回收（三）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        垃圾回收（三）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="08-垃圾回收、log日志/04-logging日志模块.html">
+            
+                
+                    <a href="../08-垃圾回收、log日志/04-logging日志模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        logging日志模块
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python高级</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="gil&#xFF08;&#x5168;&#x5C40;&#x89E3;&#x91CA;&#x5668;&#x9501;&#xFF09;">GIL&#xFF08;&#x5168;&#x5C40;&#x89E3;&#x91CA;&#x5668;&#x9501;&#xFF09;</h2>
+<h2 id="1-gil&#x9762;&#x8BD5;&#x9898;&#x5982;&#x4E0B;">1. GIL&#x9762;&#x8BD5;&#x9898;&#x5982;&#x4E0B;</h2>
+<blockquote>
+<p>&#x63CF;&#x8FF0;Python GIL&#x7684;&#x6982;&#x5FF5;&#xFF0C; &#x4EE5;&#x53CA;&#x5B83;&#x5BF9;python&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x5F71;&#x54CD;&#xFF1F;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x591A;&#x7EBF;&#x7A0B;&#x6293;&#x53D6;&#x7F51;&#x9875;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x9610;&#x660E;&#x591A;&#x7EBF;&#x7A0B;&#x6293;&#x53D6;&#x7A0B;&#x5E8F;&#x662F;&#x5426;&#x53EF;&#x6BD4;&#x5355;&#x7EBF;&#x7A0B;&#x6027;&#x80FD;&#x6709;&#x63D0;&#x5347;&#xFF0C;&#x5E76;&#x89E3;&#x91CA;&#x539F;&#x56E0;&#x3002;</p>
+</blockquote>
+<p>Guido&#x7684;&#x58F0;&#x660E;&#xFF1A;<a href="http://www.artima.com/forums/flat.jsp?forum=106&amp;thread=214235" target="_blank">http://www.artima.com/forums/flat.jsp?forum=106&amp;thread=214235</a></p>
+<p>he language doesn&apos;t require the GIL -- it&apos;s only the CPython virtual machine that has historically been unable to shed it.</p>
+<h4 id="&#x53C2;&#x8003;&#x7B54;&#x6848;">&#x53C2;&#x8003;&#x7B54;&#x6848;:</h4>
+<blockquote>
+<ol>
+<li>Python&#x8BED;&#x8A00;&#x548C;GIL&#x6CA1;&#x6709;&#x534A;&#x6BDB;&#x94B1;&#x5173;&#x7CFB;&#x3002;&#x4EC5;&#x4EC5;&#x662F;&#x7531;&#x4E8E;&#x5386;&#x53F2;&#x539F;&#x56E0;&#x5728;Cpython&#x865A;&#x62DF;&#x673A;(&#x89E3;&#x91CA;&#x5668;)&#xFF0C;&#x96BE;&#x4EE5;&#x79FB;&#x9664;GIL&#x3002;</li>
+<li>GIL&#xFF1A;&#x5168;&#x5C40;&#x89E3;&#x91CA;&#x5668;&#x9501;&#x3002;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x5728;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;GIL&#xFF0C;&#x4FDD;&#x8BC1;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x7EBF;&#x7A0B;&#x91CA;&#x653E;GIL&#x9501;&#x7684;&#x60C5;&#x51B5;&#xFF1A;
+&#x5728;IO&#x64CD;&#x4F5C;&#x7B49;&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x8D77;&#x963B;&#x585E;&#x7684;system call&#x4E4B;&#x524D;,&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x91CA;&#x653E;GIL,&#x4F46;&#x5728;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;,&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x83B7;&#x53D6;GIL
+Python 3.x&#x4F7F;&#x7528;&#x8BA1;&#x65F6;&#x5668;&#xFF08;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8FBE;&#x5230;&#x9608;&#x503C;&#x540E;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x91CA;&#x653E;GIL&#xFF09;&#x6216;Python 2.x&#xFF0C;tickets&#x8BA1;&#x6570;&#x8FBE;&#x5230;100</li>
+<li>Python&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x662F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x591A;&#x6838;&#x7684;CPU&#x8D44;&#x6E90;&#x7684;&#x3002;</li>
+<li>&#x591A;&#x7EBF;&#x7A0B;&#x722C;&#x53D6;&#x6BD4;&#x5355;&#x7EBF;&#x7A0B;&#x6027;&#x80FD;&#x6709;&#x63D0;&#x5347;&#xFF0C;&#x56E0;&#x4E3A;&#x9047;&#x5230;IO&#x963B;&#x585E;&#x4F1A;&#x81EA;&#x52A8;&#x91CA;&#x653E;GIL&#x9501;</li>
+</ol>
+</blockquote>
+<h2 id="2-&#x9A8C;&#x8BC1;gil&#x95EE;&#x9898;">2. &#x9A8C;&#x8BC1;GIL&#x95EE;&#x9898;</h2>
+<h3 id="21-&#x5355;&#x4EFB;&#x52A1;&#xFF08;&#x5355;&#x7EBF;&#x7A0B;&#xFF09;">2.1 &#x5355;&#x4EFB;&#x52A1;&#xFF08;&#x5355;&#x7EBF;&#x7A0B;&#xFF09;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4E3B;&#x7EBF;&#x7A0B;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x5360;&#x6EE1;cpu</span>
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190313062305292.png" alt="image-20190313062305292"></p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x5355;&#x4EFB;&#x52A1;&#x7A0B;&#x5E8F;&#x5FEB;&#x901F;&#x6267;&#x884C;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;<code>htop</code>&#x547D;&#x4EE4;&#x770B;&#x5230;&#x4E00;&#x4E2A;cpu&#x6838;&#x88AB;&#x6CBE;&#x6EE1;</p>
+<h3 id="22-&#x591A;&#x4EFB;&#x52A1;&#xFF08;&#x591A;&#x7EBF;&#x7A0B;&#xFF09;">2.2 &#x591A;&#x4EFB;&#x52A1;&#xFF08;&#x591A;&#x7EBF;&#x7A0B;&#xFF09;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> threading
+
+<span class="hljs-comment"># &#x5B50;&#x7EBF;&#x7A0B;&#x6B7B;&#x5FAA;&#x73AF;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-keyword">pass</span>
+
+
+t1 = threading.Thread(target=test)
+t1.start()
+
+<span class="hljs-comment"># &#x4E3B;&#x7EBF;&#x7A0B;&#x6B7B;&#x5FAA;&#x73AF;</span>
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190313062512707.png" alt="image-20190313062512707"></p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x7ED3;&#x679C;&#x770B;&#x51FA;&#xFF0C;&#x867D;&#x7136;&#x7A0B;&#x5E8F;&#x5DF2;&#x7ECF;&#x662F;2&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x662F;<code>htop</code>&#x770B;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;2&#x4E2A;cpu&#x6838;&#x5404;&#x5360;50%&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x5171;&#x52A0;&#x5728;&#x4E00;&#x8D77;&#x4E5F;&#x5C31;100%&#xFF0C;&#x8FD9;&#x5C31;&#x8BF4;&#x660E;&#x867D;&#x7136;&#x662F;&#x591A;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x4F9D;&#x7136;&#x662F;&#x4EC5;&#x4EC5;&#x5360;&#x7528;&#x4E86;1&#x4E2A;CPU&#x6838;&#xFF0C;&#x7701;&#x4E0B;&#x7684;&#x7A7A;&#x95F2;&#x800C;&#x5DF2;</p>
+<h3 id="23-&#x591A;&#x4EFB;&#x52A1;&#xFF08;&#x591A;&#x8FDB;&#x7A0B;&#xFF09;">2.3 &#x591A;&#x4EFB;&#x52A1;&#xFF08;&#x591A;&#x8FDB;&#x7A0B;&#xFF09;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> multiprocessing
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deadLoop</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># &#x5B50;&#x8FDB;&#x7A0B;&#x6B7B;&#x5FAA;&#x73AF;</span>
+p1 = multiprocessing.Process(target=deadLoop)
+p1.start()
+
+<span class="hljs-comment"># &#x4E3B;&#x8FDB;&#x7A0B;&#x6B7B;&#x5FAA;&#x73AF;</span>
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="assets/image-20190313062823983.png" alt="image-20190313062823983"></p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x591A;&#x8FDB;&#x7A0B;&#x6765;&#x5B9E;&#x73B0;&#x591A;&#x4EFB;&#x52A1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x771F;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#xFF0C;&#x5373;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x5404;&#x5360;1&#x4E2A;CPU&#x6838;&#xFF08;&#x5F53;&#x7136;&#x4E86;&#x4EFB;&#x52A1;&#x6570;&#x662F;&#x5728;&#x5C0F;&#x4E8E;cpu&#x6838;&#x5FC3;&#x6570;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF09;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5E76;&#x884C;</p>
+<h2 id="3-&#x5206;&#x6790;&#x95EE;&#x9898;">3. &#x5206;&#x6790;&#x95EE;&#x9898;</h2>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x51FA;&#x73B0;&#x591A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#x662F;&#x5047;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#x5462;&#xFF1F;&#x8FD9;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x672C;&#x6587;&#x6700;&#x5F00;&#x59CB;&#x63D0;&#x5230;&#x7684;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;Python&#x7684;&#x5386;&#x53F2;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x7528;C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7684;Python&#x89E3;&#x91CA;&#x5668;&#x6709;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x800C;Python&#x9ED8;&#x8BA4;&#x7684;C&#x8BED;&#x8A00;&#x89E3;&#x91CA;&#x5668;&#x6267;&#x884C;Python&#x591A;&#x4EFB;&#x52A1;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x7684;&#x662F;&#x771F;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#xFF0C;&#x800C;&#x7EBF;&#x7A0B;&#x5B9E;&#x9645;&#x4E0A;&#x5047;&#x7684;&#x591A;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x79F0;&#x4E3A;<code>GIL</code></p>
+<h2 id="4-&#x89E3;&#x51B3;gil&#x95EE;&#x9898;">4. &#x89E3;&#x51B3;GIL&#x95EE;&#x9898;</h2>
+<h3 id="41-&#x5728;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x65F6;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x8BED;&#x8A00;">4.1 &#x5728;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x65F6;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x8BED;&#x8A00;</h3>
+<h4 id="411-&#x7F16;&#x5199;loopc&#x6587;&#x4EF6;">4.1.1 &#x7F16;&#x5199;<code>loop.c</code>&#x6587;&#x4EF6;</h4>
+<pre><code class="lang-python">void DeadLoop()
+{
+    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)
+    {
+        ;
+    }
+}
+</code></pre>
+<h4 id="412&#x5236;&#x4F5C;so&#x6587;&#x4EF6;">4.1.2&#x5236;&#x4F5C;<code>.so</code>&#x6587;&#x4EF6;</h4>
+<p>&#x5728;Linux&#x7EC8;&#x7AEF;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>.so</code>&#x52A8;&#x6001;&#x5E93;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell">gcc -shared -o libdead_loop.so loop.c
+</code></pre>
+<h4 id="413-&#x7F16;&#x5199;mainpy&#x6587;&#x4EF6;&#x5BFC;&#x5165;so&#x6587;&#x4EF6;">4.1.3 &#x7F16;&#x5199;<code>main.py</code>&#x6587;&#x4EF6;&#x5BFC;&#x5165;<code>.so</code>&#x6587;&#x4EF6;</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ctypes <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread
+
+<span class="hljs-comment"># &#x52A0;&#x8F7D;&#x52A8;&#x6001;&#x5E93;</span>
+lib = cdll.LoadLibrary(<span class="hljs-string">&quot;./libdead_loop.so&quot;</span>)
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BA9;&#x5176;&#x6267;&#x884C;&#xFF43;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6B64;&#x51FD;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x6B7B;&#x5FAA;&#x73AF;</span>
+t = Thread(target=lib.DeadLoop)
+t.start()
+
+<span class="hljs-comment"># &#x4E3B;&#x7EBF;&#x7A0B;</span>
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<h4 id="414-&#x8FD0;&#x884C;&#x6548;&#x679C;">4.1.4 &#x8FD0;&#x884C;&#x6548;&#x679C;</h4>
+<p><img src="assets/image-20190313063717311.png" alt="image-20190313063717311"></p>
+<h2 id="5-&#x601D;&#x8003;&#x9898;&#xFF08;&#x9762;&#x8BD5;&#x9898;&#xFF09;">5. &#x601D;&#x8003;&#x9898;&#xFF08;&#x9762;&#x8BD5;&#x9898;&#xFF09;</h2>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x6709;&#x4E86;GIL&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x4E92;&#x65A5;&#x9501;&#xFF1F;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../07-协程、GIL/05-进程、线程、协程对比.html" class="navigation navigation-prev " aria-label="Previous page: 进程、线程、协程对比"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../08-垃圾回收、log日志/index.html" class="navigation navigation-next " aria-label="Next page: 垃圾回收、log日志"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python高级 -->
+<!-- End of book Python高级 -->
+</html>
