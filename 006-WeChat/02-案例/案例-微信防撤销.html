@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python操作微信 -->
+<!-- Start book Python操作微信 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>案例：微信防撤销 | Python操作微信</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../01-itchat模块API基本使用/02-API.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="案例：微信防撤销"
+        data-filepath="02-案例/案例-微信防撤销.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 09:44:06 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-itchat模块API基本使用/01-说明.html">
+            
+                
+                    <a href="../01-itchat模块API基本使用/01-说明.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="01-itchat模块API基本使用/02-API.html">
+            
+                
+                    <a href="../01-itchat模块API基本使用/02-API.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        API基本使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="02-案例/案例-微信防撤销.html">
+            
+                
+                    <a href="../02-案例/案例-微信防撤销.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        案例：微信防撤销
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python操作微信</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6848;&#x4F8B;&#x5FAE;&#x4FE1;&#x9632;&#x64A4;&#x9500;">&#x6848;&#x4F8B;-&#x5FAE;&#x4FE1;&#x9632;&#x64A4;&#x9500;</h1>
+<h2 id="1-&#x7A0B;&#x5E8F;&#x67B6;&#x6784;">1. &#x7A0B;&#x5E8F;&#x67B6;&#x6784;</h2>
+<p><img src="assets/image-20181229064646212-6037206.png" alt="image-20181229064646212"></p>
+<h2 id="2-&#x5206;&#x6790;">2. &#x5206;&#x6790;</h2>
+<blockquote>
+<p>&#x6839;&#x636E;&#x4E4B;&#x524D;&#x4F7F;&#x7528;itchat&#x7684;&#x7ECF;&#x9A8C;&#xFF0C;&#x77E5;&#x9053;itchat&#x4E2D; &#x5BF9;&#x4E8E;&#x5FAE;&#x4FE1;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x6709;&#x4E0D;&#x540C;&#x7C7B;&#x522B;&#x7684;&#x6807;&#x8BC6;&#xFF0C;&#x4F8B;&#x5982;&#x5BF9;&#x65B9;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x662F;&#x666E;&#x901A;&#x6587;&#x5B57;&#x6D88;&#x606F;&#x3001;&#x56FE;&#x7247;&#x3001;&#x89C6;&#x9891;&#x7B49;</p>
+<p>&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x817E;&#x8BAF;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#x4E00;&#x5B9A;&#x5199;&#x4E86;&#x7C7B;&#x522B;&#xFF0C;&#x5426;&#x5219;itchat&#x600E;&#x4E48;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x6570;&#x636E;&#x5E94;&#x8BE5;&#x8C03;&#x7528;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x51FD;&#x6570;&#x7684;&#x5462;&#xFF01;&#x8FD9;&#x5C31;&#x662F;&#x7ECF;&#x9A8C;&#xFF0C;&#x9047;&#x5230;&#x7684;&#x591A;&#x4E86; &#x9884;&#x4F30;&#x7684;&#x51C6;&#x786E;&#x7387;&#x4E5F;&#x5C31;&#x9AD8;&#x4E86;&#xFF0C;&#x540C;&#x5B66;&#x4EEC;&#x6162;&#x6162;&#x609F;</p>
+</blockquote>
+<h4 id="&#x6B63;&#x5E38;&#x6D88;&#x606F;msg&#x5982;&#x4E0B;&#xFF1A;">&#x6B63;&#x5E38;&#x6D88;&#x606F;MSG&#x5982;&#x4E0B;&#xFF1A;</h4>
+<pre><code class="lang-python">(<span class="hljs-string">&apos;MsgId&apos;</span>, <span class="hljs-string">&apos;4581720387938644742&apos;</span>)
+(<span class="hljs-string">&apos;FromUserName&apos;</span>, <span class="hljs-string">&apos;@3c56b1d8957833ffbc3d5aadb6af8b65&apos;</span>)
+(<span class="hljs-string">&apos;ToUserName&apos;</span>, <span class="hljs-string">&apos;@3c56b1d8957833ffbc3d5aadb6af8b65&apos;</span>)
+(<span class="hljs-string">&apos;MsgType&apos;</span>, <span class="hljs-number">1</span>)
+(<span class="hljs-string">&apos;Content&apos;</span>, <span class="hljs-string">&apos;&#x8BF7;&#x6C42;&#x6743;&apos;</span>)
+(<span class="hljs-string">&apos;Status&apos;</span>, <span class="hljs-number">3</span>)
+(<span class="hljs-string">&apos;ImgStatus&apos;</span>, <span class="hljs-number">1</span>)
+(<span class="hljs-string">&apos;CreateTime&apos;</span>, <span class="hljs-number">1523935625</span>)
+(<span class="hljs-string">&apos;VoiceLength&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;PlayLength&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;FileName&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;FileSize&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;MediaId&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;Url&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;AppMsgType&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;StatusNotifyCode&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;StatusNotifyUserName&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;RecommendInfo&apos;</span>, {<span class="hljs-string">&apos;UserName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;NickName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;QQNum&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Province&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;City&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Content&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Signature&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Alias&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Scene&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;VerifyFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;AttrStatus&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Sex&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Ticket&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;OpCode&apos;</span>: <span class="hljs-number">0</span>})
+(<span class="hljs-string">&apos;ForwardFlag&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;AppInfo&apos;</span>, {<span class="hljs-string">&apos;AppID&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Type&apos;</span>: <span class="hljs-number">0</span>})
+(<span class="hljs-string">&apos;HasProductId&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;Ticket&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;ImgHeight&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;ImgWidth&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;SubMsgType&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;NewMsgId&apos;</span>, <span class="hljs-number">4581720387938644742</span>)
+(<span class="hljs-string">&apos;OriContent&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;EncryFileName&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;User&apos;</span>, &lt;User: {<span class="hljs-string">&apos;MemberList&apos;</span>: &lt;ContactList: []&gt;, <span class="hljs-string">&apos;UserName&apos;</span>: <span class="hljs-string">&apos;@3c56b1d8957833ffbc3d5aadb6af8b65&apos;</span>, <span class="hljs-string">&apos;City&apos;</span>: <span class="hljs-string">&apos;&#x6D77;&#x6DC0;&apos;</span>, <span class="hljs-string">&apos;DisplayName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;PYQuanPin&apos;</span>: <span class="hljs-string">&apos;mingdong&apos;</span>, <span class="hljs-string">&apos;RemarkPYInitial&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Province&apos;</span>: <span class="hljs-string">&apos;&#x5317;&#x4EAC;&apos;</span>, <span class="hljs-string">&apos;KeyWord&apos;</span>: <span class="hljs-string">&apos;don&apos;</span>, <span class="hljs-string">&apos;RemarkName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;PYInitial&apos;</span>: <span class="hljs-string">&apos;MD&apos;</span>, <span class="hljs-string">&apos;EncryChatRoomId&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Alias&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Signature&apos;</span>: <span class="hljs-string">&apos;&#x5B66;&#x4E60;&#x662F;&#x4E00;&#x79CD;&#x4FE1;&#x4EF0;&apos;</span>, <span class="hljs-string">&apos;NickName&apos;</span>: <span class="hljs-string">&apos;&#xFF5E;&#x94ED;&#x4E1C;&apos;</span>, <span class="hljs-string">&apos;RemarkPYQuanPin&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;HeadImgUrl&apos;</span>: <span class="hljs-string">&apos;/cgi-bin/mmwebwx-bin/webwxgeticon?seq=870197&amp;username=@3c56b1d8957833ffbc3d5aadb6af8b65&amp;skey=@crypt_1f2490e8_b7b520504e85d05201aa7d96f6ad2b9f&apos;</span>, <span class="hljs-string">&apos;UniFriend&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Sex&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;AppAccountFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;VerifyFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;ChatRoomId&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;HideInputBarFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;AttrStatus&apos;</span>: <span class="hljs-number">98599</span>, <span class="hljs-string">&apos;SnsFlag&apos;</span>: <span class="hljs-number">49</span>, <span class="hljs-string">&apos;MemberCount&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;OwnerUin&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;ContactFlag&apos;</span>: <span class="hljs-number">2051</span>, <span class="hljs-string">&apos;Uin&apos;</span>: <span class="hljs-number">1603167940</span>, <span class="hljs-string">&apos;StarFriend&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Statues&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;WebWxPluginSwitch&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;HeadImgFlag&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;IsOwner&apos;</span>: <span class="hljs-number">0</span>}&gt;)
+(<span class="hljs-string">&apos;Type&apos;</span>, <span class="hljs-string">&apos;Text&apos;</span>)
+(<span class="hljs-string">&apos;Text&apos;</span>, <span class="hljs-string">&apos;&#x8BF7;&#x6C42;&#x6743;&apos;</span>)
+</code></pre>
+<h4 id="&#x64A4;&#x9500;&#x6D88;&#x606F;msg&#x5982;&#x4E0B;&#xFF1A;">&#x64A4;&#x9500;&#x6D88;&#x606F;MSG&#x5982;&#x4E0B;&#xFF1A;</h4>
+<pre><code class="lang-python">(<span class="hljs-string">&apos;MsgId&apos;</span>, <span class="hljs-string">&apos;423054915445451008&apos;</span>)
+(<span class="hljs-string">&apos;FromUserName&apos;</span>, <span class="hljs-string">&apos;@3c56b1d8957833ffbc3d5aadb6af8b65&apos;</span>)
+(<span class="hljs-string">&apos;ToUserName&apos;</span>, <span class="hljs-string">&apos;@3c56b1d8957833ffbc3d5aadb6af8b65&apos;</span>)
+(<span class="hljs-string">&apos;MsgType&apos;</span>, <span class="hljs-number">10002</span>)
+(<span class="hljs-string">&apos;Content&apos;</span>, <span class="hljs-string">&apos;&lt;sysmsg type=&quot;revokemsg&quot;&gt;&lt;revokemsg&gt;&lt;session&gt;dong4716138&lt;/session&gt;&lt;oldmsgid&gt;1076895120&lt;/oldmsgid&gt;&lt;msgid&gt;4581720387938644742&lt;/msgid&gt;&lt;replacemsg&gt;&lt;![CDATA[&#x4F60;&#x64A4;&#x56DE;&#x4E86;&#x4E00;&#x6761;&#x6D88;&#x606F;]]&gt;&lt;/replacemsg&gt;&lt;/revokemsg&gt;&lt;/sysmsg&gt;&apos;</span>)
+(<span class="hljs-string">&apos;Status&apos;</span>, <span class="hljs-number">4</span>)
+(<span class="hljs-string">&apos;ImgStatus&apos;</span>, <span class="hljs-number">1</span>)
+(<span class="hljs-string">&apos;CreateTime&apos;</span>, <span class="hljs-number">1523935639</span>)
+(<span class="hljs-string">&apos;VoiceLength&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;PlayLength&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;FileName&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;FileSize&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;MediaId&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;Url&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;AppMsgType&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;StatusNotifyCode&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;StatusNotifyUserName&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;RecommendInfo&apos;</span>, {<span class="hljs-string">&apos;UserName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;NickName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;QQNum&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Province&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;City&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Content&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Signature&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Alias&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Scene&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;VerifyFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;AttrStatus&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Sex&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Ticket&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;OpCode&apos;</span>: <span class="hljs-number">0</span>})
+(<span class="hljs-string">&apos;ForwardFlag&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;AppInfo&apos;</span>, {<span class="hljs-string">&apos;AppID&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Type&apos;</span>: <span class="hljs-number">0</span>})
+(<span class="hljs-string">&apos;HasProductId&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;Ticket&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;ImgHeight&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;ImgWidth&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;SubMsgType&apos;</span>, <span class="hljs-number">0</span>)
+(<span class="hljs-string">&apos;NewMsgId&apos;</span>, <span class="hljs-number">423054915445451008</span>)
+(<span class="hljs-string">&apos;OriContent&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;EncryFileName&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+(<span class="hljs-string">&apos;User&apos;</span>, &lt;User: {<span class="hljs-string">&apos;MemberList&apos;</span>: &lt;ContactList: []&gt;, <span class="hljs-string">&apos;UserName&apos;</span>: <span class="hljs-string">&apos;@3c56b1d8957833ffbc3d5aadb6af8b65&apos;</span>, <span class="hljs-string">&apos;City&apos;</span>: <span class="hljs-string">&apos;&#x6D77;&#x6DC0;&apos;</span>, <span class="hljs-string">&apos;DisplayName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;PYQuanPin&apos;</span>: <span class="hljs-string">&apos;mingdong&apos;</span>, <span class="hljs-string">&apos;RemarkPYInitial&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Province&apos;</span>: <span class="hljs-string">&apos;&#x5317;&#x4EAC;&apos;</span>, <span class="hljs-string">&apos;KeyWord&apos;</span>: <span class="hljs-string">&apos;don&apos;</span>, <span class="hljs-string">&apos;RemarkName&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;PYInitial&apos;</span>: <span class="hljs-string">&apos;MD&apos;</span>, <span class="hljs-string">&apos;EncryChatRoomId&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Alias&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;Signature&apos;</span>: <span class="hljs-string">&apos;&#x5B66;&#x4E60;&#x662F;&#x4E00;&#x79CD;&#x4FE1;&#x4EF0;&apos;</span>, <span class="hljs-string">&apos;NickName&apos;</span>: <span class="hljs-string">&apos;&#xFF5E;&#x94ED;&#x4E1C;&apos;</span>, <span class="hljs-string">&apos;RemarkPYQuanPin&apos;</span>: <span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;HeadImgUrl&apos;</span>: <span class="hljs-string">&apos;/cgi-bin/mmwebwx-bin/webwxgeticon?seq=870197&amp;username=@3c56b1d8957833ffbc3d5aadb6af8b65&amp;skey=@crypt_1f2490e8_b7b520504e85d05201aa7d96f6ad2b9f&apos;</span>, <span class="hljs-string">&apos;UniFriend&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Sex&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;AppAccountFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;VerifyFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;ChatRoomId&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;HideInputBarFlag&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;AttrStatus&apos;</span>: <span class="hljs-number">98599</span>, <span class="hljs-string">&apos;SnsFlag&apos;</span>: <span class="hljs-number">49</span>, <span class="hljs-string">&apos;MemberCount&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;OwnerUin&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;ContactFlag&apos;</span>: <span class="hljs-number">2051</span>, <span class="hljs-string">&apos;Uin&apos;</span>: <span class="hljs-number">1603167940</span>, <span class="hljs-string">&apos;StarFriend&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;Statues&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;WebWxPluginSwitch&apos;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&apos;HeadImgFlag&apos;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&apos;IsOwner&apos;</span>: <span class="hljs-number">0</span>}&gt;)
+(<span class="hljs-string">&apos;Type&apos;</span>, <span class="hljs-string">&apos;Note&apos;</span>)
+(<span class="hljs-string">&apos;Text&apos;</span>, <span class="hljs-string">&apos;&#x4F60;&#x64A4;&#x56DE;&#x4E86;&#x4E00;&#x6761;&#x6D88;&#x606F;&apos;</span>)
+</code></pre>
+<p><img src="assets/image-20180417114244023.png" alt="image-20180417114244023"></p>
+<h2 id="&#x53C2;&#x8003;&#x4EE3;&#x7801;">&#x53C2;&#x8003;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> itchat
+<span class="hljs-keyword">import</span> threading
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">from</span> queue <span class="hljs-keyword">import</span> Queue
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x7528;&#x6765;&#x6682;&#x5B58;&#x5FAE;&#x4FE1;&#x7684;&#x6570;&#x636E;</span>
+g_q = Queue()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_2_file</span><span class="hljs-params">(msg)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5C06;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x5199;&#x5165;&#x5230;&#x6587;&#x4EF6;&#x4E2D;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;wechat_&#x64A4;&#x9500;&#x6D88;&#x606F;&#x8BB0;&#x5F55;.txt&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>) <span class="hljs-keyword">as</span> f:
+        f.write(<span class="hljs-string">&quot;\r\n&quot;</span>)  <span class="hljs-comment"># &#x5148;&#x4E0E;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x884C;&#x8FDB;&#x884C;&#x5206;&#x5272;</span>
+        <span class="hljs-comment"># &#x6635;&#x79F0;</span>
+        NickName = msg[<span class="hljs-string">&apos;User&apos;</span>][<span class="hljs-string">&apos;NickName&apos;</span>]
+        <span class="hljs-comment"># &#x5907;&#x6CE8;&#x540D;&#x79F0;</span>
+        RemarkName = msg[<span class="hljs-string">&apos;User&apos;</span>][<span class="hljs-string">&apos;RemarkName&apos;</span>]
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x64A4;&#x9500;&#x7684;&#x5185;&#x5BB9;</span>
+        Content = msg[<span class="hljs-string">&apos;Content&apos;</span>]
+        <span class="hljs-comment"># &#x5199;&#x5165;&#x5230;&#x6587;&#x4EF6;</span>
+        f.write(<span class="hljs-string">&quot;%s(%s):%s&quot;</span> % (NickName, RemarkName, Content))
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">handle_revoke_msg</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5BF9;&#x63A5;&#x6536;&#x7684;&#x5FAE;&#x4FE1;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x8BBE;&#x5B9A;&#x7684;&#x903B;&#x8F91;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5904;&#x7406;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x5B57;&#x5178;&#xFF0C;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x8FD0;&#x884C;&#x540E; &#x63A5;&#x6536;&#x5230;&#x4E86;&#x6240;&#x6709;&#x7684;&#x4FE1;&#x606F;&#x6D88;&#x606F;</span>
+    msg_dict = dict()
+
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-comment"># &#x63A5;&#x6536;&#x6D88;&#x606F;</span>
+        msg = g_q.get(<span class="hljs-keyword">True</span>)
+        print(<span class="hljs-string">&quot;&#x63A5;&#x6536;&#x5230;msg&quot;</span>, type(msg), msg)
+
+        <span class="hljs-keyword">if</span> msg[<span class="hljs-string">&apos;Type&apos;</span>] == <span class="hljs-string">&quot;Text&quot;</span>:
+            <span class="hljs-comment"># &#x6587;&#x672C;&#x6D88;&#x606F;</span>
+            <span class="hljs-comment"># &#x63D0;&#x53D6;msg_id</span>
+            msg_id = msg[<span class="hljs-string">&apos;MsgId&apos;</span>]
+            <span class="hljs-comment"># &#x5C06;&#x63A5;&#x6536;&#x7684;&#x6D88;&#x606F;&#x6DFB;&#x52A0;&#x5230;&#x5B57;&#x5178;&#x4E2D;</span>
+            msg_dict[msg_id] = msg  <span class="hljs-comment"># &#x8BA9;&#x6574;&#x4E2A;msg&#x5B57;&#x5178;&#xFF0C;&#x5F53;&#x505A;value&#xFF0C;&#x8BA9;msg&#x7684;id&#x5F53;&#x505A;key&#xFF0C;&#x8FD9;&#x6837;&#x66F4;&#x65B9;&#x4FBF;&#x5904;&#x7406;</span>
+        <span class="hljs-keyword">elif</span> msg[<span class="hljs-string">&apos;Type&apos;</span>] == <span class="hljs-string">&quot;Note&quot;</span>:
+            <span class="hljs-comment"># &#x901A;&#x77E5;&#x6D88;&#x606F;&#xFF0C;&#x4F8B;&#x5982; &#x64A4;&#x9500;</span>
+            <span class="hljs-comment"># &#x63D0;&#x53D6;msg_id</span>
+            <span class="hljs-comment"># ----------- &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;    &#x5F00;&#x59CB; &#xFF08;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x5B66;&#x4E60;&#xFF0C;&#x5230;&#x5E95;2&#x5B66;&#x671F;&#x518D;&#x5B66;&#xFF09;----------</span>
+            ret = re.search(<span class="hljs-string">r&quot;&lt;msgid&gt;([^&lt;]+)&quot;</span>, msg[<span class="hljs-string">&apos;Content&apos;</span>])
+            <span class="hljs-keyword">if</span> ret:
+                revoke_msg_id = ret.group(<span class="hljs-number">1</span>)
+            <span class="hljs-comment"># ----------- &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;    &#x7ED3;&#x675F;     ----------</span>
+                print(<span class="hljs-string">&quot;&#x521A;&#x521A;&#x64A4;&#x9500;&#x7684;&#x6D88;&#x606F;id&#x4E3A;&#xFF1A;%s&quot;</span> % revoke_msg_id)
+                del_msg = msg_dict.get(revoke_msg_id)
+                <span class="hljs-keyword">if</span> del_msg:
+                    save_2_file(del_msg)
+
+        print(<span class="hljs-string">&quot;&gt;&quot;</span> * <span class="hljs-number">30</span>)
+        print(<span class="hljs-string">&quot;&#x5B57;&#x5178;&#x73B0;&#x6709;&#x6570;&#x636E;&#x4E3A;:\n&quot;</span>)
+        print(msg_dict)
+        print(<span class="hljs-string">&quot;\n&quot;</span> * <span class="hljs-number">3</span>)
+
+
+<span class="hljs-decorator">@itchat.msg_register(itchat.content.TEXT)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">text_from_wechat</span><span class="hljs-params">(msg)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x63A5;&#x6536;&#x6765;&#x81EA;&#x5FAE;&#x4FE1;&#x7684;&#x6D88;&#x606F;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># &#x5C06;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6574;&#x4E2A;&#x5B57;&#x5178;&#x4F20;&#x5165;&#x5230;queue&#x4E2D;&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C3D;&#x5FEB;&#x63A5;&#x6536;&#xFF0C;&#x63D0;&#x5347;&#x63A5;&#x6536;&#x5FAE;&#x4FE1;&#x6D88;&#x606F;&#x7684;&#x5E76;&#x53D1;&#x80FD;&#x529B;&#xFF0C;&#x5F53;&#x7136;&#x4E86;&#x4E5F;&#x5B9E;&#x73B0;&#x89E3;&#x8026;&#x5408;</span>
+    g_q.put(msg)
+
+
+<span class="hljs-comment"># NOTE&#x4E3A;&#x901A;&#x77E5;&#x6587;&#x672C;&#xFF08;&#x4F8B;&#x5982;&#x6D88;&#x606F;&#x64A4;&#x56DE;&#x7B49;&#xFF09;</span>
+<span class="hljs-decorator">@itchat.msg_register(itchat.content.NOTE)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">revoke</span><span class="hljs-params">(msg)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x63A5;&#x6536;&#x5230;&#x64A4;&#x9500;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x56DE;&#x8C03;&#x7684;&#x51FD;&#x6570;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># msg = (time.ctime(), &quot;%s : %s&quot; % (msg[&apos;FromUserName&apos;], msg[&apos;Text&apos;]))</span>
+    <span class="hljs-comment"># print(msg)  # for test</span>
+    <span class="hljs-comment"># print(&quot;=&quot;*30)</span>
+    <span class="hljs-comment"># for temp in msg.items():</span>
+    <span class="hljs-comment">#     print(temp)</span>
+    g_q.put(msg)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x4E3B;&#x63A7;&#x5236;&#x7A0B;&#x5E8F;
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x6536;&#x4ECE;&#x5FAE;&#x4FE1;&#x4E2D;&#x6536;&#x5230;&#x6D88;&#x606F;&#x540E;&#x8FDB;&#x884C;&#x7684;&#x5904;&#x7406;</span>
+    t2 = threading.Thread(target=handle_revoke_msg)
+    t2.setDaemon(<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x4E3A;&#x5B88;&#x62A4;&#x7EBF;&#x7A0B;&#xFF0C;&#x5373;&#x5F53;&#x4E3B;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E; &#x4E5F;&#x8BA9;&#x8FD9;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;</span>
+    t2.start()
+
+
+    <span class="hljs-comment"># &#x4E3B;&#x7EBF;&#x7A0B;&#x63A5;&#x6536;&#x5FAE;&#x4FE1;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;</span>
+    itchat.auto_login(hotReload=<span class="hljs-keyword">True</span>)
+    itchat.run()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../01-itchat模块API基本使用/02-API.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: API基本使用"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python操作微信 -->
+<!-- End of book Python操作微信 -->
+</html>

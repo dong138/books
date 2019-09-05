@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python操作微信 -->
+<!-- Start book Python操作微信 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>说明 | Python操作微信</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../01-itchat模块API基本使用/02-API.html" />
+    
+    
+    <link rel="prev" href="../index.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="1"
+        data-chapter-title="说明"
+        data-filepath="01-itchat模块API基本使用/01-说明.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 09:44:06 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="01-itchat模块API基本使用/01-说明.html">
+            
+                
+                    <a href="../01-itchat模块API基本使用/01-说明.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="01-itchat模块API基本使用/02-API.html">
+            
+                
+                    <a href="../01-itchat模块API基本使用/02-API.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        API基本使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="02-案例/案例-微信防撤销.html">
+            
+                
+                    <a href="../02-案例/案例-微信防撤销.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        案例：微信防撤销
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python操作微信</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x4F7F;&#x7528;python&#x73A9;&#x8F6C;&#x5FAE;&#x4FE1;">&#x4F7F;&#x7528;Python&#x73A9;&#x8F6C;&#x5FAE;&#x4FE1;</h1>
+<h2 id="&#x8BDD;&#x9898;&#x5F15;&#x5165;">&#x8BDD;&#x9898;&#x5F15;&#x5165;</h2>
+<p>&#x751F;&#x6D3B;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x80AF;&#x5B9A;&#x9047;&#x5230;&#x8FC7;&#x5BF9;&#x65B9;&#x5C06;&#x5FAE;&#x4FE1;&#x6D88;&#x606F;&#x64A4;&#x9500;&#x7684;&#x60C5;&#x51B5;</p>
+<p><img src="images/1625563L5-0.png" alt="&#x201C;&#x5FAE;&#x4FE1; &#x64A4;&#x9500;&#x201D;&#x7684;&#x56FE;&#x7247;&#x641C;&#x7D22;&#x7ED3;&#x679C;"></p>
+<p>&#x90A3;&#x4E48; &#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x600E;&#x6837;&#x624D;&#x80FD;&#x77E5;&#x9053;&#xFF0C;&#x521A;&#x521A;&#x7684;&#x6D88;&#x606F;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x96BE;&#x9053;&#x903C;&#x4ED6;&#x4E0D;&#x6210;</p>
+<p><img src="images/12312312837192381927391.gif" alt="img"></p>
+<p>&#x4E0B;&#x9762;&#x7531;&#x201C;&#x5E08;&#x5085;&#x201D;&#x7ED9;&#x5927;&#x5BB6;&#x4E00;&#x4E00;&#x9053;&#x6765;&#x2026;...</p>
+<p><img src="images/960a304e251f95ca08f273e9c2177f3e6709526e.png" alt="&#x201C;&#x5927;&#x5723;&#x5A36;&#x4EB2; &#x5510;&#x50E7;&#x201D;&#x7684;&#x56FE;&#x7247;&#x641C;&#x7D22;&#x7ED3;&#x679C;"></p>
+<h2 id="&#x6709;&#x4E86;-itchat&#xFF0C;-python-&#x8C03;&#x7528;&#x5FAE;&#x4FE1;&#x4E2A;&#x4EBA;&#x53F7;&#x4ECE;&#x672A;&#x5982;&#x6B64;&#x7B80;&#x5355;">&#x6709;&#x4E86; itchat&#xFF0C; python &#x8C03;&#x7528;&#x5FAE;&#x4FE1;&#x4E2A;&#x4EBA;&#x53F7;&#x4ECE;&#x672A;&#x5982;&#x6B64;&#x7B80;&#x5355;</h2>
+<p><span class="pg-emphasize pg-emphasize-yellow" style="background: #2ff700;">itchat &#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x5FAE;&#x4FE1;&#x4E2A;&#x4EBA;&#x53F7;&#x63A5;&#x53E3;</span></p>
+<p>&#x4F7F;&#x7528;&#x4E0D;&#x5230;&#x4E09;&#x5341;&#x884C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x5904;&#x7406;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x7684;&#x5FAE;&#x4FE1;&#x673A;&#x5668;&#x4EBA;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x8BE5; api &#x7684;&#x4F7F;&#x7528;&#x8FDC;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x529F;&#x80FD;&#x7B49;&#x7740;&#x4F60;&#x6765;&#x53D1;&#x73B0;&#x3002;</p>
+<p>&#x5982;&#x4ECA;&#x5FAE;&#x4FE1;&#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x4E86;&#x4E2A;&#x4EBA;&#x793E;&#x4EA4;&#x7684;&#x5F88;&#x5927;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x5E0C;&#x671B;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x4F60;&#x6269;&#x5C55;&#x4F60;&#x7684;&#x4E2A;&#x4EBA;&#x7684;&#x5FAE;&#x4FE1;&#x53F7;&#x3001;&#x65B9;&#x4FBF;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x3002;</p>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x672C;&#x547D;&#x4EE4;&#x5B89;&#x88C5; itchat &#xFF1A;</p>
+<p>Python2&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-sh">pip install itchat
+</code></pre>
+<p>Python3&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-python">pip3 install itchat
+</code></pre>
+<p><img src="assets/image-20181227082910011-5870550.png" alt="image-20181227082910011"></p>
+<h3 id="&#x7B80;&#x5355;&#x7684;demo">&#x7B80;&#x5355;&#x7684;demo</h3>
+<p>&#x6709;&#x4E86; itchat &#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x56DE;&#x590D;&#x53D1;&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x672C;&#x6D88;&#x606F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> itchat
+
+<span class="hljs-decorator">@itchat.msg_register(itchat.content.TEXT)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">text_reply</span><span class="hljs-params">(msg)</span>:</span>
+    itchat.send(msg[<span class="hljs-string">&apos;Text&apos;</span>], msg[<span class="hljs-string">&apos;FromUserName&apos;</span>])
+
+itchat.auto_login()
+itchat.run()
+</code></pre>
+<p>&#x5728;&#x5F39;&#x51FA;&#x4E8C;&#x7EF4;&#x7801;&#x4E4B;&#x540E;&#xFF0C;&#x767B;&#x5F55;&#x5373;&#x53EF;</p>
+<blockquote>
+<p>&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#xFF0C;&#x4EE5;&#x4E0B;&#x4E8C;&#x7EF4;&#x7801;&#x6253;&#x4E86;&#x84DD;&#x8272;&#x9A6C;&#x8D5B;&#x514B;</p>
+</blockquote>
+<p><img src="assets/image-20181227083714443-5871034.png" alt="image-20181227083714443"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: 联系方式"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../01-itchat模块API基本使用/02-API.html" class="navigation navigation-next " aria-label="Next page: API基本使用"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python操作微信 -->
+<!-- End of book Python操作微信 -->
+</html>
