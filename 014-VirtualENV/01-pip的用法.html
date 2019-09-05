@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Python虚拟环境 -->
+<!-- Start book Python虚拟环境 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>pip用法 | Python虚拟环境</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./02-虚拟环境.html" />
+    
+    
+    <link rel="prev" href="./index.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="1"
+        data-chapter-title="pip用法"
+        data-filepath="01-pip的用法.md"
+        data-basepath="."
+        data-revision="Thu Sep 05 2019 10:41:29 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="01-pip的用法.html">
+            
+                
+                    <a href="./01-pip的用法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        pip用法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-虚拟环境.html">
+            
+                
+                    <a href="./02-虚拟环境.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        虚拟环境
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Python虚拟环境</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="pip&#x7684;&#x7528;&#x6CD5;">pip&#x7684;&#x7528;&#x6CD5;</h1>
+<h2 id="1-&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x5305;">1. &#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x5305;</h2>
+<h4 id="&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;">&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7248;</h4>
+<pre><code class="lang-shell"> $ pip install <package_name>
+</package_name></code></pre>
+<h4 id="&#x6307;&#x5B9A;&#x7248;&#x672C;&#x5B89;&#x88C5;">&#x6307;&#x5B9A;&#x7248;&#x672C;&#x5B89;&#x88C5;</h4>
+<pre><code class="lang-shell"> $ pip install <package_name>==<version>
+</version></package_name></code></pre>
+<h2 id="2-&#x5347;&#x7EA7;&#x4E00;&#x4E2A;&#x5305;">2. &#x5347;&#x7EA7;&#x4E00;&#x4E2A;&#x5305;</h2>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;version&#x53F7;&#xFF0C;&#x5347;&#x7EA7;&#x5230;&#x6700;&#x65B0;&#x7248;&#x672C;</p>
+</blockquote>
+<pre><code class="lang-shell"> $ pip install --upgrade <package_name>==<version>
+</version></package_name></code></pre>
+<h2 id="3-&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5305;">3. &#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5305;</h2>
+<pre><code class="lang-shell"> $ pip uninstall <package_name>
+</package_name></code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: 联系方式"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./02-虚拟环境.html" class="navigation navigation-next " aria-label="Next page: 虚拟环境"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Python虚拟环境 -->
+<!-- End of book Python虚拟环境 -->
+</html>
