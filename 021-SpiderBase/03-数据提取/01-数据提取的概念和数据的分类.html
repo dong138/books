@@ -1,0 +1,564 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book 爬虫基础 -->
+<!-- Start book 爬虫基础 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>数据提取的概念和数据的分类 | 爬虫基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../03-数据提取/02-非结构数据提取-正则.html" />
+    
+    
+    <link rel="prev" href="../03-数据提取/index.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.1"
+        data-chapter-title="数据提取的概念和数据的分类"
+        data-filepath="03-数据提取/01-数据提取的概念和数据的分类.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 11:03:21 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-爬虫基础/index.html">
+            
+                
+                    <a href="../01-爬虫基础/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        爬虫基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-爬虫基础/01-爬虫的基础概念.html">
+            
+                
+                    <a href="../01-爬虫基础/01-爬虫的基础概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        爬虫的基础概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-爬虫基础/02-爬虫的分类和爬虫的流程.html">
+            
+                
+                    <a href="../01-爬虫基础/02-爬虫的分类和爬虫的流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        爬虫的分类和爬虫的流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-爬虫基础/03-HTTP和HTTPS的复习.html">
+            
+                
+                    <a href="../01-爬虫基础/03-HTTP和HTTPS的复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        HTTP和HTTPS的复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-爬虫基础/04-字符串相关的复习.html">
+            
+                
+                    <a href="../01-爬虫基础/04-字符串相关的复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        字符串相关的复习
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-请求的发送方式/index.html">
+            
+                
+                    <a href="../02-请求的发送方式/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        请求的发送方式
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-请求的发送方式/01-requests模块的入门使用.html">
+            
+                
+                    <a href="../02-请求的发送方式/01-requests模块的入门使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        requests模块的入门使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-请求的发送方式/02-使用requests发送post请求.html">
+            
+                
+                    <a href="../02-请求的发送方式/02-使用requests发送post请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        requests发送post请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-请求的发送方式/03-requess处理cookie.html">
+            
+                
+                    <a href="../02-请求的发送方式/03-requess处理cookie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        requests处理cookie
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="02-请求的发送方式/04-requests模块的其他方法.html">
+            
+                
+                    <a href="../02-请求的发送方式/04-requests模块的其他方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        requests模块的其他方法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-数据提取/index.html">
+            
+                
+                    <a href="../03-数据提取/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据提取
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="03-数据提取/01-数据提取的概念和数据的分类.html">
+            
+                
+                    <a href="../03-数据提取/01-数据提取的概念和数据的分类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据提取的概念和数据的分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03-数据提取/02-非结构数据提取-正则.html">
+            
+                
+                    <a href="../03-数据提取/02-非结构数据提取-正则.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        非结构数据提取-正则
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03-数据提取/03-XPath语法.html">
+            
+                
+                    <a href="../03-数据提取/03-XPath语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        XPath语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03-数据提取/04-非结构数据提取-lxml模块.html">
+            
+                
+                    <a href="../03-数据提取/04-非结构数据提取-lxml模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        非结构数据提取-lxml模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="03-数据提取/05-非结构数据提取-BS4.html">
+            
+                
+                    <a href="../03-数据提取/05-非结构数据提取-BS4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        非结构数据提取-BeautifulSoup4
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="03-数据提取/06-结构数据提取-JSON.html">
+            
+                
+                    <a href="../03-数据提取/06-结构数据提取-JSON.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        结构数据提取-json
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="扩展/index.html">
+            
+                
+                    <a href="../扩展/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        扩展
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="扩展/01-字符集.html">
+            
+                
+                    <a href="../扩展/01-字符集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        字符集
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >爬虫基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6570;&#x636E;&#x63D0;&#x53D6;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x6570;&#x636E;&#x7684;&#x5206;&#x7C7B;">&#x6570;&#x636E;&#x63D0;&#x53D6;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x6570;&#x636E;&#x7684;&#x5206;&#x7C7B;</h1>
+<h2 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;">&#x5B66;&#x4E60;&#x76EE;&#x6807;</h2>
+<ol>
+<li>&#x4E86;&#x89E3; &#x722C;&#x866B;&#x7684;&#x6570;&#x636E;&#x7684;&#x5206;&#x7C7B;</li>
+</ol>
+<h2 id="1-&#x722C;&#x866B;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x5206;&#x7C7B;">1. &#x722C;&#x866B;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x5206;&#x7C7B;</h2>
+<blockquote>
+<p>&#x5728;&#x722C;&#x866B;&#x722C;&#x53D6;&#x7684;&#x6570;&#x636E;&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;,&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x6570;&#x636E;&#x7684;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x6765;&#x53C8;&#x89C4;&#x5F8B;&#x7684;&#x63D0;&#x53D6;&#x548C;&#x89E3;&#x6790;&#x6570;&#x636E;.</p>
+</blockquote>
+<ul>
+<li>&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF1A;json&#xFF0C;xml&#x7B49;<ul>
+<li>&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF1A;&#x76F4;&#x63A5;&#x8F6C;&#x5316;&#x4E3A;python&#x7C7B;&#x578B;</li>
+</ul>
+</li>
+<li>&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF1A;HTML<ul>
+<li>&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF1A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3001;xpath&#x3001;BS4</li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x4EE5;&#x4ECA;&#x65E5;&#x5934;&#x6761;&#x7684;&#x9996;&#x9875;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x548C;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;</p>
+<h2 id="2-&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF1A;">2. &#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF1A;</h2>
+<h3 id="json"><code>json</code></h3>
+<p><img src="assets/&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;.png" alt="img"></p>
+<h3 id="xml"><code>xml</code></h3>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">bookstore</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">book</span> <span class="hljs-attribute">category</span>=<span class="hljs-value">&quot;COOKING&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>Everyday Italian<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">author</span>&gt;</span>Giada De Laurentiis<span class="hljs-tag">&lt;/<span class="hljs-title">author</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">year</span>&gt;</span>2005<span class="hljs-tag">&lt;/<span class="hljs-title">year</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">price</span>&gt;</span>30.00<span class="hljs-tag">&lt;/<span class="hljs-title">price</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-title">book</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">book</span> <span class="hljs-attribute">category</span>=<span class="hljs-value">&quot;CHILDREN&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>Harry Potter<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">author</span>&gt;</span>J K. Rowling<span class="hljs-tag">&lt;/<span class="hljs-title">author</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">year</span>&gt;</span>2005<span class="hljs-tag">&lt;/<span class="hljs-title">year</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">price</span>&gt;</span>29.99<span class="hljs-tag">&lt;/<span class="hljs-title">price</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-title">book</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">book</span> <span class="hljs-attribute">category</span>=<span class="hljs-value">&quot;WEB&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>Learning XML<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">author</span>&gt;</span>Erik T. Ray<span class="hljs-tag">&lt;/<span class="hljs-title">author</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">year</span>&gt;</span>2003<span class="hljs-tag">&lt;/<span class="hljs-title">year</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-title">price</span>&gt;</span>39.95<span class="hljs-tag">&lt;/<span class="hljs-title">price</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-title">book</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bookstore</span>&gt;</span>
+</code></pre>
+<h2 id="3-&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF1A;">3. &#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#xFF1A;</h2>
+<p><img src="assets/&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;.png" alt="img"></p>
+<h2 id="4-&#x5C0F;&#x7ED3;">4. &#x5C0F;&#x7ED3;</h2>
+<ol>
+<li>&#x722C;&#x866B;&#x4E2D;&#x6570;&#x636E;&#x5206;&#x7C7B;&#x4E4B;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;: <ul>
+<li><code>json</code></li>
+<li><code>xml</code></li>
+</ul>
+</li>
+<li>&#x722C;&#x866B;&#x4E2D;&#x6570;&#x636E;&#x5206;&#x7C7B;&#x4E4B;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;:<ul>
+<li><code>Html</code></li>
+<li>&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../03-数据提取/index.html" class="navigation navigation-prev " aria-label="Previous page: 数据提取"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../03-数据提取/02-非结构数据提取-正则.html" class="navigation navigation-next " aria-label="Next page: 非结构数据提取-正则"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book 爬虫基础 -->
+<!-- End of book 爬虫基础 -->
+</html>

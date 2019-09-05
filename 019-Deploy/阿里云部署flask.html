@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Web项目部署 -->
+<!-- Start book Web项目部署 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>阿里云部署flask | Web项目部署</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="./index.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="1"
+        data-chapter-title="阿里云部署flask"
+        data-filepath="阿里云部署flask.md"
+        data-basepath="."
+        data-revision="Thu Sep 05 2019 10:59:03 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="阿里云部署flask.html">
+            
+                
+                    <a href="./阿里云部署flask.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        阿里云部署flask
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Web项目部署</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x963F;&#x91CC;&#x4E91;&#x90E8;&#x7F72;flask">&#x963F;&#x91CC;&#x4E91;&#x90E8;&#x7F72;flask</h1>
+<h2 id="1-&#x963F;&#x91CC;&#x4E91;&#x5B89;&#x88C5;ubuntu">1. &#x963F;&#x91CC;&#x4E91;-&#x5B89;&#x88C5;Ubuntu</h2>
+<blockquote>
+<p>&#x4E0B;&#x56FE;&#x793A;&#x4F8B;&#xFF0C;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x4ECE;&#x767B;&#x5F55;&#x963F;&#x91CC;&#x4E91;&#x4E4B;&#x540E;&#xFF0C;&#x4ECE;&#x5934;&#x5B89;&#x88C5;Ubuntu16.04 64&#x4F4D;&#x7CFB;&#x7EDF;&#x7684;&#x6D41;&#x7A0B;</p>
+</blockquote>
+<p><img src="assets/image-20190606081441822.png" alt="image-20190606081441822"></p>
+<p><img src="assets/image-20190606081459525.png" alt="image-20190606081459525"></p>
+<p><img src="assets/image-20190606081514498.png" alt="image-20190606081514498"></p>
+<p><img src="assets/image-20190606081608033.png" alt="image-20190606081608033"></p>
+<p><img src="assets/image-20190606081619887.png" alt="image-20190606081619887"></p>
+<p><img src="assets/image-20190606081633346.png" alt="image-20190606081633346"></p>
+<p><img src="assets/image-20190606081721244.png" alt="image-20190606081721244"></p>
+<p><img src="assets/image-20190606081730922.png" alt="image-20190606081730922"></p>
+<p><img src="assets/image-20190606081756900.png" alt="image-20190606081756900"></p>
+<p><img src="assets/image-20190606081812280.png" alt="image-20190606081812280"></p>
+<h2 id="2-&#x4F7F;&#x7528;ssh&#x8FDC;&#x7A0B;&#x767B;&#x5F55;&#x963F;&#x91CC;&#x4E91;&#x670D;&#x52A1;&#x5668;">2. &#x4F7F;&#x7528;ssh&#x8FDC;&#x7A0B;&#x767B;&#x5F55;&#x963F;&#x91CC;&#x4E91;&#x670D;&#x52A1;&#x5668;</h2>
+<p><img src="assets/image-20190606082014856.png" alt="image-20190606082014856"></p>
+<p><img src="assets/image-20190606082034409.png" alt="image-20190606082034409"></p>
+<p><img src="assets/image-20190606082144438.png" alt="image-20190606082144438"></p>
+<h2 id="3-&#x66F4;&#x65B0;ubuntu&#x7684;&#x66F4;&#x65B0;&#x6E90;">3. &#x66F4;&#x65B0;Ubuntu&#x7684;&#x66F4;&#x65B0;&#x6E90;</h2>
+<p><img src="assets/image-20190606082829292.png" alt="image-20190606082829292"></p>
+<p><img src="assets/image-20190606082840370.png" alt="image-20190606082840370"></p>
+<p><img src="assets/image-20190606082901455.png" alt="image-20190606082901455"></p>
+<p>&#x53EA;&#x8981;&#x6267;&#x884C;&#x5B8C;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x770B;&#x5230;&#x6210;&#x529F;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740; &#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>apt-get install xxx</code>&#x5728;&#x8FD9;&#x4E2A;Ubuntu&#x7CFB;&#x7EDF;&#x4E0A;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x4E86;</p>
+<h2 id="4-&#x5B89;&#x88C5;-mysql&#x670D;&#x52A1;&#x5668;">4. &#x5B89;&#x88C5; MySQL&#x670D;&#x52A1;&#x5668;</h2>
+<ul>
+<li>&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x56DE;&#x8F66;&#x540E;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x63D0;&#x793A;&#x8F93;&#x5165;</li>
+</ul>
+<pre><code class="lang-shell">sudo apt-get install mysql-server
+</code></pre>
+<p><img src="assets/image-20190606083008153.png" alt="image-20190606083008153"></p>
+<p><img src="assets/image-20190606083059817.png" alt="image-20190606083059817"></p>
+<p><img src="assets/image-20190606083122187.png" alt="image-20190606083122187"></p>
+<p><img src="assets/image-20190606083159125.png" alt="image-20190606083159125"></p>
+<p><img src="assets/image-20190606083259408.png" alt="image-20190606083259408"></p>
+<p><img src="assets/image-20190606083336155.png" alt="image-20190606083336155"></p>
+<h2 id="5-&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;python3">5. &#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;Python3</h2>
+<p><img src="assets/image-20190606083524343.png" alt="image-20190606083524343"></p>
+<h2 id="6-&#x5B89;&#x88C5;python&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177;">6. &#x5B89;&#x88C5;Python&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177;</h2>
+<h4 id="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177;virtualenv">&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177;(virtualenv)</h4>
+<pre><code class="lang-shell">sudo pip install virtualenv
+</code></pre>
+<p><img src="assets/image-20190606083741985.png" alt="image-20190606083741985"></p>
+<h4 id="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177;virtualenvwrapper">&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177;(virtualenvwrapper)</h4>
+<pre><code class="lang-shell">sudo pip install virtualenvwrapper
+</code></pre>
+<p><img src="assets/image-20190606083841429.png" alt="image-20190606083841429"></p>
+<h4 id="&#x67E5;&#x627E;virtualenvwrappersh&#x8DEF;&#x5F84;">&#x67E5;&#x627E;virtualenvwrapper.sh&#x8DEF;&#x5F84;</h4>
+<p><img src="assets/image-20190606084011092.png" alt="image-20190606084011092"></p>
+<p>&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x76F4;&#x63A5;&#x628A;&#x4E0B;&#x9762;&#x4E24;&#x884C;&#x5199;&#x5165;<code>~/.bash_profile</code>&#x6587;&#x4EF6;&#x4E2D;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-shell">export WORKON_HOME=&apos;~/workspace&apos;  # &#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E3A;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x662F;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x6307;&#x5B9A;&#x76EE;&#x5F55;
+source /usr/local/bin/virtualenvwrapper.sh # &#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053;&#x8DEF;&#x5F84;&#xFF0C;&#x53EF;&#x4EE5;find / -name virtualenvwrapper.sh
+</code></pre>
+<p><img src="assets/image-20190606084203120.png" alt="image-20190606084203120"></p>
+<p><img src="assets/image-20190606084215635.png" alt="image-20190606084215635"></p>
+<p>&#x5B8C;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4EE5;&#x540E;&#x6267;&#x884C;&#x4E00;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x4E0D;&#x7136;&#x4E0D;&#x751F;&#x6548;</p>
+<pre><code class="lang-shell">source ~/.bash_profile
+</code></pre>
+<h4 id="&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;">&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</h4>
+<p><img src="assets/image-20190606084413302.png" alt="image-20190606084413302"></p>
+<p><img src="assets/image-20190606084509714.png" alt="image-20190606084509714"></p>
+<p><img src="assets/image-20190606084557820.png" alt="image-20190606084557820"></p>
+<p><img src="assets/image-20190606084624482.png" alt="image-20190606084624482"></p>
+<h2 id="7-&#x4E0A;&#x4F20;&#x4EE3;&#x7801;">7. &#x4E0A;&#x4F20;&#x4EE3;&#x7801;</h2>
+<p>&#x7B80;&#x5355;&#x8D77;&#x89C1;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;scp&#x76F4;&#x63A5;&#x590D;&#x5236;&#x5230;&#x963F;&#x91CC;&#x4E91;&#x8FD9;&#x53F0;&#x865A;&#x62DF;&#x7535;&#x8111;&#x4E0A;&#x7684;Ubuntu&#x7CFB;&#x7EDF;&#x4E2D;</p>
+<p><img src="assets/image-20190606084830169.png" alt="image-20190606084830169"></p>
+<p><img src="assets/image-20190606084929283.png" alt="image-20190606084929283"></p>
+<p><img src="assets/image-20190606085313013.png" alt="image-20190606085313013"></p>
+<p><img src="assets/image-20190606085347747.png" alt="image-20190606085347747"></p>
+<p><img src="assets/image-20190606085418552.png" alt="image-20190606085418552"></p>
+<p><img src="assets/image-20190606085452941.png" alt="image-20190606085452941"></p>
+<h2 id="8-&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;flask&#x524D;&#x7684;&#x51C6;&#x5907;">8. &#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;flask&#x524D;&#x7684;&#x51C6;&#x5907;</h2>
+<p><img src="assets/image-20190606085557269.png" alt="image-20190606085557269"></p>
+<p><img src="assets/image-20190606085652234.png" alt="image-20190606085652234"></p>
+<p><img src="assets/image-20190606085720003.png" alt="image-20190606085720003"></p>
+<p><img src="assets/image-20190606085808023.png" alt="image-20190606085808023"></p>
+<p><img src="assets/image-20190606085846215.png" alt="image-20190606085846215"></p>
+<p><img src="assets/image-20190606090310704.png" alt="image-20190606090310704"></p>
+<p><img src="assets/image-20190606090216390.png" alt="image-20190606090216390"></p>
+<p>&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;(&#x8BE5;&#x8FC7;&#x7A0B;&#x7701;&#x7565;&#xFF0C;&#x81EA;&#x5DF1;&#x4F7F;&#x7528;scp&#x5B8C;&#x6210;&#x5373;&#x53EF;)</p>
+<p><img src="assets/image-20190606090623256.png" alt="image-20190606090623256"></p>
+<p><img src="assets/image-20190606090707753.png" alt="image-20190606090707753"></p>
+<p><img src="assets/image-20190606090731799.png" alt="image-20190606090731799"></p>
+<p><img src="assets/image-20190606091147723.png" alt="image-20190606091147723"></p>
+<p><img src="assets/image-20190606091256039.png" alt="image-20190606091256039"></p>
+<p><img src="assets/image-20190606091424129.png" alt="image-20190606091424129"></p>
+<p><img src="assets/image-20190606091548757.png" alt="image-20190606091548757"></p>
+<h2 id="9-&#x8FD0;&#x884C;flask&#x9879;&#x76EE;">9. &#x8FD0;&#x884C;flask&#x9879;&#x76EE;</h2>
+<p><img src="assets/image-20190606091704969.png" alt="image-20190606091704969"></p>
+<p><img src="assets/image-20190606092211966.png" alt="image-20190606092211966"></p>
+<p><img src="assets/image-20190606092307362.png" alt="image-20190606092307362"></p>
+<p><img src="assets/image-20190606092349297.png" alt="image-20190606092349297"></p>
+<p><img src="assets/image-20190606092436507.png" alt="image-20190606092436507"></p>
+<p>&#x7EC8;&#x4E8E;&#x53EF;&#x4EE5;&#x7528;&#x516C;&#x7F51;ip&#x770B;&#x5F97;&#x5230;&#x4E86;</p>
+<blockquote>
+<p>&#x6B64;&#x65F6;&#x5C06;&#x8FD9;&#x4E2A;url&#x5206;&#x4EAB;&#x7ED9;&#x4F60;&#x7684;&#x4EB2;&#x670B;&#x597D;&#x53CB;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E5F;&#x662F;&#x770B;&#x5F97;&#x89C1;&#x7684;</p>
+</blockquote>
+<h2 id="10-&#x4E0A;&#x4F20;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;mysql&#x4E0A;">10. &#x4E0A;&#x4F20;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;MySQL&#x4E0A;</h2>
+<p><img src="assets/image-20190606094134330.png" alt="image-20190606094134330"></p>
+<p><img src="assets/image-20190606094357332.png" alt="image-20190606094357332"></p>
+<p><img src="assets/image-20190606094413726.png" alt="image-20190606094413726"></p>
+<p><img src="assets/image-20190606094457366.png" alt="image-20190606094457366"></p>
+<p><img src="assets/image-20190606094556480.png" alt="image-20190606094556480"></p>
+<p><img src="assets/image-20190606094642630.png" alt="image-20190606094642630"></p>
+<p><img src="assets/image-20190606094741979.png" alt="image-20190606094741979"></p>
+<h2 id="11-&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;">11. &#x6D4B;&#x8BD5;&#x8FD0;&#x884C;</h2>
+<p><img src="assets/image-20190606094821250.png" alt="image-20190606094821250"></p>
+<p><img src="assets/image-20190606094915199.png" alt="image-20190606094915199"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 联系方式"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Web项目部署 -->
+<!-- End of book Web项目部署 -->
+</html>

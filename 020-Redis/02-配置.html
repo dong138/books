@@ -1,0 +1,512 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Redis数据库 -->
+<!-- Start book Redis数据库 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>配置 | Redis数据库</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./03-服务端和客户端命令.html" />
+    
+    
+    <link rel="prev" href="./01-安装.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="1.2"
+        data-chapter-title="配置"
+        data-filepath="02-配置.md"
+        data-basepath="."
+        data-revision="Thu Sep 05 2019 11:01:34 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="00-redis.html">
+            
+                
+                    <a href="./00-redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-安装.html">
+            
+                
+                    <a href="./01-安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="02-配置.html">
+            
+                
+                    <a href="./02-配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="03-服务端和客户端命令.html">
+            
+                
+                    <a href="./03-服务端和客户端命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        服务端和客户端命令
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="04-数据操作.html">
+            
+                
+                    <a href="./04-数据操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        数据操作
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="04-1-string.html">
+            
+                
+                    <a href="./04-1-string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        string
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="04-2-键命令.html">
+            
+                
+                    <a href="./04-2-键命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        键命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="04-3-hash.html">
+            
+                
+                    <a href="./04-3-hash.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        hash
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="04-4-list.html">
+            
+                
+                    <a href="./04-4-list.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        list
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="04-5-set.html">
+            
+                
+                    <a href="./04-5-set.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        set
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="04-6-zset.html">
+            
+                
+                    <a href="./04-6-zset.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        zset
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="05-与Python交互.html">
+            
+                
+                    <a href="./05-与Python交互.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        与Python交互
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="05-1-StrictRedis.html">
+            
+                
+                    <a href="./05-1-StrictRedis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        StrictRedis
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="05-2-string.html">
+            
+                
+                    <a href="./05-2-string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        string
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="redis/da-jian-zhu-cong.html">
+            
+            <span><b>4.</b> 搭建主从</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="redis/da-jian-ji-qun.html">
+            
+            <span><b>5.</b> 搭建集群</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="redis/da-jian-ji-qun/pei-zhi-ji-qi-1.html">
+            
+            <span><b>5.1.</b> 配置机器1</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="redis/da-jian-ji-qun/pei-zhi-ji-qi-2.html">
+            
+            <span><b>5.2.</b> 配置机器2</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="redis/da-jian-ji-qun/chuang-jian-ji-qun.html">
+            
+            <span><b>5.3.</b> 创建集群</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="redis/da-jian-ji-qun/yu-python-jiao-hu.html">
+            
+            <span><b>5.4.</b> 与Python交互</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Redis数据库</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h1>
+<h2 id="&#x67E5;&#x770B;&#x914D;&#x7F6E;">&#x67E5;&#x770B;&#x914D;&#x7F6E;</h2>
+<p>Redis&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x5728;/etc/redis/redis.conf&#x4E0B;</p>
+<p>&#x67E5;&#x770B;</p>
+<p><code>sudo vi /etc/redis/redis.conf</code></p>
+<h2 id="&#x6838;&#x5FC3;&#x914D;&#x7F6E;&#x9009;&#x9879;">&#x6838;&#x5FC3;&#x914D;&#x7F6E;&#x9009;&#x9879;</h2>
+<p>&#x7ED1;&#x5B9A;ip&#xFF1A;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x53EF;&#x5C06;&#x6B64;&#x2F8F;&#x6CE8;&#x91CA;&#xFF0C;&#x6216;&#x7ED1;&#x5B9A;&#x2F00;&#x4E2A;&#x771F;&#x5B9E;ip</p>
+<p><code>bind 127.0.0.1</code></p>
+<p>&#x7AEF;&#x2F1D;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;6379</p>
+<p><code>port 6379</code></p>
+<p>&#x662F;&#x5426;&#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x8FD0;&#x2F8F;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x8FD0;&#x2F8F;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x5728;&#x547D;&#x4EE4;&#x2F8F;&#x963B;&#x585E;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x670D;&#x52A1;</li>
+<li>&#x5982;&#x679C;&#x4EE5;&#x2FAE;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x8FD0;&#x2F8F;&#xFF0C;&#x5219;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x88AB;&#x963B;&#x585E;</li>
+<li>&#x8BBE;&#x7F6E;&#x4E3A;yes&#x8868;&#x793A;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;no&#x8868;&#x793A;&#x2FAE;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;</li>
+<li><p>&#x63A8;&#x8350;&#x8BBE;&#x7F6E;&#x4E3A;yes</p>
+<p><code>daemonize yes</code></p>
+</li>
+</ul>
+<p>&#x6570;&#x636E;&#x2F42;&#x4EF6;</p>
+<blockquote>
+<p>dbfilename dump.rdb</p>
+</blockquote>
+<p>&#x6570;&#x636E;&#x2F42;&#x4EF6;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;</p>
+<blockquote>
+<p>dir /var/lib/redis</p>
+</blockquote>
+<p>&#x2F47;&#x5FD7;&#x2F42;&#x4EF6;</p>
+<blockquote>
+<p>logfile &quot;/var/log/redis/redis-server.log&quot;</p>
+</blockquote>
+<p>&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x9ED8;&#x8BA4;&#x6709;16&#x4E2A;</p>
+<blockquote>
+<p>database 16</p>
+</blockquote>
+<p>&#x4E3B;&#x4ECE;&#x590D;&#x5236;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x53CC;&#x673A;&#x5907;&#x4EFD;</p>
+<blockquote>
+<p>slaveof</p>
+</blockquote>
+<h1 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h1>
+<p>redis&#x914D;&#x7F6E;&#x4FE1;&#x606F;<a href="http://blog.csdn.net/ljphilp/article/details/52934933" target="_blank">http://blog.csdn.net/ljphilp/article/details/52934933</a></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./01-安装.html" class="navigation navigation-prev " aria-label="Previous page: 安装"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./03-服务端和客户端命令.html" class="navigation navigation-next " aria-label="Next page: 服务端和客户端命令"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Redis数据库 -->
+<!-- End of book Redis数据库 -->
+</html>

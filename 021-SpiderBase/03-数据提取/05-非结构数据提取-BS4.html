@@ -1,0 +1,644 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book 爬虫基础 -->
+<!-- Start book 爬虫基础 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>非结构数据提取-BeautifulSoup4 | 爬虫基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../03-数据提取/06-结构数据提取-JSON.html" />
+    
+    
+    <link rel="prev" href="../03-数据提取/04-非结构数据提取-lxml模块.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.5"
+        data-chapter-title="非结构数据提取-BeautifulSoup4"
+        data-filepath="03-数据提取/05-非结构数据提取-BS4.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 11:03:21 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-爬虫基础/index.html">
+            
+                
+                    <a href="../01-爬虫基础/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        爬虫基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01-爬虫基础/01-爬虫的基础概念.html">
+            
+                
+                    <a href="../01-爬虫基础/01-爬虫的基础概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        爬虫的基础概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-爬虫基础/02-爬虫的分类和爬虫的流程.html">
+            
+                
+                    <a href="../01-爬虫基础/02-爬虫的分类和爬虫的流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        爬虫的分类和爬虫的流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-爬虫基础/03-HTTP和HTTPS的复习.html">
+            
+                
+                    <a href="../01-爬虫基础/03-HTTP和HTTPS的复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        HTTP和HTTPS的复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01-爬虫基础/04-字符串相关的复习.html">
+            
+                
+                    <a href="../01-爬虫基础/04-字符串相关的复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        字符串相关的复习
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-请求的发送方式/index.html">
+            
+                
+                    <a href="../02-请求的发送方式/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        请求的发送方式
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="02-请求的发送方式/01-requests模块的入门使用.html">
+            
+                
+                    <a href="../02-请求的发送方式/01-requests模块的入门使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        requests模块的入门使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="02-请求的发送方式/02-使用requests发送post请求.html">
+            
+                
+                    <a href="../02-请求的发送方式/02-使用requests发送post请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        requests发送post请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="02-请求的发送方式/03-requess处理cookie.html">
+            
+                
+                    <a href="../02-请求的发送方式/03-requess处理cookie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        requests处理cookie
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="02-请求的发送方式/04-requests模块的其他方法.html">
+            
+                
+                    <a href="../02-请求的发送方式/04-requests模块的其他方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        requests模块的其他方法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-数据提取/index.html">
+            
+                
+                    <a href="../03-数据提取/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        数据提取
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="03-数据提取/01-数据提取的概念和数据的分类.html">
+            
+                
+                    <a href="../03-数据提取/01-数据提取的概念和数据的分类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据提取的概念和数据的分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03-数据提取/02-非结构数据提取-正则.html">
+            
+                
+                    <a href="../03-数据提取/02-非结构数据提取-正则.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        非结构数据提取-正则
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03-数据提取/03-XPath语法.html">
+            
+                
+                    <a href="../03-数据提取/03-XPath语法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        XPath语法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03-数据提取/04-非结构数据提取-lxml模块.html">
+            
+                
+                    <a href="../03-数据提取/04-非结构数据提取-lxml模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        非结构数据提取-lxml模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="03-数据提取/05-非结构数据提取-BS4.html">
+            
+                
+                    <a href="../03-数据提取/05-非结构数据提取-BS4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        非结构数据提取-BeautifulSoup4
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="03-数据提取/06-结构数据提取-JSON.html">
+            
+                
+                    <a href="../03-数据提取/06-结构数据提取-JSON.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        结构数据提取-json
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="扩展/index.html">
+            
+                
+                    <a href="../扩展/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        扩展
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="扩展/01-字符集.html">
+            
+                
+                    <a href="../扩展/01-字符集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        字符集
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >爬虫基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x975E;&#x7ED3;&#x6784;&#x6570;&#x636E;&#x63D0;&#x53D6;bs4">&#x975E;&#x7ED3;&#x6784;&#x6570;&#x636E;&#x63D0;&#x53D6;-BS4</h1>
+<h2 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;">&#x5B66;&#x4E60;&#x76EE;&#x6807;</h2>
+<ol>
+<li>&#x638C;&#x63E1; BS4&#x7684;&#x4F7F;&#x7528;&#x6D41;&#x7A0B;</li>
+<li>&#x638C;&#x63E1; BS4&#x7684;find_all,find,select&#x65B9;&#x6CD5;&#x89E3;&#x6790;&#x6570;&#x636E;</li>
+</ol>
+<h2 id="1-beautifulsoup4&#x7684;&#x4ECB;&#x7ECD;&#x548C;&#x5B89;&#x88C5;">1 BeautifulSoup4&#x7684;&#x4ECB;&#x7ECD;&#x548C;&#x5B89;&#x88C5;</h2>
+<h3 id="&#x4ECB;&#x7ECD;">&#x4ECB;&#x7ECD;</h3>
+<p>&#x548C; &#x4F7F;&#x7528;<code>lxml&#x6A21;&#x5757;</code> &#x4E00;&#x6837;&#xFF0C;<code>Beautiful Soup</code> &#x4E5F;&#x662F;&#x4E00;&#x4E2A;<code>HTML/XML</code>&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x529F;&#x80FD;&#x4E5F;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x548C;&#x63D0;&#x53D6; <code>HTML/XML</code> &#x6570;&#x636E;</p>
+<p><code>Beautiful Soup</code>&#x662F;&#x57FA;&#x4E8E;<code>HTML DOM</code>&#x7684;&#xFF0C;&#x4F1A;&#x8F7D;&#x5165;&#x6574;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x89E3;&#x6790;&#x6574;&#x4E2A;<code>DOM</code>&#x6811;&#xFF0C;&#x56E0;&#x6B64;&#x65F6;&#x95F4;&#x548C;&#x5185;&#x5B58;&#x5F00;&#x9500;&#x90FD;&#x4F1A;&#x5927;&#x5F88;&#x591A;&#xFF0C;&#x6240;&#x4EE5;&#x6027;&#x80FD;&#x8981;&#x4F4E;&#x4E8E;<code>lxml&#x6A21;&#x5757;</code></p>
+<p><code>BeautifulSoup</code> &#x7528;&#x6765;&#x89E3;&#x6790;<code>HTML</code>&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;<code>API</code>&#x975E;&#x5E38;&#x4EBA;&#x6027;&#x5316;&#xFF0C;&#x652F;&#x6301;<code>CSS</code>&#x9009;&#x62E9;&#x5668;&#x3001;<code>Python</code>&#x6807;&#x51C6;&#x5E93;&#x4E2D;&#x7684;<code>HTML</code>&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x4E5F;&#x652F;&#x6301;<code>lxml&#x6A21;&#x5757;</code> &#x7684; <code>XML</code>&#x89E3;&#x6790;&#x5668;</p>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<p>&#x4F7F;&#x7528; <code>pip</code> &#x5B89;&#x88C5;&#x5373;&#x53EF;&#xFF1A; <code>pip install beautifulsoup4</code></p>
+<p>&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;<a href="http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0" target="_blank">http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0</a></p>
+<p><img src="assets/bs4&#x5BF9;&#x6BD4;&#x56FE;.png" alt="&#xE5;&#xAF;&#xB9;&#xE6;&#xAF;&#x94;&#xE5;&#x9B;&#xBE;"></p>
+<h2 id="2-bs4&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x793A;&#x4F8B;">2 BS4&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h2>
+<p>&#x9996;&#x5148;&#x5FC5;&#x987B;&#x8981;&#x5BFC;&#x5165; bs4 &#x5E93;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup
+
+html = <span class="hljs-string">&quot;&quot;&quot;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were
+&lt;a href=&quot;http://example.com/elsie&quot; class=&quot;sister&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,
+&lt;a href=&quot;http://example.com/lacie&quot; class=&quot;sister&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and
+&lt;a href=&quot;http://example.com/tillie&quot; class=&quot;sister&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;
+and they lived at the bottom of a well.&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-comment"># &#x521B;&#x5EFA; Beautiful Soup &#x5BF9;&#x8C61;</span>
+soup = BeautifulSoup(html, features=<span class="hljs-string">&quot;lxml&quot;</span>)
+
+print(soup.prettify())
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>
+   The Dormouse&apos;s story
+  <span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;dromouse&quot;</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>
+    The Dormouse&apos;s story
+   <span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;story&quot;</span>&gt;</span>
+   Once upon a time there were three little sisters; and their names were
+   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/elsie&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link1&quot;</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Elsie --&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+   ,
+   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/lacie&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link2&quot;</span>&gt;</span>
+    Lacie
+   <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+   and
+   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/tillie&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link3&quot;</span>&gt;</span>
+    Tillie
+   <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+   ;
+and they lived at the bottom of a well.
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;story&quot;</span>&gt;</span>
+   ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<h5 id="&#x6CE8;&#x610F;&#xFF1A;">&#x6CE8;&#x610F;&#xFF1A;</h5>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728; Python &#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x770B;&#x5230;&#x8FD9;&#x6837;&#x4E00;&#x6BB5;&#x8B66;&#x544A;&#xFF1A; </p>
+<p><img src="assets/image-20190705055137660.png" alt="image-20190705055137660"></p>
+<blockquote>
+<p>&#x610F;&#x601D;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x5730;&#x6307;&#x5B9A;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x6700;&#x4F73;&#x53EF;&#x7528;HTML&#x89E3;&#x6790;&#x5668;(&#x201C;lxml&#x201D;)&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x4E2D;&#x8FD0;&#x884C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x89E3;&#x6790;&#x5668;&#x9020;&#x6210;&#x884C;&#x4E3A;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;soup = BeautifulSoup(html,features=&quot;lxml&quot;)&#x65B9;&#x5F0F;&#x6307;&#x5B9A;lxml&#x89E3;&#x6790;&#x5668;&#x3002;</p>
+</blockquote>
+<h2 id="3-&#x641C;&#x7D22;&#x6587;&#x6863;&#x6811;&#x6807;&#x7B7E;&#x3001;&#x5185;&#x5BB9;&#x3001;&#x5C5E;&#x6027;">3 &#x641C;&#x7D22;&#x6587;&#x6863;&#x6811;-&#x6807;&#x7B7E;&#x3001;&#x5185;&#x5BB9;&#x3001;&#x5C5E;&#x6027;</h2>
+<h3 id="findall"><code>find_all</code></h3>
+<pre><code class="lang-python"><span class="hljs-comment"># find_all&#x7684;&#x53C2;&#x6570;&#x5982;&#x4E0B;</span>
+find_all(self, name=<span class="hljs-keyword">None</span>, attrs={}, recursive=<span class="hljs-keyword">True</span>, text=<span class="hljs-keyword">None</span>, limit=<span class="hljs-keyword">None</span>, **kwargs)
+</code></pre>
+<h4 id="1-name&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x6807;&#x7B7E;&#xFF09;">1) name&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x6807;&#x7B7E;&#xFF09;</h4>
+<h5 id="&#x4F20;&#x5B57;&#x7B26;&#x4E32;">&#x4F20;&#x5B57;&#x7B26;&#x4E32;</h5>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#x662F;&#x5B57;&#x7B26;&#x4E32;.&#x5728;&#x641C;&#x7D22;&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x53C2;&#x6570;,Beautiful Soup&#x4F1A;&#x67E5;&#x627E;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x5B8C;&#x6574;&#x5339;&#x914D;&#x6807;&#x7B7E;&#x540D;&#x5B57;</p>
+<p><img src="assets/image-20190705055625715.png" alt="image-20190705055625715"></p>
+<h5 id="&#x4F20;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">&#x4F20;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h5>
+<p>&#x5982;&#x679C;&#x4F20;&#x5165;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;,Beautiful Soup&#x4F1A;&#x901A;&#x8FC7;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684; match() &#x6765;&#x5339;&#x914D;&#x5185;&#x5BB9;.&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x627E;&#x51FA;&#x6240;&#x6709;&#x4EE5;b&#x5F00;&#x5934;&#x7684;&#x6807;&#x7B7E;</p>
+<p><img src="assets/image-20190705055759010.png" alt="image-20190705055759010"></p>
+<h5 id="&#x4F20;&#x5217;&#x8868;">&#x4F20;&#x5217;&#x8868;</h5>
+<p>&#x5982;&#x679C;&#x4F20;&#x5165;&#x5217;&#x8868;&#x53C2;&#x6570;,Beautiful Soup&#x4F1A;&#x5C06;&#x4E0E;&#x5217;&#x8868;&#x4E2D;&#x4EFB;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;&#x8FD4;&#x56DE;</p>
+<p><img src="assets/image-20190705060104285.png" alt="image-20190705060104285"></p>
+<h4 id="2&#xFF09;keyword-&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x5C5E;&#x6027;&#xFF09;">2&#xFF09;keyword &#x53C2;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x5C5E;&#x6027;&#xFF09;</h4>
+<p>&#x76F4;&#x767D;&#x70B9;&#x8BB2;&#xFF0C;&#x5C31;&#x662F;&#x6839;&#x636E;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x9009;&#x62E9;</p>
+<p><img src="assets/image-20190705061005917.png" alt="image-20190705061005917"></p>
+<h4 id="3&#xFF09;text-&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x5185;&#x5BB9;&#xFF09;">3&#xFF09;text &#x53C2;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x5185;&#x5BB9;&#xFF09;</h4>
+<p>&#x901A;&#x8FC7; text &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x5BB9;&#xFF0C;&#x4E0E; name &#x53C2;&#x6570;&#x7684;&#x53EF;&#x9009;&#x503C;&#x4E00;&#x6837;, text &#x53C2;&#x6570;&#x63A5;&#x53D7; &#x5B57;&#x7B26;&#x4E32; , &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F; , &#x5217;&#x8868;</p>
+<p><img src="assets/image-20190705061338033.png" alt="image-20190705061338033"></p>
+<h3 id="find">find</h3>
+<p>find&#x7684;&#x7528;&#x6CD5;&#x4E0E;find_all&#x4E00;&#x6837;&#xFF0C;&#x533A;&#x522B;&#x5728;&#x4E8E;find&#x8FD4;&#x56DE; &#x7B2C;&#x4E00;&#x4E2A;&#x7B26;&#x5408;&#x5339;&#x914D;&#x7ED3;&#x679C;&#xFF0C;find_all&#x5219;&#x8FD4;&#x56DE; &#x6240;&#x6709;&#x5339;&#x914D;&#x7ED3;&#x679C;&#x7684;&#x5217;&#x8868;</p>
+<h2 id="4-&#x641C;&#x7D22;&#x6587;&#x6863;&#x6811;css&#x9009;&#x62E9;&#x5668;">4 &#x641C;&#x7D22;&#x6587;&#x6863;&#x6811;-CSS&#x9009;&#x62E9;&#x5668;</h2>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x4E0E; find_all &#x65B9;&#x6CD5;&#x6709;&#x5F02;&#x66F2;&#x540C;&#x5DE5;&#x4E4B;&#x5999;&#x7684;&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x662F;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5339;&#x914D;&#x7ED3;&#x679C;&#x7684;&#x5217;&#x8868;&#x3002;</p>
+<ul>
+<li>&#x5199; CSS &#x65F6;<ul>
+<li>&#x6807;&#x7B7E;&#x540D;&#x4E0D;&#x52A0;&#x4EFB;&#x4F55;&#x4FEE;&#x9970;</li>
+<li>&#x7C7B;&#x540D;&#x524D;&#x52A0;<code>.</code></li>
+<li>id&#x540D;&#x524D;&#x52A0;<code>#</code></li>
+</ul>
+</li>
+<li>&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x7B5B;&#x9009;&#x5143;&#x7D20;&#xFF0C;&#x7528;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#x662F; <code>soup.select()</code>&#xFF0C;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x662F;<code>list</code></li>
+</ul>
+<h4 id="&#xFF08;1&#xFF09;&#x901A;&#x8FC7;&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;">&#xFF08;1&#xFF09;&#x901A;&#x8FC7;&#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;</h4>
+<p><img src="assets/image-20190705061708559.png" alt="image-20190705061708559"></p>
+<h4 id="&#xFF08;2&#xFF09;&#x901A;&#x8FC7;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;">&#xFF08;2&#xFF09;&#x901A;&#x8FC7;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;</h4>
+<p><img src="assets/image-20190705061750965.png" alt="image-20190705061750965"></p>
+<h4 id="&#xFF08;3&#xFF09;&#x901A;&#x8FC7;-id-&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;">&#xFF08;3&#xFF09;&#x901A;&#x8FC7; id &#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;</h4>
+<p><img src="assets/image-20190705061814130.png" alt="image-20190705061814130"></p>
+<h4 id="&#xFF08;4&#xFF09;&#x5C42;&#x7EA7;&#x9009;&#x62E9;&#x5668;-&#x67E5;&#x627E;">&#xFF08;4&#xFF09;&#x5C42;&#x7EA7;&#x9009;&#x62E9;&#x5668; &#x67E5;&#x627E;</h4>
+<p><img src="assets/image-20190705061922039.png" alt="image-20190705061922039"></p>
+<h4 id="&#xFF08;5&#xFF09;&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;">&#xFF08;5&#xFF09;&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;</h4>
+<p><img src="assets/image-20190705062011188.png" alt="image-20190705062011188"></p>
+<h4 id="6-&#x83B7;&#x53D6;&#x6587;&#x672C;&#x5185;&#x5BB9;-gettext">(6) &#x83B7;&#x53D6;&#x6587;&#x672C;&#x5185;&#x5BB9; <code>get_text()</code></h4>
+<p>&#x4EE5;&#x4E0A;&#x7684; select &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x5F62;&#x5F0F;&#x8F93;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x7528; <code>get_text()</code> &#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x5B83;&#x7684;&#x5185;&#x5BB9;</p>
+<p><img src="assets/image-20190705062122523.png" alt="image-20190705062122523"></p>
+<h4 id="7-&#x83B7;&#x53D6;&#x5C5E;&#x6027;get&#x5C5E;&#x6027;&#x7684;&#x540D;&#x5B57;">(7) &#x83B7;&#x53D6;&#x5C5E;&#x6027;<code>get(&apos;&#x5C5E;&#x6027;&#x7684;&#x540D;&#x5B57;&apos;)</code></h4>
+<p><img src="assets/image-20190705062217813.png" alt="image-20190705062217813"></p>
+<h2 id="5-&#x4F5C;&#x4E1A;">5 &#x4F5C;&#x4E1A;</h2>
+<p>&#x7528;bs4&#x6765;&#x505A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x722C;&#x866B;&#xFF0C;&#x722C;&#x53D6;&#x67D0;&#x4E2A;&#x8D34;&#x5427;&#x91CC;&#x7684;&#x6240;&#x6709;&#x5E16;&#x5B50;&#xFF0C;&#x83B7;&#x53D6;&#x6BCF;&#x4E2A;&#x5E16;&#x5B50;&#x7684;&#x6807;&#x9898;&#xFF0C;&#x8FDE;&#x63A5;&#x548C;&#x5E16;&#x5B50;&#x4E2D;&#x56FE;&#x7247;</p>
+<h3 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h3>
+<ol>
+<li>&#x5B89;&#x88C5;beautifulsoup4:<code>pip install beautifulsoup4</code></li>
+<li>beautifulsoup&#x5BFC;&#x5305;: <code>from bs4 import BeautifulSoup</code></li>
+<li>beautifulsoup&#x8F6C;&#x6362;&#x7C7B;&#x578B;: <code>BeautifulSoup(html)</code></li>
+<li>find &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x89E3;&#x6790;&#x5B8C;&#x6BD5;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>findall &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x89E3;&#x6790;&#x5217;&#x8868;list</li>
+<li>select &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x89E3;&#x6790;&#x5217;&#x8868;list</li>
+<li>&#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x7684;&#x65B9;&#x6CD5;: <code>get(&apos;&#x5C5E;&#x6027;&#x540D;&#x5B57;&apos;)</code></li>
+<li>&#x548C;&#x83B7;&#x53D6;&#x6587;&#x672C;&#x7684;&#x65B9;&#x6CD5;: <code>get_text()</code></li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../03-数据提取/04-非结构数据提取-lxml模块.html" class="navigation navigation-prev " aria-label="Previous page: 非结构数据提取-lxml模块"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../03-数据提取/06-结构数据提取-JSON.html" class="navigation navigation-next " aria-label="Next page: 结构数据提取-json"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book 爬虫基础 -->
+<!-- End of book 爬虫基础 -->
+</html>
