@@ -1,0 +1,733 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book MiniWeb框架 -->
+<!-- Start book MiniWeb框架 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>web服务器与mini_web框架-分离 | MiniWeb框架</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../02/03-mini_web框架-放入html、css等资源文件.html" />
+    
+    
+    <link rel="prev" href="../02/01-mini_web框架-添加路由功能.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.2"
+        data-chapter-title="web服务器与mini_web框架-分离"
+        data-filepath="02/02-web服务器与mini_web框架-分离.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:37:31 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01/01-WSGI.html">
+            
+                
+                    <a href="../01/01-WSGI.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        WSGI
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="01/02-应用程序示例.html">
+            
+                
+                    <a href="../01/02-应用程序示例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        应用程序示例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="02/index.html">
+            
+                
+                    <a href="../02/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        mini_web框架完善
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="02/01-mini_web框架-添加路由功能.html">
+            
+                
+                    <a href="../02/01-mini_web框架-添加路由功能.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        mini_web框架-添加路由功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="02/02-web服务器与mini_web框架-分离.html">
+            
+                
+                    <a href="../02/02-web服务器与mini_web框架-分离.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        web服务器与mini_web框架-分离
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="02/03-mini_web框架-放入html、css等资源文件.html">
+            
+                
+                    <a href="../02/03-mini_web框架-放入html、css等资源文件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        mini_web框架-放入html、css等资源文件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="02/04-mini_web框架-显示页面.html">
+            
+                
+                    <a href="../02/04-mini_web框架-显示页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        mini_web框架-显示页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="02/05-伪静态、静态和动态的区别.html">
+            
+                
+                    <a href="../02/05-伪静态、静态和动态的区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        伪静态、静态和动态的区别
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="02/06-mini-web框架-实现伪静态url.html">
+            
+                
+                    <a href="../02/06-mini-web框架-实现伪静态url.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        mini-web框架-实现伪静态url
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="02/07-mini_web框架-替换模板.html">
+            
+                
+                    <a href="../02/07-mini_web框架-替换模板.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        mini_web框架-替换模板
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="03/index.html">
+            
+                
+                    <a href="../03/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        股票案例
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="03/01-MySQL数据库准备数据.html">
+            
+                
+                    <a href="../03/01-MySQL数据库准备数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        股票案例数据准备
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="03/02-mini-web框架-从mysql中查询数据.html">
+            
+                
+                    <a href="../03/02-mini-web框架-从mysql中查询数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        查询所有股票信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="03/03-mini-web框架-组装数据为html格式.html">
+            
+                
+                    <a href="../03/03-mini-web框架-组装数据为html格式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        组装数据为html格式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="03/04-mini-web框架-mysql-改1.html">
+            
+                
+                    <a href="../03/04-mini-web框架-mysql-改1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        修改备注1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="03/05-mini-web框架-路由支持正则.html">
+            
+                
+                    <a href="../03/05-mini-web框架-路由支持正则.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        mini-web框架-路由支持正则
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="03/06-mini-web框架-mysql-改2.html">
+            
+                
+                    <a href="../03/06-mini-web框架-mysql-改2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        修改备注2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="03/07-mini-web框架-url编码、MySQL-改3.html">
+            
+                
+                    <a href="../03/07-mini-web框架-url编码、MySQL-改3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        url编码、修改备注3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="03/08-mini-web框架-mysql-增.html">
+            
+                
+                    <a href="../03/08-mini-web框架-mysql-增.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        添加关注
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="03/09-mini-web框架-mysql-删.html">
+            
+                
+                    <a href="../03/09-mini-web框架-mysql-删.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        取消关注
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >MiniWeb框架</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="web&#x670D;&#x52A1;&#x5668;&#x4E0E;miniweb&#x6846;&#x67B6;&#x5206;&#x79BB;">web&#x670D;&#x52A1;&#x5668;&#x4E0E;mini_web&#x6846;&#x67B6;-&#x5206;&#x79BB;</h1>
+<h2 id="1-&#x5206;&#x79BB;&#x7684;&#x76EE;&#x7684;">1. &#x5206;&#x79BB;&#x7684;&#x76EE;&#x7684;</h2>
+<p><img src="assets/image-20190423172937304.png" alt="image-20190423172937304"></p>
+<p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;WSGI&#x534F;&#x8BAE;&#xFF0C;&#x5C06;web&#x670D;&#x52A1;&#x5668;&#x4E0E;mini_web&#x6846;&#x67B6;&#x7684;&#x529F;&#x80FD;&#x57FA;&#x672C;&#x5206;&#x79BB;&#x4E86;</p>
+<ul>
+<li>web&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8D1F;&#x8D23;&#xFF1A;<ul>
+<li>tcp&#x670D;&#x52A1;&#x5668;</li>
+<li>&#x521B;&#x5EFA;&#x8FDB;&#x7A0B;</li>
+<li>&#x5408;&#x5E76;response&#x7684;&#x72B6;&#x6001;&#x7801;&#x3001;&#x54CD;&#x5E94;&#x5934;&#x3001;&#x54CD;&#x5E94;&#x4F53;</li>
+</ul>
+</li>
+<li>mini_web&#x6846;&#x67B6;&#xFF0C;&#x8D1F;&#x8D23;:<ul>
+<li>&#x6839;&#x636E;url&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x51FD;&#x6570;</li>
+<li>&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x72B6;&#x6001;&#xFF0C;&#x54CD;&#x5E94;&#x5934;</li>
+<li>&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x4F53;</li>
+</ul>
+</li>
+</ul>
+<p>&#x4F46;&#x662F;&#x5728;web&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801; <code>http_server.py</code>&#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&quot;&#x85D5;&#x65AD;&#x4E1D;&#x8FDE;&quot;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> mini_web
+....
+response_body = mini_web.application()
+...
+</code></pre>
+<p>&#x6B63;&#x786E;&#x7684;&#x505A;&#x6CD5;&#x662F;&#xFF0C;&#x5728;&#x8FD0;&#x884C;web&#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x6267;&#x884C;&#x8981;&#x8FD0;&#x884C;&#x54EA;&#x4E2A;&#x6846;&#x67B6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C06;&#x6846;&#x67B6;&#x5185;&#x5D4C;&#x5230;web&#x670D;&#x52A1;&#x5668;&#x7684;&#x4EE3;&#x7801;&#x4E2D;</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x624D;&#x6709;&#x4E86;&#x672C;&#x8282;&#x77E5;&#x8BC6;&#x70B9;</p>
+<h2 id="2-&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5206;&#x79BB;&#x529F;&#x80FD;">2. &#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5206;&#x79BB;&#x529F;&#x80FD;</h2>
+<h3 id="httpserverpy&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x5982;&#x4E0B;"><code>http_server.py</code>&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x5982;&#x4E0B;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> multiprocessing
+<span class="hljs-keyword">import</span> sys
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Server</span><span class="hljs-params">(object)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, port, app)</span>:</span>  <span class="hljs-comment"># -------- &#x66F4;&#x65B0; ----------</span>
+        <span class="hljs-comment"># 1. &#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;</span>
+        self.tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        <span class="hljs-comment"># &#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x5728;tcp&#x5148;&#x65AD;&#x5F00;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0B;&#x4E00;&#x6B21;&#x4F9D;&#x7136;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x9700;&#x8981;&#x8BBE;&#x7F6E;</span>
+        self.tcp_server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="hljs-number">1</span>)
+
+        <span class="hljs-comment"># 2. &#x7ED1;&#x5B9A;&#x672C;&#x5730;&#x4FE1;&#x606F;</span>
+        self.tcp_server_socket.bind((<span class="hljs-string">&quot;&quot;</span>, port))  <span class="hljs-comment"># -------- &#x66F4;&#x65B0; ----------</span>
+
+        <span class="hljs-comment"># 3. &#x53D8;&#x6210;&#x76D1;&#x542C;&#x5957;&#x63A5;&#x5B57;</span>
+        self.tcp_server_socket.listen(<span class="hljs-number">128</span>)
+
+        <span class="hljs-comment"># &#x5B9A;&#x4E49;2&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x6765;&#x5B58;&#x50A8;web&#x6846;&#x67B6;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x72B6;&#x6001;&#x7801;&#x4EE5;&#x53CA;&#x54CD;&#x5E94;&#x5934;</span>
+        self.status = <span class="hljs-string">&quot;&quot;</span>  <span class="hljs-comment"># &#x6307;&#x5411;&#x72B6;&#x6001;&#x7801;&#x5B57;&#x7B26;&#x4E32;</span>
+        self.headers = <span class="hljs-keyword">None</span>  <span class="hljs-comment"># &#x6307;&#x5411;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5217;&#x8868;</span>
+
+        <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF0C;&#x5B58;&#x50A8;web&#x6846;&#x67B6;&#x7684;&#x5165;&#x53E3;&#x51FD;&#x6570;&#x5F15;&#x7528;</span>
+        self.app = app  <span class="hljs-comment"># -------- &#x66F4;&#x65B0; ----------</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">handle_request</span><span class="hljs-params">(self, client_socket)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x5904;&#x7406;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;
+        &#x7136;&#x540E;&#x56DE;&#x9001;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#xFF08;html&#x3001;css&#x3001;js&#x3001;img&#x3002;&#x3002;&#x3002;&#xFF09;
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># 1. &#x63A5;&#x6536;</span>
+        recv_content = client_socket.recv(<span class="hljs-number">1024</span>).decode(<span class="hljs-string">&quot;utf-8&quot;</span>, errors=<span class="hljs-string">&quot;ignore&quot;</span>)
+
+        print(<span class="hljs-string">&quot;-----&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x5982;&#x4E0B;----&#xFF1A;&quot;</span>)
+        <span class="hljs-comment"># print(recv_content)</span>
+        lines = recv_content.splitlines()  <span class="hljs-comment"># &#x5C06;&#x63A5;&#x6536;&#x5230;&#x7684;http&#x7684;request&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x6309;&#x7167;&#x884C;&#x8FDB;&#x884C;&#x5207;&#x5272;&#x5230;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;</span>
+        <span class="hljs-comment"># for line in lines:</span>
+        <span class="hljs-comment">#     print(&quot;---&quot;)</span>
+        <span class="hljs-comment">#     print(line)</span>
+
+        <span class="hljs-comment"># 2. &#x5904;&#x7406;&#x8BF7;&#x6C42;</span>
+        <span class="hljs-comment"># &#x63D0;&#x53D6;&#x51FA;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x7684;request&#x4E2D;&#x7684;&#x8DEF;&#x5F84;</span>
+        <span class="hljs-comment"># GET / HTTP/1.1</span>
+        <span class="hljs-comment"># GET /index.html HTTP/1.1</span>
+        <span class="hljs-comment"># .......</span>
+        lines[<span class="hljs-number">0</span>]
+
+        <span class="hljs-comment"># &#x63D0;&#x53D6;&#x51FA;/index.html &#x6216;&#x8005; /</span>
+        request_file_path = re.match(<span class="hljs-string">r&quot;[^/]+(/[^ ]*)&quot;</span>, lines[<span class="hljs-number">0</span>]).group(<span class="hljs-number">1</span>)
+
+        print(<span class="hljs-string">&quot;----&#x63D0;&#x51FA;&#x6765;&#x7684;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x662F;&#xFF1A;----&quot;</span>)
+        print(request_file_path)
+
+        <span class="hljs-comment"># &#x5B8C;&#x5584;&#x5BF9;&#x65B9;&#x8BBF;&#x95EE;&#x4E3B;&#x9875;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x6709;/&#x90A3;&#x4E48;&#x5C31;&#x8BA4;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x8981;&#x8BBF;&#x95EE;&#x7684;&#x662F;&#x4E3B;&#x9875;</span>
+        <span class="hljs-keyword">if</span> request_file_path == <span class="hljs-string">&quot;/&quot;</span>:
+            request_file_path = <span class="hljs-string">&quot;/index.html&quot;</span>
+
+        <span class="hljs-comment"># &#x5982;&#x679C;&#x8BF7;&#x6C42;&#x7684;&#x540E;&#x7F00;&#x4E0D;&#x662F;.py&#x7ED3;&#x5C3E;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8BA4;&#x4E3A;&#x662F;&#x666E;&#x901A;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF08;&#x5C31;&#x662F;&#x9759;&#x6001;&#x9875;&#x9762;&#xFF09;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> request_file_path.endswith(<span class="hljs-string">&quot;.py&quot;</span>):
+
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-comment"># &#x4ECE;html&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x8BFB;&#x53D6;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;</span>
+                <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;./html&quot;</span> + request_file_path, <span class="hljs-string">&quot;rb&quot;</span>) <span class="hljs-keyword">as</span> f:
+                    content = f.read()
+            <span class="hljs-keyword">except</span> Exception:
+                <span class="hljs-comment"># &#x5982;&#x679C;&#x8981;&#x662F;&#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8BA4;&#x4E3A;&#xFF1A;&#x627E;&#x4E0D;&#x5230;&#x90A3;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x5E94;&#x8BE5;&#x5BF9;&#x6D4F;&#x89C8;&#x5668;404</span>
+                <span class="hljs-keyword">pass</span>
+                response_headers = <span class="hljs-string">&quot;HTTP/1.1 404 Not Found\r\n&quot;</span>
+                response_headers += <span class="hljs-string">&quot;Content-Type:text/html;charset=utf-8\r\n&quot;</span>
+                response_headers += <span class="hljs-string">&quot;\r\n&quot;</span>
+                response_boy = <span class="hljs-string">&quot;----sorry&#xFF0C;the file you need not found-------&quot;</span>
+                response = response_headers + response_boy
+                <span class="hljs-comment"># 3.2 &#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x56DE;&#x9001;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;</span>
+                client_socket.send(response.encode(<span class="hljs-string">&quot;utf-8&quot;</span>))
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-comment"># &#x5982;&#x679C;&#x8981;&#x662F;&#x6CA1;&#x6709;&#x5F02;&#x5E38;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8BA4;&#x4E3A;&#xFF1A;&#x627E;&#x5230;&#x4E86;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x5176;&#x6570;&#x636E;&#x56DE;&#x9001;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x5373;&#x53EF;</span>
+                response_headers = <span class="hljs-string">&quot;HTTP/1.1 200 OK\r\n&quot;</span>
+                response_headers += <span class="hljs-string">&quot;Content-Type:text/html;charset=utf-8\r\n&quot;</span>
+                response_headers += <span class="hljs-string">&quot;\r\n&quot;</span>
+                response_boy = content
+                response = response_headers.encode(<span class="hljs-string">&quot;utf-8&quot;</span>) + response_boy
+                <span class="hljs-comment"># 3.2 &#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x56DE;&#x9001;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;</span>
+                client_socket.send(response)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;&#x4EE5;.py&#x7ED3;&#x5C3E;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x751F;&#x6210;&#x9875;&#x9762;&#x5185;&#x5BB9;</span>
+
+            env = dict()  <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E2A;&#x5B57;&#x5178;&#xFF0C;&#x7528;&#x6765;&#x5C01;&#x88C5;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x9012;&#x5230;application&#x51FD;&#x6570;&#x4E2D;</span>
+            env[<span class="hljs-string">&quot;PATH_INFO&quot;</span>] = request_file_path  <span class="hljs-comment"># &quot;/login.py&quot;</span>
+
+            <span class="hljs-comment"># -------- &#x66F4;&#x65B0; ----------</span>
+            response_boy = self.app(env, self.set_status_headers)
+
+            <span class="hljs-comment"># &#x5C06;header&#x548C;body&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#xFF0C;&#x4F5C;&#x4E3A;response&#x7684;&#x5185;&#x5BB9;</span>
+            response_headers = <span class="hljs-string">&quot;HTTP/1.1 %s\r\n&quot;</span> % self.status
+            <span class="hljs-keyword">for</span> header <span class="hljs-keyword">in</span> self.headers:
+                response_headers += <span class="hljs-string">&quot;%s:%s\r\n&quot;</span> % (header[<span class="hljs-number">0</span>], header[<span class="hljs-number">1</span>])
+            response_headers += <span class="hljs-string">&quot;\r\n&quot;</span>
+
+            response = response_headers + response_boy
+            <span class="hljs-comment"># 3.2 &#x7ED9;&#x6D4F;&#x89C8;&#x5668;&#x56DE;&#x9001;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;</span>
+            client_socket.send(response.encode(<span class="hljs-string">&quot;utf-8&quot;</span>))
+
+        <span class="hljs-comment"># 4. &#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;</span>
+        client_socket.close()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_status_headers</span><span class="hljs-params">(self, status, headers)</span>:</span>
+        self.status = status  <span class="hljs-comment"># &quot;200 OK&quot;</span>
+        self.headers = headers  <span class="hljs-comment"># [(&quot;Content-Type&quot;, &quot;text/html;charset=utf-8&quot;)]</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x7528;&#x6765;&#x63A7;&#x5236;&#x6574;&#x4F53;
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            <span class="hljs-comment"># 4. &#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x94FE;&#x63A5;</span>
+            client_socket, client_info = self.tcp_server_socket.accept()
+
+            print(client_info)  <span class="hljs-comment"># &#x6253;&#x5370; &#x5F53;&#x524D;&#x662F;&#x54EA;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x4E86;&#x8BF7;&#x6C42;</span>
+
+            <span class="hljs-comment"># 5. &#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;</span>
+            <span class="hljs-comment"># handle_request(client_socket)</span>
+            p = multiprocessing.Process(target=self.handle_request, args=(client_socket,))
+            p.start()
+
+            <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#x53BB;&#x4F7F;&#x7528;client_socket&#xFF0C;&#x90A3;&#x4E48;&#x5B50;&#x8FDB;&#x7A0B;&#x4F1A;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x8FD9;&#x4E2A;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5728;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x5173;&#x95ED;&#x4E00;&#x6B21;</span>
+            <span class="hljs-comment"># &#x8FD9;&#x6837;&#x80FD;&#x591F;&#x4FDD;&#x8BC1;&#x5728;&#x5B50;&#x8FDB;&#x7A0B;&#x63A5;&#x6536;&#x4E14;&#x8C03;&#x7528;close&#x65F6;&#xFF0C;&#x80FD;&#x591F;&#x771F;&#x6B63;&#x7684;&#x5C06;&#x8FD9;&#x4E2A;&#x5957;&#x63A5;&#x5B57;&#x5173;&#x95ED;&#xFF0C;&#x5982;&#x679C;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x6CA1;&#x6709;close&#x3002;&#x90A3;&#x4E48;&#x5373;&#x4F7F;&#x5B50;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;close</span>
+            <span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x5957;&#x63A5;&#x5B57;&#x4E5F;&#x4E0D;&#x4F1A;&#x88AB;&#x771F;&#x6B63;&#x7684;&#x5173;&#x95ED;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;tcp&#x7684;4&#x6B21;&#x6325;&#x624B;</span>
+            <span class="hljs-comment">#</span>
+            <span class="hljs-comment"># &#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF1A;&#x5982;&#x679C;&#x662F;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48; &#x5C31;&#x8981;&#x5728;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x5173;&#x95ED;&#x4E00;&#x6B21;</span>
+            <span class="hljs-comment">#         &#x5982;&#x679C;&#x662F;&#x5B50;&#x7EBF;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48; &#x5C31;&#x4E0D;&#x8981;&#x518D;&#x4E3B;&#x8FDB;&#x7A0B;&#x4E2D;&#x5173;&#x95ED;&#xFF0C;&#x56E0;&#x4E3A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x5171;&#x4EAB;&#xFF0C;&#x800C;&#x8FDB;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x590D;&#x5236;</span>
+            client_socket.close()
+
+        <span class="hljs-comment"># 6. &#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;</span>
+        self.tcp_server_socket.close()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x5B8C;&#x6210;&#x6574;&#x4F53;&#x7684;&#x63A7;&#x5236;
+    :return:
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-comment"># -------- &#x66F4;&#x65B0; &#x5F00;&#x59CB; ----------</span>
+    <span class="hljs-comment"># python3 xxx.py 7890 my_web_frame_name:application&quot;</span>
+    <span class="hljs-keyword">if</span> len(sys.argv) == <span class="hljs-number">3</span>:
+        <span class="hljs-comment"># &#x83B7;&#x53D6;web&#x670D;&#x52A1;&#x5668;&#x7684;port</span>
+        port = sys.argv[<span class="hljs-number">1</span>]
+        <span class="hljs-keyword">if</span> port.isdigit():
+            port = int(port)
+        <span class="hljs-keyword">else</span>:
+            exit(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x6570;&#x5B57;&#x5F53;&#x505A;&#x7AEF;&#x53E3;&#x53F7;&quot;</span>)
+        <span class="hljs-comment"># &#x83B7;&#x53D6;web&#x670D;&#x52A1;&#x5668;&#x9700;&#x8981;&#x52A8;&#x6001;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x8BBF;&#x95EE;&#x7684;web&#x6846;&#x67B6;&#x540D;&#x5B57;</span>
+        web_frame_module_app_name = sys.argv[<span class="hljs-number">2</span>]
+    <span class="hljs-keyword">else</span>:
+        exit(<span class="hljs-string">&quot;&#x8FD0;&#x884C;&#x65B9;&#x5F0F;&#x5982;: python3 xxx.py 7890 my_web_frame_name:application&quot;</span>)
+
+    print(<span class="hljs-string">&quot;http&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;&#x7684;port:%s&quot;</span> % port)
+
+    <span class="hljs-comment"># &#x63D0;&#x53D6;&#x6846;&#x67B6;&#x540D;&#x79F0;&#xFF0C;&#x4EE5;&#x53CA;&#x5165;&#x53E3;&#x51FD;&#x6570;</span>
+    ret = re.match(<span class="hljs-string">r&quot;([^:]*):(.*)&quot;</span>, web_frame_module_app_name)
+    <span class="hljs-keyword">if</span> ret:
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x6A21;&#x5757;&#x540D;</span>
+        web_frame_module_name = ret.group(<span class="hljs-number">1</span>)
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x53EF;&#x4EE5;&#x8C03;&#x7528;web&#x6846;&#x67B6;&#x7684;&#x5E94;&#x7528;&#x540D;&#x79F0;</span>
+        app_name = ret.group(<span class="hljs-number">2</span>)
+
+    <span class="hljs-comment"># &#x5BFC;&#x5165;web&#x6846;&#x67B6;&#x7684;&#x4E3B;&#x6A21;&#x5757;</span>
+    web_frame_module = __import__(web_frame_module_name)
+    <span class="hljs-comment"># &#x83B7;&#x53D6;&#x90A3;&#x4E2A;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;(&#x5BF9;&#x8C61;)</span>
+    app = getattr(web_frame_module, app_name)
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;Server&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x8C61;</span>
+    server = Server(port, app)
+
+    <span class="hljs-comment"># -------- &#x66F4;&#x65B0; &#x7ED3;&#x675F; ----------</span>
+
+    <span class="hljs-comment"># &#x8C03;&#x7528;&#x5B83;&#x7684;&#x8FD0;&#x884C;&#x65B9;&#x6CD5;</span>
+    server.run()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x672C;&#x6B21;&#x4EC5;&#x4EC5;&#x662F;&#x4FEE;&#x6539;&#x7684;web&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801;&#xFF0C;mini_web&#x6846;&#x67B6;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4FEE;&#x6539;&#xFF0C;&#x8BF7;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4E0A;&#x6B21;&#x7684;&#x7248;&#x672C;</p>
+<h3 id="1-&#x9ED8;&#x8BA4;pycharm&#x8FD0;&#x884C;&#x5931;&#x8D25;">1. &#x9ED8;&#x8BA4;pycharm&#x8FD0;&#x884C;&#x5931;&#x8D25;</h3>
+<p><img src="assets/image-20190423171202121.png" alt="image-20190423171202121"></p>
+<p>&#x539F;&#x56E0;&#xFF1A;</p>
+<p>Python&#x4EE3;&#x7801;&#x4E2D;&#x5DF2;&#x7ECF;&#x660E;&#x786E;&#x5199;&#x660E;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;pycharm&#x8FD0;&#x884C;&#x65F6;&#x6CA1;&#x6709;&#x5E26;&#x4E0A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x4F1A;&#x5931;&#x8D25;</p>
+<h3 id="2-pycharm&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x53C2;&#x6570;">2. pycharm&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x53C2;&#x6570;</h3>
+<p><img src="assets/image-20190423171331433.png" alt="image-20190423171331433"></p>
+<p><img src="assets/image-20190423171120191.png" alt="image-20190423171120191"></p>
+<p>&#x518D;&#x6B21;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x5230;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="assets/image-20190423171419721.png" alt="image-20190423171419721"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../02/01-mini_web框架-添加路由功能.html" class="navigation navigation-prev " aria-label="Previous page: mini_web框架-添加路由功能"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../02/03-mini_web框架-放入html、css等资源文件.html" class="navigation navigation-next " aria-label="Next page: mini_web框架-放入html、css等资源文件"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book MiniWeb框架 -->
+<!-- End of book MiniWeb框架 -->
+</html>
