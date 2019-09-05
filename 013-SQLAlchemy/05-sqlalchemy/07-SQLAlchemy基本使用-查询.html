@@ -1,0 +1,972 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book SQLAlchemy -->
+<!-- Start book SQLAlchemy -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>基本使用-查询 | SQLAlchemy</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../05-sqlalchemy/08-SQLAlchemy基本使用-修改.html" />
+    
+    
+    <link rel="prev" href="../05-sqlalchemy/06-SQLAlchemy基本使用-插入.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="7"
+        data-chapter-title="基本使用-查询"
+        data-filepath="05-sqlalchemy/07-SQLAlchemy基本使用-查询.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:39:33 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="05-sqlalchemy/01-ORM.html">
+            
+                
+                    <a href="../05-sqlalchemy/01-ORM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        ORM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="05-sqlalchemy/02-SQLAlchemy.html">
+            
+                
+                    <a href="../05-sqlalchemy/02-SQLAlchemy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        SQLAlchemy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="05-sqlalchemy/03-准备工作.html">
+            
+                
+                    <a href="../05-sqlalchemy/03-准备工作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        准备工作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="05-sqlalchemy/04-定义模型类、创建数据表.html">
+            
+                
+                    <a href="../05-sqlalchemy/04-定义模型类、创建数据表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        描述表结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-sqlalchemy/05-SQLAlchemy字段类型.html">
+            
+                
+                    <a href="../05-sqlalchemy/05-SQLAlchemy字段类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        SQLAlchemy字段类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="05-sqlalchemy/06-SQLAlchemy基本使用-插入.html">
+            
+                
+                    <a href="../05-sqlalchemy/06-SQLAlchemy基本使用-插入.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        基本使用-插入
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="7" data-path="05-sqlalchemy/07-SQLAlchemy基本使用-查询.html">
+            
+                
+                    <a href="../05-sqlalchemy/07-SQLAlchemy基本使用-查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        基本使用-查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="05-sqlalchemy/08-SQLAlchemy基本使用-修改.html">
+            
+                
+                    <a href="../05-sqlalchemy/08-SQLAlchemy基本使用-修改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        基本使用-修改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="05-sqlalchemy/09-SQLAlchemy基本使用-删除.html">
+            
+                
+                    <a href="../05-sqlalchemy/09-SQLAlchemy基本使用-删除.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        基本使用-删除
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="05-sqlalchemy/11-多对一关联操作.html">
+            
+                
+                    <a href="../05-sqlalchemy/11-多对一关联操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        多对一关联操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="05-sqlalchemy/12-多对多关联操作.html">
+            
+                
+                    <a href="../05-sqlalchemy/12-多对多关联操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        多对多关联操作
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >SQLAlchemy</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="sqlalchemy&#x67E5;&#x8BE2;&#x6570;&#x636E;">SQLAlchemy&#x67E5;&#x8BE2;&#x6570;&#x636E;</h1>
+<h2 id="1-&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;">1. &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709;&#x6570;&#x636E;</span>
+obj = session.query(User).all()
+
+<span class="hljs-comment"># print(type(obj))  # &#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x7C7B;&#x578B;&#x662F; &lt;class &apos;list&apos;&gt;</span>
+
+<span class="hljs-comment"># &#x8BF4;&#x660E;&#xFF1A;</span>
+<span class="hljs-comment"># obj&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6570;&#x636E;&#x4E3A; User&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+    <span class="hljs-comment"># print(temp)  # &#x6B64;&#x65F6;temp&#x4E3A;User&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment"># print(type(temp))  # &#x7C7B;&#x578B;&#x662F; &lt;class &apos;__main__.User&apos;&gt;</span>
+    print(temp.id)
+    print(temp.username)
+    print(temp.password)
+    print(temp.email)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810172738934.png" alt="image-20180810172738934"></p>
+<h4 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;:</h4>
+<ol>
+<li><code>session.query(User).all()</code>&#x67E5;&#x8BE2;&#x6240;&#x6709;</li>
+<li>&#x67E5;&#x8BE2;&#x7684;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;user&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</li>
+</ol>
+<h2 id="2-&#x6309;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;">2. &#x6309;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x636E;</span>
+obj = session.query(User).filter(User.id == <span class="hljs-number">1</span>).one()
+print(obj.id)
+print(obj.username)
+print(obj.password)
+print(obj.email)
+
+print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+
+obj = session.query(User).filter(User.id == <span class="hljs-number">4</span>).one()
+print(obj.id)
+print(obj.username)
+print(obj.password)
+print(obj.email)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810173055973.png" alt="image-20180810173055973"></p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<ol>
+<li><code>session.query(User).filter(User.id==4).one()</code>&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x503C;&#x7CBE;&#x51C6;&#x67E5;&#x627E;</li>
+<li>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</li>
+</ol>
+<h2 id="3-&#x67E5;&#x8BE2;&#x7B2C;1&#x4E2A;&#x8BB0;&#x5F55;">3. &#x67E5;&#x8BE2;&#x7B2C;1&#x4E2A;&#x8BB0;&#x5F55;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x7B2C;&#x4E00;&#x884C;</span>
+obj = session.query(User).first()
+print(obj.id)
+print(obj.username)
+print(obj.password)
+print(obj.email)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810173250598.png" alt="image-20180810173250598"></p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<ol>
+<li><code>session.query(User).first()</code>&#x67E5;&#x8BE2;&#x7B2C;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;</li>
+</ol>
+<h2 id="4-&#x6839;&#x636E;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x6BB5;">4. &#x6839;&#x636E;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x6BB5;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x67E5;&#x8BE2;ID&gt;1&#x7684;&#x6240;&#x6709;&#x540D;&#x5B57;</span>
+obj = session.query(User.username).filter(User.id &gt; <span class="hljs-number">1</span>).all()
+<span class="hljs-comment"># print(type(obj))  # &#x7C7B;&#x578B;&#x662F; &lt;class &apos;__main__.User&apos;&gt;</span>
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    <span class="hljs-comment"># print(temp.id)  # &#x4E0D;&#x80FD;&#x67E5;&#x8BE2;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x662F;username&#x5B57;&#x6BB5;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5176;&#x4ED6;&#x7684;</span>
+    print(temp.username)
+<span class="hljs-comment"># print(temp.password)  # &#x4E0D;&#x80FD;&#x67E5;&#x8BE2;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x662F;username&#x5B57;&#x6BB5;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5176;&#x4ED6;&#x7684;</span>
+<span class="hljs-comment"># print(temp.email)  # &#x4E0D;&#x80FD;&#x67E5;&#x8BE2;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x662F;username&#x5B57;&#x6BB5;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5176;&#x4ED6;&#x7684;</span>
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810173649905.png" alt="image-20180810173649905"></p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<ol>
+<li><code>session.query(User.username).filter(User.id&gt;1).all()</code>&#x6309;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x6240;&#x6709;</li>
+<li>&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x5217;&#x8868;</li>
+</ol>
+<h2 id="5-&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53D6;&#x51FA;&#x6570;&#x636E;">5. &#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53D6;&#x51FA;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># uers&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53D6;&#x51FA;&#x6570;&#x636E;</span>
+q1 = session.query(User.username).all()[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]
+print(q1)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810173919559.png" alt="image-20180810173919559"></p>
+<h4 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h4>
+<ol>
+<li><code>session.query(User.username).all()[1:4]</code>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53D6;&#x6570;&#x636E;</li>
+<li>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x5217;&#x8868;</li>
+</ol>
+<h2 id="6-&#x6392;&#x5E8F;">6. &#x6392;&#x5E8F;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x6839;&#x636E;id&#x5347;&#x5E8F;&#x6392;&#x5217;</span>
+obj = session.query(User).order_by(User.id).all()
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(<span class="hljs-string">&quot;*&quot;</span> * <span class="hljs-number">5</span>)
+    print(temp.id)
+    print(temp.username)
+    print(temp.password)
+    print(temp.email)
+
+print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+
+<span class="hljs-comment"># &#x6839;&#x636E;id&#x964D;&#x5E8F;&#x6392;&#x5217;</span>
+obj = session.query(User).order_by(-User.id).all()
+<span class="hljs-comment"># obj = session.query(User).filter(User.id &gt; 2).order_by(-User.id).all()</span>
+<span class="hljs-comment"># obj = session.query(User).order_by(-User.id).filter(User.id &gt; 2).all()</span>
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(<span class="hljs-string">&quot;*&quot;</span> * <span class="hljs-number">5</span>)
+    print(temp.id)
+    print(temp.username)
+    print(temp.password)
+    print(temp.email)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810174349489.png" alt="image-20180810174349489"></p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<ol>
+<li><code>session.query(User).order_by(User.id).all()</code>&#x4E0D;&#x5E26;&#x6709;<code>-</code>&#x8868;&#x793A;&#x5347;&#x5E8F;</li>
+<li><code>session.query(User).order_by(-User.id).all()</code>&#x5E26;&#x6709;<code>-</code>&#x8868;&#x793A;&#x964D;&#x5E8F;</li>
+</ol>
+<h2 id="7-&#x5728;&#x975E;&#x8FDE;&#x7EED;&#x8303;&#x56F4;">7. &#x5728;&#x975E;&#x8FDE;&#x7EED;&#x8303;&#x56F4;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+<span class="hljs-comment"># &#x67E5;&#x8BE2;user&#x8868;&#x4E2D;id&#x662F;1,3&#x7684;&#x59D3;&#x540D;</span>
+obj = session.query(User.username).filter(User.id.in_([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>])).all()
+<span class="hljs-comment"># obj = session.query(User.username).filter(User.id.in_([1, 2, 3])).all()</span>
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810174716692.png" alt="image-20180810174716692"></p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<ol>
+<li><code>session.query(User.username).filter(User.id.in_([1,3])).all()</code>&#x67E5;&#x8BE2;&#x975E;&#x8FDE;&#x7EED;</li>
+</ol>
+<h2 id="8-&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;">8. &#x6A21;&#x7CCA;&#x67E5;&#x8BE2;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x65B0;User&#x5BF9;&#x8C61;</span>
+new_user1 = User(username=<span class="hljs-string">&apos;sha&apos;</span>, password=<span class="hljs-string">&quot;123456&quot;</span>, email=<span class="hljs-string">&quot;shasha@163.com&quot;</span>)
+new_user2 = User(username=<span class="hljs-string">&apos;shaxuan&apos;</span>, password=<span class="hljs-string">&quot;123456&quot;</span>, email=<span class="hljs-string">&quot;shaxuan@163.com&quot;</span>)
+new_user3 = User(username=<span class="hljs-string">&apos;lili&apos;</span>, password=<span class="hljs-string">&quot;112233&quot;</span>, email=<span class="hljs-string">&quot;lili@163.com&quot;</span>)
+new_user4 = User(username=<span class="hljs-string">&apos;feifei&apos;</span>, password=<span class="hljs-string">&quot;132143245&quot;</span>, email=<span class="hljs-string">&quot;feifei@163.com&quot;</span>)
+new_user5 = User(username=<span class="hljs-string">&apos;shan&apos;</span>, password=<span class="hljs-string">&quot;535211&quot;</span>, email=<span class="hljs-string">&quot;shan@163.com&quot;</span>)
+new_user6 = User(username=<span class="hljs-string">&apos;shapigou&apos;</span>, password=<span class="hljs-string">&quot;535211&quot;</span>, email=<span class="hljs-string">&quot;shapigou@163.com&quot;</span>)
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;session</span>
+session.add_all([new_user1, new_user2, new_user3, new_user4, new_user5, new_user6])
+<span class="hljs-comment"># &#x63D0;&#x4EA4;&#x5373;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;</span>
+session.commit()
+
+<span class="hljs-comment"># &#x6A21;&#x7CCA;&#x67E5;&#x8BE2;,%&#x5339;&#x914D;&#x591A;&#x4E2A;&#x5B57;&#x7B26;,_&#x5339;&#x914D;&#x5355;&#x4E2A;&#x5B57;&#x7B26;</span>
+obj = session.query(User.username).filter(User.username.like(<span class="hljs-string">&apos;%h%&apos;</span>)).all()
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+
+obj = session.query(User.username).filter(User.username.like(<span class="hljs-string">&apos;%h___&apos;</span>)).all()
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810175905920.png" alt="image-20180810175905920"></p>
+<h4 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h4>
+<ol>
+<li><code>session.query(User.username).filter(User.username.like(&apos;%h___&apos;)).all()</code>&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;</li>
+</ol>
+<h2 id="9-&#x67E5;&#x8BE2;&#x6570;&#x91CF;">9. &#x67E5;&#x8BE2;&#x6570;&#x91CF;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+<span class="hljs-comment"># &#x8BA1;&#x7B97;&#x4E2A;&#x6570;,&#x8FD4;&#x56DE;&#x67E5;&#x8BE2;&#x7684;&#x6570;&#x91CF;</span>
+<span class="hljs-comment"># obj_num = session.query(User).count()</span>
+<span class="hljs-comment"># obj_num = session.query(User).filter(User.id &gt; 5).all().count()  # &#x8FD9;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5168;&#x90E8;&#x67E5;&#x8BE2;&#x4E86;&#x518D;&#x7EDF;&#x8BA1;&#x4E2A;&#x6570;</span>
+obj_num = session.query(User).filter(User.id &gt; <span class="hljs-number">5</span>).count()  <span class="hljs-comment"># &#x76F4;&#x63A5;&#x5199;&#x4E0A;&#x6761;&#x4EF6;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;count&#x7EDF;&#x8BA1;&#x4E2A;&#x6570;</span>
+print(obj_num)
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810182148946.png" alt="image-20180810182148946"></p>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h4>
+<ol>
+<li><code>session.query(User).count()</code>&#x67E5;&#x8BE2;&#x6570;&#x91CF;</li>
+</ol>
+<h2 id="10-&#x903B;&#x8F91;&#x4E0E;">10. &#x903B;&#x8F91;&#x4E0E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> and_
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x903B;&#x8F91;&#x4E0E;&#x67E5;&#x8BE2;</span>
+obj = session.query(User.username).filter(and_(User.id &gt;= <span class="hljs-number">1</span>, User.username.like(<span class="hljs-string">&apos;%h%&apos;</span>))).all()
+<span class="hljs-comment"># obj = session.query(User.username).filter(and_(User.id &gt;= 1, User.username.like(&apos;%h%&apos;), User.id &lt;= 5)).all()</span>
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+
+obj = session.query(User.username).filter(and_(User.id &gt;= <span class="hljs-number">4</span>, User.username.like(<span class="hljs-string">&apos;%h%&apos;</span>))).all()
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+session.close()
+</code></pre>
+<h4 id="&#x6548;&#x679C;">&#x6548;&#x679C;</h4>
+<p><img src="../Images/05-sqlalchemy/image-20180810182533369.png" alt="image-20180810182533369"></p>
+<h4 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h4>
+<ol>
+<li><code>session.query(User.username).filter(and_(User.id &gt;= 4, User.username.like(&apos;%h%&apos;))).all()</code>&#x903B;&#x8F91;&#x4E0E;</li>
+</ol>
+<h2 id="11-&#x903B;&#x8F91;&#x6216;">11. &#x903B;&#x8F91;&#x6216;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> or_
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># uers&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x903B;&#x8F91;&#x6216;&#x67E5;&#x8BE2;</span>
+<span class="hljs-comment"># obj = session.query(User).filter(or_(User.id == 1, User.username.like(&apos;%h%&apos;))).order_by(User.id).all()</span>
+obj = session.query(User).filter(or_(User.id &gt;= <span class="hljs-number">1</span>, User.id &lt;= <span class="hljs-number">5</span>)).all()
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+session.close()
+</code></pre>
+<p><img src="../Images/05-sqlalchemy/image-20180810183334944.png" alt="image-20180810183334944"></p>
+<h2 id="12-&#x903B;&#x8F91;&#x975E;">12. &#x903B;&#x8F91;&#x975E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> not_
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    <span class="hljs-comment"># &#x5BF9;&#x5E94;MySQL&#x4E2D;&#x6570;&#x636E;&#x8868;&#x7684;&#x540D;&#x5B57;</span>
+    __tablename__ = <span class="hljs-string">&apos;users&apos;</span>
+
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;id&#x5B57;&#x6BB5;(&#x4E3B;&#x952E;)</span>
+    username = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># uers&#x8868;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;</span>
+    password = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;password&#x5B57;&#x6BB5;</span>
+    email = Column(String(<span class="hljs-number">64</span>), nullable=<span class="hljs-keyword">False</span>, index=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># users&#x8868;&#x4E2D;&#x7684;email&#x5B57;&#x6BB5;(&#x6709;&#x7D22;&#x5F15;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;%s(%r)&apos;</span> % (self.__class__.__name__, self.username)
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x903B;&#x8F91;&#x975E;</span>
+obj = session.query(User).filter(not_(User.id &gt;= <span class="hljs-number">3</span>)).all()
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj:
+    print(temp.username)
+
+session.close()
+</code></pre>
+<p><img src="assets/image-20190505201757673.png" alt="image-20190505201757673"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../05-sqlalchemy/06-SQLAlchemy基本使用-插入.html" class="navigation navigation-prev " aria-label="Previous page: 基本使用-插入"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../05-sqlalchemy/08-SQLAlchemy基本使用-修改.html" class="navigation navigation-next " aria-label="Next page: 基本使用-修改"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book SQLAlchemy -->
+<!-- End of book SQLAlchemy -->
+</html>

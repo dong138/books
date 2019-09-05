@@ -1,0 +1,652 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book SQLAlchemy -->
+<!-- Start book SQLAlchemy -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>多对一关联操作 | SQLAlchemy</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../05-sqlalchemy/12-多对多关联操作.html" />
+    
+    
+    <link rel="prev" href="../05-sqlalchemy/09-SQLAlchemy基本使用-删除.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="10"
+        data-chapter-title="多对一关联操作"
+        data-filepath="05-sqlalchemy/11-多对一关联操作.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:39:33 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="05-sqlalchemy/01-ORM.html">
+            
+                
+                    <a href="../05-sqlalchemy/01-ORM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        ORM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="05-sqlalchemy/02-SQLAlchemy.html">
+            
+                
+                    <a href="../05-sqlalchemy/02-SQLAlchemy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        SQLAlchemy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="05-sqlalchemy/03-准备工作.html">
+            
+                
+                    <a href="../05-sqlalchemy/03-准备工作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        准备工作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="05-sqlalchemy/04-定义模型类、创建数据表.html">
+            
+                
+                    <a href="../05-sqlalchemy/04-定义模型类、创建数据表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        描述表结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-sqlalchemy/05-SQLAlchemy字段类型.html">
+            
+                
+                    <a href="../05-sqlalchemy/05-SQLAlchemy字段类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        SQLAlchemy字段类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="05-sqlalchemy/06-SQLAlchemy基本使用-插入.html">
+            
+                
+                    <a href="../05-sqlalchemy/06-SQLAlchemy基本使用-插入.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        基本使用-插入
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="05-sqlalchemy/07-SQLAlchemy基本使用-查询.html">
+            
+                
+                    <a href="../05-sqlalchemy/07-SQLAlchemy基本使用-查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        基本使用-查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="05-sqlalchemy/08-SQLAlchemy基本使用-修改.html">
+            
+                
+                    <a href="../05-sqlalchemy/08-SQLAlchemy基本使用-修改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        基本使用-修改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="05-sqlalchemy/09-SQLAlchemy基本使用-删除.html">
+            
+                
+                    <a href="../05-sqlalchemy/09-SQLAlchemy基本使用-删除.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        基本使用-删除
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="10" data-path="05-sqlalchemy/11-多对一关联操作.html">
+            
+                
+                    <a href="../05-sqlalchemy/11-多对一关联操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        多对一关联操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="05-sqlalchemy/12-多对多关联操作.html">
+            
+                
+                    <a href="../05-sqlalchemy/12-多对多关联操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        多对多关联操作
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >SQLAlchemy</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="sqlalchemy-&#x591A;&#x5BF9;&#x4E00;&#x5173;&#x8054;&#x64CD;&#x4F5C;">SQLAlchemy &#x591A;&#x5BF9;&#x4E00;&#x5173;&#x8054;&#x64CD;&#x4F5C;</h1>
+<h2 id="1-&#x51C6;&#x5907;">1. &#x51C6;&#x5907;</h2>
+<h3 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;">&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer, ForeignKey
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker, relationship
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;parent_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;parent_table&#x8868;&#x67E5;child_table,&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;children&#x5B57;&#x6BB5;,&#x53EA;&#x662F;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;</span>
+    <span class="hljs-comment"># &#x53C2;&#x6570;backref&#x76F8;&#x5F53;&#x4E8E;&#x7ED9;&#x7C7B;Child&#x7C7B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Child.parents&#x5C5E;&#x6027;&#x83B7;&#x53D6;child_table&#x8868;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;parent_table&#x8868;</span>
+    childrens = relationship(<span class="hljs-string">&apos;Child&apos;</span>, backref=<span class="hljs-string">&apos;parents&apos;</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;child_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>,autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    age = Column(Integer)
+    parent_id = Column(Integer, ForeignKey(<span class="hljs-string">&apos;parent_table.id&apos;</span>))
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;userinfo&#x8868;&#xFF08;&#x6240;&#x6709;&#x8868;&#x7ED3;&#x6784;&#xFF09;</span>
+Base.metadata.create_all(engine)
+</code></pre>
+<p><img src="../Images/05-sqlalchemy/image-20180810190226462.png" alt="image-20180810190226462"></p>
+<p><img src="../Images/05-sqlalchemy/image-20180810193746348.png" alt="image-20180810193746348"></p>
+<p><img src="../Images/05-sqlalchemy/image-20180810193808707.png" alt="image-20180810193808707"></p>
+<h2 id="2-&#x63D2;&#x5165;&#x6570;&#x636E;">2. &#x63D2;&#x5165;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer, ForeignKey
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker, relationship
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;parent_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;parent_table&#x8868;&#x67E5;child_table,&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;children&#x5B57;&#x6BB5;,&#x53EA;&#x662F;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;</span>
+    <span class="hljs-comment"># &#x53C2;&#x6570;backref&#x76F8;&#x5F53;&#x4E8E;&#x7ED9;&#x7C7B;Child&#x7C7B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Child.parents&#x5C5E;&#x6027;&#x83B7;&#x53D6;child_table&#x8868;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;parent_table&#x8868;</span>
+    childrens = relationship(<span class="hljs-string">&apos;Child&apos;</span>, backref=<span class="hljs-string">&apos;parents&apos;</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;child_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>,autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    age = Column(Integer)
+    parent_id = Column(Integer, ForeignKey(<span class="hljs-string">&apos;parent_table.id&apos;</span>))
+
+
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+p = Parent(name=<span class="hljs-string">&quot;&#x66F9;&#x64CD;&quot;</span>)
+c1 = Child(name=<span class="hljs-string">&quot;&#x66F9;&#x4E15;&quot;</span>, age=<span class="hljs-number">10</span>, parents=p)
+c2 = Child(name=<span class="hljs-string">&quot;&#x66F9;&#x690D;&quot;</span>, age=<span class="hljs-number">11</span>, parents=p)
+c3 = Child(name=<span class="hljs-string">&quot;&#x66F9;&#x5F70;&quot;</span>, age=<span class="hljs-number">12</span>, parents=p)
+c4 = Child(name=<span class="hljs-string">&quot;&#x66F9;&#x6602;&quot;</span>, age=<span class="hljs-number">13</span>, parents=p)
+c5 = Child(name=<span class="hljs-string">&quot;&#x66F9;&#x51B2;&quot;</span>, age=<span class="hljs-number">14</span>, parents=p)
+
+session.add_all([p, c1, c2, c3, c4, c5])
+session.commit()
+session.close()
+</code></pre>
+<p><img src="../Images/05-sqlalchemy/image-20180810194245352.png" alt="image-20180810194245352"></p>
+<h2 id="3-&#x67E5;&#x8BE2;">3. &#x67E5;&#x8BE2;</h2>
+<h3 id="&#x793A;&#x4F8B;1">&#x793A;&#x4F8B;1</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer, ForeignKey
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker, relationship
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;parent_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;parent_table&#x8868;&#x67E5;child_table,&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;children&#x5B57;&#x6BB5;,&#x53EA;&#x662F;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;</span>
+    <span class="hljs-comment"># &#x53C2;&#x6570;backref&#x76F8;&#x5F53;&#x4E8E;&#x7ED9;&#x7C7B;Child&#x7C7B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Child.parents&#x5C5E;&#x6027;&#x83B7;&#x53D6;child_table&#x8868;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;parent_table&#x8868;</span>
+    childrens = relationship(<span class="hljs-string">&apos;Child&apos;</span>, backref=<span class="hljs-string">&apos;parents&apos;</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;child_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>,autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    age = Column(Integer)
+    parent_id = Column(Integer, ForeignKey(<span class="hljs-string">&apos;parent_table.id&apos;</span>))
+
+
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x67E5;&#x8BE2;&#x51FA;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span>
+obj = session.query(Parent).filter(Parent.id == <span class="hljs-number">1</span>).one()
+print(obj.childrens)
+<span class="hljs-comment"># &#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;children&#xFF0C;&#x67E5;&#x51FA;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5173;&#x8054;age&#x5B57;&#x6BB5;&#x503C;</span>
+<span class="hljs-keyword">for</span> temp <span class="hljs-keyword">in</span> obj.childrens:
+    print(temp.name, temp.age)
+
+session.close()
+</code></pre>
+<p><img src="../Images/05-sqlalchemy/image-20180810194617223.png" alt="image-20180810194617223"></p>
+<h3 id="&#x793A;&#x4F8B;2">&#x793A;&#x4F8B;2</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer, ForeignKey
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker, relationship
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;parent_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;parent_table&#x8868;&#x67E5;child_table,&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;children&#x5B57;&#x6BB5;,&#x53EA;&#x662F;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;</span>
+    <span class="hljs-comment"># &#x53C2;&#x6570;backref&#x76F8;&#x5F53;&#x4E8E;&#x7ED9;&#x7C7B;Child&#x7C7B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Child.parents&#x5C5E;&#x6027;&#x83B7;&#x53D6;child_table&#x8868;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;parent_table&#x8868;</span>
+    childrens = relationship(<span class="hljs-string">&apos;Child&apos;</span>, backref=<span class="hljs-string">&apos;parents&apos;</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;child_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>,autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    age = Column(Integer)
+    parent_id = Column(Integer, ForeignKey(<span class="hljs-string">&apos;parent_table.id&apos;</span>))
+
+
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x67E5;&#x8BE2;&#x51FA;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span>
+obj = session.query(Child).filter(Child.id == <span class="hljs-number">2</span>).one()
+<span class="hljs-comment"># &#x6253;&#x5370;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5173;&#x8054;</span>
+print(obj.parents.name)
+
+session.close()
+</code></pre>
+<p><img src="../Images/05-sqlalchemy/image-20180810194836248.png" alt="image-20180810194836248"></p>
+<h3 id="&#x793A;&#x4F8B;3">&#x793A;&#x4F8B;3</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer, ForeignKey
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker, relationship
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;parent_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;parent_table&#x8868;&#x67E5;child_table,&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;children&#x5B57;&#x6BB5;,&#x53EA;&#x662F;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;</span>
+    <span class="hljs-comment"># &#x53C2;&#x6570;backref&#x76F8;&#x5F53;&#x4E8E;&#x7ED9;&#x7C7B;Child&#x7C7B;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Child.parents&#x5C5E;&#x6027;&#x83B7;&#x53D6;child_table&#x8868;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;parent_table&#x8868;</span>
+    childrens = relationship(<span class="hljs-string">&apos;Child&apos;</span>, backref=<span class="hljs-string">&apos;parents&apos;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&apos;id:%d,name=%s&apos;&quot;</span> % (self.id, self.name)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;child_table&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>,autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">20</span>))
+    age = Column(Integer)
+    parent_id = Column(Integer, ForeignKey(<span class="hljs-string">&apos;parent_table.id&apos;</span>))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&apos;id=%d,name=%s,age=%d&apos;&quot;</span> % (self.id, self.name, self.age)
+
+
+DBSession = sessionmaker(bind=engine)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x5185;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x51FA;Parent.id == Child.parent_id&#x7684;&#x7ED3;&#x679C;</span>
+q6 = session.query(Parent).join(Child).filter(Parent.id == Child.parent_id).all()
+print(q6)
+
+print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+
+<span class="hljs-comment"># &#x5185;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x51FA;Parent.id == Child.parent_id&#x7684;&#x7ED3;&#x679C;</span>
+q6 = session.query(Child).join(Parent).filter(Parent.id == Child.parent_id).all()
+print(q6)
+<span class="hljs-comment"># for temp in q6:</span>
+<span class="hljs-comment">#     print(type(temp))</span>
+<span class="hljs-comment">#     print(temp.name, temp.age)</span>
+
+print(<span class="hljs-string">&quot;-&quot;</span> * <span class="hljs-number">20</span>)
+
+<span class="hljs-comment"># &#x5185;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x51FA;Parent.id == Child.parent_id&#x7684;&#x7ED3;&#x679C;</span>
+q6 = session.query(Parent, Child).join(Child).filter(Parent.id == Child.parent_id).all()
+print(q6)
+<span class="hljs-comment"># for p, c in q6:</span>
+<span class="hljs-comment">#     print(p.name, c.name, c.age)</span>
+
+session.close()
+</code></pre>
+<p><img src="assets/image-20190506202226426.png" alt="image-20190506202226426"></p>
+<h2 id="4-relationship&#x653E;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x5F20;&#x8868;">4. relationship&#x653E;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x5F20;&#x8868;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> create_engine
+<span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, String, Integer, ForeignKey
+<span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> sessionmaker, relationship
+
+
+<span class="hljs-comment"># &#x94FE;&#x63A5;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x8981;&#x7528;&#x5230;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;</span>
+engine = create_engine(<span class="hljs-string">&apos;mysql+pymysql://root:python@localhost:3306/py3_sqlalchemy_2019?charset=utf8&apos;</span>)
+Base = declarative_base()  <span class="hljs-comment"># &#x751F;&#x6210;SQLORM&#x57FA;&#x7C7B;</span>
+
+
+<span class="hljs-comment"># &#x4E00;&#x5BF9;&#x591A;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Group</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;group&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    caption = Column(String(<span class="hljs-number">32</span>))
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">&apos;user&apos;</span>
+    id = Column(Integer, primary_key=<span class="hljs-keyword">True</span>, autoincrement=<span class="hljs-keyword">True</span>)
+    name = Column(String(<span class="hljs-number">32</span>))
+    group_id = Column(Integer, ForeignKey(<span class="hljs-string">&apos;group.id&apos;</span>))
+    <span class="hljs-comment"># &#x865A;&#x62DF;&#x521B;&#x5EFA;&#x5173;&#x7CFB;,relationship  &#x4E00;&#x822C;&#x662F;&#x8DDF;foreignkey &#x5728;&#x4E00;&#x8D77;&#x4F7F;&#x7528;</span>
+    group = relationship(<span class="hljs-string">&quot;Group&quot;</span>, backref=<span class="hljs-string">&apos;users&apos;</span>)
+
+    <span class="hljs-comment"># &#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x65B9;&#x5F0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        temp = <span class="hljs-string">&apos;%s-%s:%s&apos;</span> % (self.id, self.name, self.group_id)
+        <span class="hljs-keyword">return</span> temp
+
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x8868;</span>
+<span class="hljs-comment"># Base.metadata.create_all(engine)</span>
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;</span>
+DBSession = sessionmaker(bind=engine)
+<span class="hljs-comment"># &#x521B;&#x5EFA;session&#x5BF9;&#x8C61;</span>
+session = DBSession()  <span class="hljs-comment"># &#x751F;&#x6210;&#x94FE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5B9E;&#x4F8B;</span>
+
+<span class="hljs-comment"># &#x63D2;&#x5165;&#x6570;&#x636E;</span>
+g1 = Group(caption=<span class="hljs-string">&apos;&#x7814;&#x53D1;&apos;</span>)
+g2 = Group(caption=<span class="hljs-string">&apos;&#x6D4B;&#x8BD5;&apos;</span>)
+session.add_all([g1, g2])
+
+session.add_all([
+    User(name=<span class="hljs-string">&apos;&#x8001;&#x738B;&apos;</span>, group=g1),
+    User(name=<span class="hljs-string">&apos;&#x8001;&#x95EB;&apos;</span>, group=g1),
+    User(name=<span class="hljs-string">&apos;&#x8001;&#x9A6C;&apos;</span>, group=g2),
+    User(name=<span class="hljs-string">&apos;&#x8001;&#x53F6;&apos;</span>, group=g2)
+])
+
+session.commit()
+session.close()
+</code></pre>
+<h3 id="&#x65B0;&#x5EFA;&#x6570;&#x636E;&#x8868;">&#x65B0;&#x5EFA;&#x6570;&#x636E;&#x8868;</h3>
+<p><img src="../Images/05-sqlalchemy/image-20180811113222297.png" alt="image-20180811113222297"></p>
+<h3 id="&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;">&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;</h3>
+<p><img src="../Images/05-sqlalchemy/image-20180811113149538.png" alt="image-20180811113149538"></p>
+<h2 id="5-&#x603B;&#x8BA1;">5. &#x603B;&#x8BA1;</h2>
+<p><img src="assets/image-20190506203132060.png" alt="image-20190506203132060"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../05-sqlalchemy/09-SQLAlchemy基本使用-删除.html" class="navigation navigation-prev " aria-label="Previous page: 基本使用-删除"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../05-sqlalchemy/12-多对多关联操作.html" class="navigation navigation-next " aria-label="Next page: 多对多关联操作"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book SQLAlchemy -->
+<!-- End of book SQLAlchemy -->
+</html>

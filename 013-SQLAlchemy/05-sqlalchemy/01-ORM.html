@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book SQLAlchemy -->
+<!-- Start book SQLAlchemy -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>ORM | SQLAlchemy</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../05-sqlalchemy/02-SQLAlchemy.html" />
+    
+    
+    <link rel="prev" href="../index.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="1"
+        data-chapter-title="ORM"
+        data-filepath="05-sqlalchemy/01-ORM.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 10:39:33 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="05-sqlalchemy/01-ORM.html">
+            
+                
+                    <a href="../05-sqlalchemy/01-ORM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        ORM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="05-sqlalchemy/02-SQLAlchemy.html">
+            
+                
+                    <a href="../05-sqlalchemy/02-SQLAlchemy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        SQLAlchemy
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="05-sqlalchemy/03-准备工作.html">
+            
+                
+                    <a href="../05-sqlalchemy/03-准备工作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        准备工作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="05-sqlalchemy/04-定义模型类、创建数据表.html">
+            
+                
+                    <a href="../05-sqlalchemy/04-定义模型类、创建数据表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        描述表结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-sqlalchemy/05-SQLAlchemy字段类型.html">
+            
+                
+                    <a href="../05-sqlalchemy/05-SQLAlchemy字段类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        SQLAlchemy字段类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="05-sqlalchemy/06-SQLAlchemy基本使用-插入.html">
+            
+                
+                    <a href="../05-sqlalchemy/06-SQLAlchemy基本使用-插入.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        基本使用-插入
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="05-sqlalchemy/07-SQLAlchemy基本使用-查询.html">
+            
+                
+                    <a href="../05-sqlalchemy/07-SQLAlchemy基本使用-查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        基本使用-查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="05-sqlalchemy/08-SQLAlchemy基本使用-修改.html">
+            
+                
+                    <a href="../05-sqlalchemy/08-SQLAlchemy基本使用-修改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        基本使用-修改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="05-sqlalchemy/09-SQLAlchemy基本使用-删除.html">
+            
+                
+                    <a href="../05-sqlalchemy/09-SQLAlchemy基本使用-删除.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        基本使用-删除
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="05-sqlalchemy/11-多对一关联操作.html">
+            
+                
+                    <a href="../05-sqlalchemy/11-多对一关联操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        多对一关联操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="05-sqlalchemy/12-多对多关联操作.html">
+            
+                
+                    <a href="../05-sqlalchemy/12-多对多关联操作.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        多对多关联操作
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >SQLAlchemy</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="orm">ORM</h1>
+<h2 id="1-&#x76EE;&#x7684;">1. &#x76EE;&#x7684;</h2>
+<p>&#x5728;mini_web&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6587;&#x4EF6;<code>mini_web.py</code>&#x4E2D;&#x5B58;&#x653E;&#x5F88;&#x591A;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x4E2D;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x91CC;&#x57FA;&#x672C;&#x90FD;&#x6709;&#x6570;&#x636E;&#x5E93;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x662F;&#x4FEE;&#x6539;&#x5907;&#x6CE8;&#x7684;2&#x4E2A;&#x51FD;&#x6570;</p>
+<p><img src="assets/image-20190505083139491.png" alt="image-20190505083139491"></p>
+<p><img src="assets/image-20190505083044041.png" alt="image-20190505083044041"></p>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x5728;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x7684;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;URL&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x6574;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x57FA;&#x672C;&#x90FD;&#x4F1A;&#x6D89;&#x53CA;&#x5230;SQL&#x7684;&#x7F16;&#x5199;&#xFF0C;&#x867D;&#x7136;&#x4F7F;&#x7528;&#x539F;&#x751F;&#x7684;SQL&#x80FD;&#x591F;&#x8BA9;&#x81EA;&#x5DF1;&#x4E0D;&#x4F1A;&#x9057;&#x5FD8;&#x8FD9;&#x4E9B;SQL&#x8BED;&#x53E5;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x4E0D;&#x5C0F;&#x5FC3;&#x7684;&#x758F;&#x6F0F;&#x5BFC;&#x81F4;SQL&#x7F16;&#x5199;&#x6709;&#x95EE;&#x9898;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x8F83;&#x5927;&#x7684;&#x9690;&#x60A3;&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;&#x8981;&#x60F3;&#x5C3D;&#x91CF;&#x907F;&#x514D;SQL&#x7F16;&#x5199;&#x9519;&#x8BEF;&#xFF0C;&#x63D0;&#x5347;&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x4F1A;&#x5C06;&#x5BF9;SQL&#x7684;&#x64CD;&#x4F5C;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8BA9;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x53BB;&#x6267;&#x884C;SQL</p>
+<h2 id="2-orm">2. ORM</h2>
+<p>&#x5168;&#x79F0; <code>Object Relational Mapping</code>, &#x7FFB;&#x8BD1;&#x8FC7;&#x6765;&#x53EB;<code>&#x5BF9;&#x8C61;&#x5173;&#x7CFB;&#x6620;&#x5C04;</code>&#x3002;</p>
+<p>&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;ORM &#x5C06;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x4E0E;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x7C7B;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x79CD;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x6216;&#x8005;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x7C7B;&#x6216;&#x8005;&#x7C7B;&#x5B9E;&#x4F8B;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+<p><img src="../Images/05-sqlalchemy/124324t341323asdsd.png" alt="orm1"></p>
+<h2 id="3-&#x7406;&#x89E3;&#x56FE;&#x89E3;">3. &#x7406;&#x89E3;&#x56FE;&#x89E3;</h2>
+<p><img src="assets/image-20190505084958032.png" alt="image-20190505084958032"></p>
+<h2 id="4-&#x603B;&#x7ED3;">4. &#x603B;&#x7ED3;</h2>
+<ul>
+<li><p>&#x4E4B;&#x524D;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x65F6; &#x9700;&#x8981;&#x7F16;&#x5199;&#x7684;SQL&#xFF0C;&#x8FD9;&#x6837;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#xFF0C;&#x800C;&#x4E14;&#x6548;&#x7387;&#x8F83;&#x4F4E;&#xFF0C;&#x4E0D;&#x592A;&#x9002;&#x5408;&#x5FEB;&#x901F;&#x4E92;&#x8054;&#x7F51;&#x5F00;&#x53D1;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;ORM&#x5C06;&#x5BF9;SQL&#x8BED;&#x53E5;&#x7684;&#x7F16;&#x5199;&#x53D8;&#x6210;&#x4E86;&#x5BF9;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x7F16;&#x5199;&#xFF0C;&#x9700;&#x8981;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x65F6;&#x53EA;&#x9700;&#x8981;&#x64CD;&#x4F5C;&#x8FD9;&#x4E2A;&#x7C7B;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x9700;&#x8981;&#x7F16;&#x5199;SQL&#x8BED;&#x53E5;&#x6240;&#x4EE5;&#x4E0D;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#xFF0C;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x9AD8;</p>
+</li>
+<li>&#x4F7F;&#x7528;ORM&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5927;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x5F53;RDBMS&#x4ECE;&#x67D0;&#x79CD;&#x5207;&#x6362;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x65F6;&#xFF08;&#x4F8B;&#x5982;&#x4E4B;&#x524D;&#x662F;MySQL&#xFF0C;&#x540E;&#x671F;&#x8981;&#x7528;Oracle&#xFF09;&#xFF0C;&#x5207;&#x6362;&#x6210;&#x672C;&#x975E;&#x5E38;&#x4F4E;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: 联系方式"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../05-sqlalchemy/02-SQLAlchemy.html" class="navigation navigation-next " aria-label="Next page: SQLAlchemy"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book SQLAlchemy -->
+<!-- End of book SQLAlchemy -->
+</html>
