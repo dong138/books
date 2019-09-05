@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Scrapy框架 -->
+<!-- Start book Scrapy框架 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>阳光工程-3-封装字典 | Scrapy框架</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../03-scrapy入门案例/阳光工程-4-总结.html" />
+    
+    
+    <link rel="prev" href="../03-scrapy入门案例/阳光工程-2-合并数据.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="3.3"
+        data-chapter-title="阳光工程-3-封装字典"
+        data-filepath="03-scrapy入门案例/阳光工程-3-封装字典.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 11:12:18 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-scrapy的概念作用和工作流程.html">
+            
+                
+                    <a href="../01-scrapy的概念作用和工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        scrapy的概念作用和工作流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-scrapy的入门使用.html">
+            
+                
+                    <a href="../02-scrapy的入门使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        scrapy的入门使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-scrapy入门案例/index.html">
+            
+                
+                    <a href="../03-scrapy入门案例/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        scrapy入门案例：阳光工程
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="03-scrapy入门案例/阳光工程-1-下一页.html">
+            
+                
+                    <a href="../03-scrapy入门案例/阳光工程-1-下一页.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        阳光工程-1-下一页
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03-scrapy入门案例/阳光工程-2-合并数据.html">
+            
+                
+                    <a href="../03-scrapy入门案例/阳光工程-2-合并数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        阳光工程-2-合并数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="03-scrapy入门案例/阳光工程-3-封装字典.html">
+            
+                
+                    <a href="../03-scrapy入门案例/阳光工程-3-封装字典.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        阳光工程-3-封装字典
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03-scrapy入门案例/阳光工程-4-总结.html">
+            
+                
+                    <a href="../03-scrapy入门案例/阳光工程-4-总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04-crawlspider.html">
+            
+                
+                    <a href="../04-crawlspider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        crawlspider
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-scrapy管道的使用.html">
+            
+                
+                    <a href="../05-scrapy管道的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        scrapy管道的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="06-scrapy的debug、shell、配置.html">
+            
+                
+                    <a href="../06-scrapy的debug、shell、配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        scrapy的debug、shell、配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="07-scrapy中间件的使用.html">
+            
+                
+                    <a href="../07-scrapy中间件的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        scrapy中间件的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="08-scrapy模拟登陆.html">
+            
+                
+                    <a href="../08-scrapy模拟登陆.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        scrapy模拟登陆
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="09-scrapy_redis概念作用和流程.html">
+            
+                
+                    <a href="../09-scrapy_redis概念作用和流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        scrapy_redis概念作用和流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="10-研究scrapy-redis官方案例/index.html">
+            
+                
+                    <a href="../10-研究scrapy-redis官方案例/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        研究scrapy-redis官方案例
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="10-研究scrapy-redis官方案例/01-下载scrapy-redis官方案例.html">
+            
+                
+                    <a href="../10-研究scrapy-redis官方案例/01-下载scrapy-redis官方案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        下载scrapy-redis官方案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="10-研究scrapy-redis官方案例/02-案例：dmoz.html">
+            
+                
+                    <a href="../10-研究scrapy-redis官方案例/02-案例：dmoz.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        案例：dmoz
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="10-研究scrapy-redis官方案例/03-案例：myspider_redis.html">
+            
+                
+                    <a href="../10-研究scrapy-redis官方案例/03-案例：myspider_redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        案例：myspider_redis
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="10-研究scrapy-redis官方案例/04-案例：mycrawler_redis.html">
+            
+                
+                    <a href="../10-研究scrapy-redis官方案例/04-案例：mycrawler_redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        案例：mycrawler_redis
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="10-研究scrapy-redis官方案例/05-总结.html">
+            
+                
+                    <a href="../10-研究scrapy-redis官方案例/05-总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Scrapy框架</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6848;&#x4F8B;&#xFF1A;&#x9633;&#x5149;&#x5DE5;&#x7A0B;3baseitem">&#x6848;&#x4F8B;&#xFF1A;&#x9633;&#x5149;&#x5DE5;&#x7A0B;-3-BaseItem</h1>
+<blockquote>
+<p>items.py&#x4E2D;&#x5B9A;&#x4E49;BaseItem</p>
+</blockquote>
+<h2 id="1-baseitem&#x80FD;&#x591F;&#x505A;&#x4EC0;&#x4E48;">1. BaseItem&#x80FD;&#x591F;&#x505A;&#x4EC0;&#x4E48;</h2>
+<ol>
+<li>&#x5B9A;&#x4E49;item&#x5373;&#x63D0;&#x524D;&#x89C4;&#x5212;&#x597D;&#x54EA;&#x4E9B;&#x5B57;&#x6BB5;&#x9700;&#x8981;&#x6293;&#x53D6;&#xFF0C;&#x9632;&#x6B62;&#x624B;&#x8BEF;&#xFF1B;&#x914D;&#x5408;&#x6CE8;&#x91CA;&#x4E00;&#x8D77;&#x53EF;&#x4EE5;&#x6E05;&#x6670;&#x7684;&#x77E5;&#x9053;&#x8981;&#x6293;&#x53D6;&#x54EA;&#x4E9B;&#x5B57;&#x6BB5;&#xFF1B;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5;&#x4E0D;&#x80FD;&#x6293;&#x53D6;&#xFF1B;&#x5728;&#x5B57;&#x6BB5;&#x4E0D;&#x591A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#xFF1B;&#x53EF;&#x4EE5;&#x5728;&#x722C;&#x866B;&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x5B57;&#x5178;&#x6765;&#x4EE3;&#x66FF;</li>
+<li>&#x4F7F;&#x7528;scrapy&#x7684;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7EC4;&#x4EF6;&#x9700;&#x8981;BaseItem&#x505A;&#x652F;&#x6301;&#xFF0C;&#x5982;scrapy&#x7684;ImagesPipeline&#x7BA1;&#x9053;&#x7C7B;&#xFF0C;&#x767E;&#x5EA6;&#x641C;&#x7D22;&#x4E86;&#x89E3;&#x66F4;&#x591A;</li>
+<li>&#x5728;python&#x5927;&#x591A;&#x6570;&#x6846;&#x67B6;&#x4E2D;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x6846;&#x67B6;&#x90FD;&#x4F1A;&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;(&#x5728;python&#x81EA;&#x5E26;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x5C01;&#x88C5;)&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x589E;&#x52A0;&#x529F;&#x80FD;&#xFF0C;&#x589E;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;<ul>
+<li>&#x5982;response.xpath()&#x7684;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x5177;&#x6709;extract()&#x7B49;&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-&#x5B9A;&#x4E49;baseitem">2. &#x5B9A;&#x4E49;BaseItem</h2>
+<p>&#x5728;<code>items.py</code>&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x8981;&#x63D0;&#x53D6;&#x7684;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> scrapy
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YgItem</span><span class="hljs-params">(scrapy.Item)</span>:</span>
+    <span class="hljs-comment"># define the fields for your item here like:</span>
+    <span class="hljs-comment"># name = scrapy.Field()</span>
+    num = scrapy.Field()  <span class="hljs-comment"># &#x5E8F;&#x53F7;</span>
+    subject = scrapy.Field()  <span class="hljs-comment"># &#x4E3B;&#x9898;</span>
+    href = scrapy.Field()  <span class="hljs-comment"># &#x5185;&#x5BB9;&#x8D85;&#x94FE;&#x63A5;</span>
+    status = scrapy.Field()  <span class="hljs-comment"># &#x72B6;&#x6001;</span>
+    nick_name = scrapy.Field()  <span class="hljs-comment"># &#x7528;&#x6237;&#x6635;&#x79F0;</span>
+    publish_date = scrapy.Field()  <span class="hljs-comment"># &#x53D1;&#x5E03;&#x65E5;&#x671F;</span>
+    content = scrapy.Field()  <span class="hljs-comment"># &#x95EE;&#x9898;&#x8BE6;&#x60C5;</span>
+</code></pre>
+<h2 id="3-&#x4F7F;&#x7528;baseitem">3. &#x4F7F;&#x7528;BaseItem</h2>
+<p>BaseItem&#x5B9A;&#x4E49;&#x540E;&#x9700;&#x8981;&#x5728;&#x722C;&#x866B;&#x4E2D;&#x5BFC;&#x5165;&#x5E76;&#x4E14;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x4E4B;&#x540E;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x548C;&#x4F7F;&#x7528;&#x5B57;&#x5178;&#x76F8;&#x540C;</p>
+<p><img src="assets/image-20190722140917736.png" alt="image-20190722140917736"></p>
+<h2 id="4-&#x6CE8;&#x610F;">4. &#x6CE8;&#x610F;</h2>
+<ul>
+<li>python&#x4E2D;&#x7684;&#x5BFC;&#x5165;&#x8DEF;&#x5F84;&#x8981;&#x8BC0;&#xFF1A;&#x4ECE;&#x54EA;&#x91CC;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#xFF0C;&#x5C31;&#x4ECE;&#x54EA;&#x91CC;&#x5F00;&#x59CB;&#x5BFC;&#x5165;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../03-scrapy入门案例/阳光工程-2-合并数据.html" class="navigation navigation-prev " aria-label="Previous page: 阳光工程-2-合并数据"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../03-scrapy入门案例/阳光工程-4-总结.html" class="navigation navigation-next " aria-label="Next page: 总结"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Scrapy框架 -->
+<!-- End of book Scrapy框架 -->
+</html>
