@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Go基础 -->
+<!-- Start book Go基础 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>自定义包 | Go基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../10-复合数据类型/index.html" />
+    
+    
+    <link rel="prev" href="../09-工程管理（上）/index.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="9.1"
+        data-chapter-title="自定义包"
+        data-filepath="09-工程管理（上）/01-自定义包.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 22:05:38 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程说明、老师联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-初试Go语言/01-初试Go语言.html">
+            
+                
+                    <a href="../01-初试Go语言/01-初试Go语言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        初试Go语言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-注释/02-注释.html">
+            
+                
+                    <a href="../02-注释/02-注释.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        注释
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-变量/03-变量.html">
+            
+                
+                    <a href="../03-变量/03-变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04-基础数据类型/04-基础数据类型.html">
+            
+                
+                    <a href="../04-基础数据类型/04-基础数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        基础数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-常量/05-常量.html">
+            
+                
+                    <a href="../05-常量/05-常量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        常量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="06-运算符/06-运算符.html">
+            
+                
+                    <a href="../06-运算符/06-运算符.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        运算符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="07-流程控制/index.html">
+            
+                
+                    <a href="../07-流程控制/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        流程控制
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="07-流程控制/01-顺序结构.html">
+            
+                
+                    <a href="../07-流程控制/01-顺序结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        顺序结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="07-流程控制/02-if判断.html">
+            
+                
+                    <a href="../07-流程控制/02-if判断.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        选择结构-if判断
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="07-流程控制/03-switch.html">
+            
+                
+                    <a href="../07-流程控制/03-switch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        选择结构-switch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="07-流程控制/04-循环.html">
+            
+                
+                    <a href="../07-流程控制/04-循环.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        循环结构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="08-函数/index.html">
+            
+                
+                    <a href="../08-函数/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        函数
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="08-函数/01-函数学习1.html">
+            
+                
+                    <a href="../08-函数/01-函数学习1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        函数基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="08-函数/02-函数学习2.html">
+            
+                
+                    <a href="../08-函数/02-函数学习2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        函数高级
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="09-工程管理（上）/index.html">
+            
+                
+                    <a href="../09-工程管理（上）/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        工程管理(上)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="9.1" data-path="09-工程管理（上）/01-自定义包.html">
+            
+                
+                    <a href="../09-工程管理（上）/01-自定义包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        自定义包
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="10-复合数据类型/index.html">
+            
+                
+                    <a href="../10-复合数据类型/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        复合数据类型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="10-复合数据类型/01-数组.html">
+            
+                
+                    <a href="../10-复合数据类型/01-数组.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        数组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="10-复合数据类型/02-切片.html">
+            
+                
+                    <a href="../10-复合数据类型/02-切片.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        切片
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Go基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x81EA;&#x5B9A;&#x4E49;&#x5305;">&#x81EA;&#x5B9A;&#x4E49;&#x5305;</h1>
+<h2 id="1-&#x4EC0;&#x4E48;&#x662F;&#x5305;">1. &#x4EC0;&#x4E48;&#x662F;&#x5305;</h2>
+<p>&#x5728;&#x7B2C;1&#x5929;&#x7684;&#x8BFE;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BB2;&#x89E3;&#x4E86;&#x5173;&#x4E8E;<code>&#x5305;</code>&#x7684;&#x6982;&#x5FF5;&#xFF0C;<code>&#x5305;</code>&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;&#xFF0C;&#x6807;&#x5FD7;&#x7740;&#x4EE3;&#x7801;&#x662F;&#x6765;&#x81EA;&#x54EA;&#x513F;&#xFF0C;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x76F4;&#x767D;&#x70B9;&#x8BB2;&#xFF1A;&#x901A;&#x8FC7;&#x5305;&#x5BF9;&#x591A;&#x4E2A;<code>.go</code>&#x6587;&#x4EF6;&#x6216;&#x8005;&#x591A;&#x4E2A;<code>&#x51FD;&#x6570;</code>&#x8FDB;&#x884C;&#x7BA1;&#x7406;</p>
+<h2 id="2-&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x5305;">2. &#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x6709;&#x5305;</h2>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x628A;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x5199;<code>&#x5728;main( )</code>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x60C5;&#x51B5;&#x5462;&#xFF1F;</p>
+<p>&#x4EE3;&#x7801;&#x6DF7;&#x4E71;&#xFF0C;&#x975E;&#x5E38;&#x4E0D;&#x5BB9;&#x6613;&#x7BA1;&#x7406;&#x3002;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x9762;&#x4E34;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF1A;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x5199;&#x5728;&#x4E86;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x505A;&#x7684;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x91CF;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x6587;&#x4EF6;&#x4F1A;&#x53D8;&#x7684;&#x975E;&#x5E38;&#x81C3;&#x80BF;&#xFF0C;&#x4EE3;&#x7801;&#x4E5F;&#x4F1A;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x96BE;&#x7BA1;&#x7406;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x8981;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x8981;&#x5C06;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;UserInfo.go&#x6587;&#x4EF6;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;&#x7528;&#x6237;&#x7684;&#x6DFB;&#x52A0;&#x51FD;&#x6570;&#xFF0C;&#x4FEE;&#x6539;&#x51FD;&#x6570;&#xFF0C;&#x5220;&#x9664;&#x51FD;&#x6570;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
+<h2 id="3-&#x600E;&#x6837;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5305;">3. &#x600E;&#x6837;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5305;</h2>
+<p>&#x89C1; &#x56FE;&#x793A;</p>
+<h2 id="4-&#x505A;&#x7684;&#x4F5C;&#x7528;">4. &#x505A;&#x7684;&#x4F5C;&#x7528;</h2>
+<p>&#x901A;&#x4FD7;&#x70B9;&#x8BF4;&#xFF1A;&#x5408;&#x7406;&#x5206;&#x5316;&#x4EE3;&#x7801;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../09-工程管理（上）/index.html" class="navigation navigation-prev " aria-label="Previous page: 工程管理(上)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../10-复合数据类型/index.html" class="navigation navigation-next " aria-label="Next page: 复合数据类型"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Go基础 -->
+<!-- End of book Go基础 -->
+</html>
