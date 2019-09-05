@@ -1,0 +1,720 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book 多任务编程 -->
+<!-- Start book 多任务编程 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>案例：并发TCP服务器 | 多任务编程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../01day/08-队列.html" />
+    
+    
+    <link rel="prev" href="../01day/06-创建线程的另外一种方式.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="案例：并发TCP服务器"
+        data-filepath="01day/07-案例：并发TCP服务器.md"
+        data-basepath=".."
+        data-revision="Thu Sep 05 2019 09:38:36 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01day/index.html">
+            
+                
+                    <a href="../01day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        多线程-1
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01day/01-引入多任务.html">
+            
+                
+                    <a href="../01day/01-引入多任务.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        引入多任务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01day/02-多任务的概念.html">
+            
+                
+                    <a href="../01day/02-多任务的概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        多任务的概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01day/03-线程.html">
+            
+                
+                    <a href="../01day/03-线程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        线程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="01day/04-创建线程时传递参数.html">
+            
+                
+                    <a href="../01day/04-创建线程时传递参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        创建线程时传递参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="01day/05-案例：可同时收发数据的UDP聊天程序.html">
+            
+                
+                    <a href="../01day/05-案例：可同时收发数据的UDP聊天程序.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        案例：可同时收发数据的UDP聊天程序
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02day/index.html">
+            
+                
+                    <a href="../02day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        多线程-2
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="01day/06-创建线程的另外一种方式.html">
+            
+                
+                    <a href="../01day/06-创建线程的另外一种方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        创建线程的另外一种方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="01day/07-案例：并发TCP服务器.html">
+            
+                
+                    <a href="../01day/07-案例：并发TCP服务器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        案例：并发TCP服务器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="01day/08-队列.html">
+            
+                
+                    <a href="../01day/08-队列.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        队列
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="01day/09-案例：带有聊天记录的UDP聊天程序.html">
+            
+                
+                    <a href="../01day/09-案例：带有聊天记录的UDP聊天程序.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        案例：带有聊天记录的UDP聊天程序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="01day/10-多线程-共享全局变量.html">
+            
+                
+                    <a href="../01day/10-多线程-共享全局变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        多线程-共享全局变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="01day/11-多线程-共享全局变量问题.html">
+            
+                
+                    <a href="../01day/11-多线程-共享全局变量问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        多线程-共享全局变量-问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="01day/12-互斥锁.html">
+            
+                
+                    <a href="../01day/12-互斥锁.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        互斥锁
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03day/index.html">
+            
+                
+                    <a href="../03day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        多进程-1
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="03day/01-进程.html">
+            
+                
+                    <a href="../03day/01-进程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        进程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="03day/02-创建进程方式1.html">
+            
+                
+                    <a href="../03day/02-创建进程方式1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        创建进程方式1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="03day/03-创建进程方式2.html">
+            
+                
+                    <a href="../03day/03-创建进程方式2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        创建进程方式2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="03day/04-传递参数.html">
+            
+                
+                    <a href="../03day/04-传递参数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        传递参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="03day/05-进程不共享全局变量.html">
+            
+                
+                    <a href="../03day/05-进程不共享全局变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        进程不共享全局变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="03day/06-进程间通信-Queue.html">
+            
+                
+                    <a href="../03day/06-进程间通信-Queue.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        进程间通信-Queue
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04day/index.html">
+            
+                
+                    <a href="../04day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        多进程-2
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="03day/07-创建进程方式3.html">
+            
+                
+                    <a href="../03day/07-创建进程方式3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        创建进程方式3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="03day/08-进程池通信-Queue.html">
+            
+                
+                    <a href="../03day/08-进程池通信-Queue.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        进程池通信-Queue
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="03day/09-案例：文件夹copy程序.html">
+            
+                
+                    <a href="../03day/09-案例：文件夹copy程序.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        案例：文件夹copy程序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="03day/10-进程、线程对比.html">
+            
+                
+                    <a href="../03day/10-进程、线程对比.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        进程VS线程
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >多任务编程</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6848;&#x4F8B;&#xFF1A;&#x5E76;&#x53D1;tcp&#x670D;&#x52A1;&#x5668;">&#x6848;&#x4F8B;&#xFF1A;&#x5E76;&#x53D1;TCP&#x670D;&#x52A1;&#x5668;</h1>
+<h2 id="1-&#x5F15;&#x5165;">1. &#x5F15;&#x5165;</h2>
+<blockquote>
+<p>&#x4E4B;&#x524D;&#x7F16;&#x5199;&#x7684;TCP&#x670D;&#x52A1;&#x5668;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x53EA;&#x80FD;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x4E3A;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x8FD9;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x5173;&#x95ED;&#x4E4B;&#x540E;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#x3002;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x670D;&#x52A1;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x6765;&#x5B8C;&#x6210;TCP&#x7684;&#x670D;&#x52A1;&#x5668;</p>
+</blockquote>
+<h2 id="2-&#x53C2;&#x8003;&#x4EE3;&#x7801;">2. &#x53C2;&#x8003;&#x4EE3;&#x7801;</h2>
+<h3 id="&#x4E4B;&#x524D;&#x7684;&#x5355;&#x4EFB;&#x52A1;tcp&#x670D;&#x52A1;&#x5668;">&#x4E4B;&#x524D;&#x7684;&#x5355;&#x4EFB;&#x52A1;TCP&#x670D;&#x52A1;&#x5668;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+
+
+<span class="hljs-comment"># 1. &#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;</span>
+server_s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+<span class="hljs-comment"># 2. &#x7ED1;&#x5B9A;&#x672C;&#x5730;&#x4FE1;&#x606F;</span>
+server_s.bind((<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-number">7890</span>))
+
+<span class="hljs-comment"># 3. &#x5C06;&#x5957;&#x63A5;&#x5B57;&#x7531;&#x9ED8;&#x8BA4;&#x7684;&#x4E3B;&#x52A8;&#x94FE;&#x63A5;&#x6A21;&#x5F0F;&#x6539;&#x4E3A;&#x88AB;&#x52A8;&#x6A21;&#x5F0F;&#xFF08;&#x76D1;&#x542C;&#x6A21;&#x5757;&#xFF09;</span>
+server_s.listen(<span class="hljs-number">128</span>)
+
+<span class="hljs-comment"># 4. &#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x94FE;&#x63A5;</span>
+new_s, client_info = server_s.accept()
+print(client_info)
+
+<span class="hljs-comment"># 5. &#x63A5;&#x6536;/&#x53D1;&#x9001;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    recv_content = new_s.recv(<span class="hljs-number">1024</span>)
+    <span class="hljs-keyword">if</span> len(recv_content) != <span class="hljs-number">0</span>:
+        print(recv_content)
+    <span class="hljs-keyword">else</span>:
+        new_s.close()
+        <span class="hljs-keyword">break</span>
+
+<span class="hljs-comment"># 6. &#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;</span>
+server_s.close()
+</code></pre>
+<h3 id="&#x5E76;&#x53D1;tcp&#x670D;&#x52A1;&#x5668;">&#x5E76;&#x53D1;TCP&#x670D;&#x52A1;&#x5668;</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket
+<span class="hljs-keyword">import</span> threading
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HandleData</span><span class="hljs-params">(threading.Thread)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, client_socket)</span>:</span>
+        super().__init__()
+        self.client_socket = client_socket
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># &#x63A5;&#x6536;/&#x53D1;&#x9001;&#x6570;&#x636E;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            recv_content = self.client_socket.recv(<span class="hljs-number">1024</span>)
+            <span class="hljs-keyword">if</span> len(recv_content) != <span class="hljs-number">0</span>:
+                print(recv_content)
+                self.client_socket.send(recv_content)
+            <span class="hljs-keyword">else</span>:
+                self.client_socket.close()
+                <span class="hljs-keyword">break</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__del__</span><span class="hljs-params">(self)</span>:</span>
+        self.client_socket.close()
+
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TCPServer</span><span class="hljs-params">(threading.Thread)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, port)</span>:</span>
+        <span class="hljs-comment"># &#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-comment"># threading.Thread.__init__(self)</span>
+        super().__init__()
+
+        <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;</span>
+        self.server_s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        <span class="hljs-comment"># &#x7ED1;&#x5B9A;&#x672C;&#x5730;&#x4FE1;&#x606F;</span>
+        self.server_s.bind((<span class="hljs-string">&quot;&quot;</span>, port))
+
+        <span class="hljs-comment"># &#x5C06;&#x5957;&#x63A5;&#x5B57;&#x7531;&#x9ED8;&#x8BA4;&#x7684;&#x4E3B;&#x52A8;&#x94FE;&#x63A5;&#x6A21;&#x5F0F;&#x6539;&#x4E3A;&#x88AB;&#x52A8;&#x6A21;&#x5F0F;&#xFF08;&#x76D1;&#x542C;&#x6A21;&#x5757;&#xFF09;</span>
+        self.server_s.listen(<span class="hljs-number">128</span>)
+
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># &#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x94FE;&#x63A5;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            new_s, client_info = self.server_s.accept()
+            print(client_info)
+
+            <span class="hljs-comment"># t = HandleData(new_s)</span>
+            <span class="hljs-comment"># t.start()</span>
+            HandleData(new_s).start()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__del__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># &#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;</span>
+        self.server_s.close()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    tcp_server = TCPServer(<span class="hljs-number">7788</span>)  <span class="hljs-comment"># 7788&#x8868;&#x793A;TCP&#x8981;&#x7ED1;&#x5B9A;&#x7684;&#x7AEF;&#x53E3;</span>
+    tcp_server.start()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    main()
+</code></pre>
+<h3 id="&#x8FD0;&#x884C;&#x6548;&#x679C;">&#x8FD0;&#x884C;&#x6548;&#x679C;</h3>
+<h4 id="&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;">&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF1A;</h4>
+<p><img src="assets/image-20181213131310256-4677990.png" alt="image-20181213131310256"></p>
+<h4 id="&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;">&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</h4>
+<p><img src="assets/image-20181213131140489-4677900.png" alt="image-20181213131140489"></p>
+<h3 id="3-&#x5C0F;&#x7ED3;">3. &#x5C0F;&#x7ED3;</h3>
+<ol>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;threading.Thread&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;</li>
+<li>&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x7C7B;&#x4E00;&#x6837;&#xFF0C;&#x7ED9;&#x5B83;&#x7684;<code>__init__</code>&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x53C2;&#x6570;</li>
+<li>&#x5728;<code>__init__</code>&#x65B9;&#x6CD5;&#x4E2D;&#x901A;&#x8FC7;<code>super().__init__()</code>&#x8C03;&#x7528;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;&#x80FD;&#x591F;&#x4FDD;&#x8BC1;&#x7236;&#x7C7B;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x6267;&#x884C;</li>
+<li>&#x53EF;&#x4EE5;&#x5728;<code>__del__</code>&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;<code>close()</code>&#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../01day/06-创建线程的另外一种方式.html" class="navigation navigation-prev " aria-label="Previous page: 创建线程的另外一种方式"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../01day/08-队列.html" class="navigation navigation-next " aria-label="Next page: 队列"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book 多任务编程 -->
+<!-- End of book 多任务编程 -->
+</html>
