@@ -1,0 +1,828 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    <!-- Start book Go基础 -->
+<!-- Start book Go基础 -->
+    <head>
+        <!-- head:start -->
+<!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>结构体 | Go基础</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-emphasize/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../10-复合数据类型/06-指针.html" />
+    
+    
+    <link rel="prev" href="../10-复合数据类型/04-Map.html" />
+    
+
+        <!-- head:end -->
+<!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+<!-- body:start -->
+        
+    <div class="book"
+        data-level="10.5"
+        data-chapter-title="结构体"
+        data-filepath="10-复合数据类型/05-结构体.md"
+        data-basepath=".."
+        data-revision="Sun Sep 08 2019 14:32:03 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程说明、老师联系方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01-初试Go语言/01-初试Go语言.html">
+            
+                
+                    <a href="../01-初试Go语言/01-初试Go语言.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        初试Go语言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="02-注释/02-注释.html">
+            
+                
+                    <a href="../02-注释/02-注释.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        注释
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="03-变量/03-变量.html">
+            
+                
+                    <a href="../03-变量/03-变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="04-基础数据类型/04-基础数据类型.html">
+            
+                
+                    <a href="../04-基础数据类型/04-基础数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        基础数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="05-常量/05-常量.html">
+            
+                
+                    <a href="../05-常量/05-常量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        常量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="06-运算符/06-运算符.html">
+            
+                
+                    <a href="../06-运算符/06-运算符.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        运算符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="07-流程控制/index.html">
+            
+                
+                    <a href="../07-流程控制/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        流程控制
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="07-流程控制/01-顺序结构.html">
+            
+                
+                    <a href="../07-流程控制/01-顺序结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        顺序结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="07-流程控制/02-if判断.html">
+            
+                
+                    <a href="../07-流程控制/02-if判断.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        选择结构-if判断
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="07-流程控制/03-switch.html">
+            
+                
+                    <a href="../07-流程控制/03-switch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        选择结构-switch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="07-流程控制/04-循环.html">
+            
+                
+                    <a href="../07-流程控制/04-循环.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        循环结构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="08-函数/index.html">
+            
+                
+                    <a href="../08-函数/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        函数
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="08-函数/01-函数学习1.html">
+            
+                
+                    <a href="../08-函数/01-函数学习1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        函数基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="08-函数/02-函数学习2.html">
+            
+                
+                    <a href="../08-函数/02-函数学习2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        函数高级
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="09-工程管理（上）/index.html">
+            
+                
+                    <a href="../09-工程管理（上）/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        工程管理(上)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="09-工程管理（上）/01-自定义包.html">
+            
+                
+                    <a href="../09-工程管理（上）/01-自定义包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        自定义包
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="10-复合数据类型/index.html">
+            
+                
+                    <a href="../10-复合数据类型/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        复合数据类型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="10-复合数据类型/01-数组.html">
+            
+                
+                    <a href="../10-复合数据类型/01-数组.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        数组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="10-复合数据类型/02-切片.html">
+            
+                
+                    <a href="../10-复合数据类型/02-切片.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        切片
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="10-复合数据类型/03-字符串.html">
+            
+                
+                    <a href="../10-复合数据类型/03-字符串.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        字符串
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="10-复合数据类型/04-Map.html">
+            
+                
+                    <a href="../10-复合数据类型/04-Map.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        Map
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="10.5" data-path="10-复合数据类型/05-结构体.html">
+            
+                
+                    <a href="../10-复合数据类型/05-结构体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        结构体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="10-复合数据类型/06-指针.html">
+            
+                
+                    <a href="../10-复合数据类型/06-指针.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.6.</b>
+                        
+                        指针
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="11-面向对象/index.html">
+            
+                
+                    <a href="../11-面向对象/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        面向对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="12-异常处理/index.html">
+            
+                
+                    <a href="../12-异常处理/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        异常处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="13-文本文件处理/index.html">
+            
+                
+                    <a href="../13-文本文件处理/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        文本文件处理
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Go基础</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7ED3;&#x6784;&#x4F53;">&#x7ED3;&#x6784;&#x4F53;</h1>
+<h2 id="1-&#x5F15;&#x5165;">1. &#x5F15;&#x5165;</h2>
+<p>&#x73B0;&#x5728;&#x6709;&#x4E00;&#x4E2A;&#x9700;&#x6C42;&#xFF0C;&#x8981;&#x6C42;&#x5B58;&#x50A8;&#x5B66;&#x751F;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5B66;&#x751F;&#x7684;&#x5B66;&#x53F7;&#xFF0C;&#x5B66;&#x751F;&#x7684;&#x59D3;&#x540D;&#xFF0C;&#x5E74;&#x9F84;&#xFF0C;&#x5BB6;&#x5EAD;&#x4F4F;&#x5740;&#x7B49;&#x3002;&#x6309;&#x7167;&#x4EE5;&#x524D;&#x5B66;&#x4E60;&#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF0C;</p>
+<p>&#x53EF;&#x4EE5;&#x4EE5;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5B58;&#x50A8;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-keyword">func</span> main()  {
+    <span class="hljs-keyword">var</span> id <span class="hljs-typename">int</span>
+    <span class="hljs-keyword">var</span> name <span class="hljs-typename">string</span>
+    <span class="hljs-keyword">var</span> sex <span class="hljs-typename">bool</span>
+    <span class="hljs-keyword">var</span> age <span class="hljs-typename">int</span>
+    <span class="hljs-keyword">var</span> address <span class="hljs-typename">string</span>
+    <span class="hljs-keyword">var</span> weight <span class="hljs-typename">int</span>
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5229;&#x4E8E;&#x6570;&#x636E;&#x7684;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x5BF9;&#x67D0;&#x4E2A;&#x9700;&#x8981;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8003;&#x8651;<code>&#x7ED3;&#x6784;&#x4F53;</code></p>
+<h2 id="2-&#x7ED3;&#x6784;&#x4F53;">2. &#x7ED3;&#x6784;&#x4F53;</h2>
+<p>&#x7ED3;&#x6784;&#x4F53;&#xFF1A;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x5C06;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x7EC4;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x6765;&#x8868;&#x793A;&#x6570;&#x636E;</p>
+<h2 id="3-&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;">3. &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;</h2>
+<p>&#x57FA;&#x672C;&#x683C;&#x5F0F;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> &#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;&#x540D; <span class="hljs-keyword">struct</span>{
+    &#x6210;&#x5458;&#x53D8;&#x91CF;&#x540D;<span class="hljs-number">1</span> &#x7C7B;&#x578B;<span class="hljs-number">1</span>
+    &#x6210;&#x5458;&#x53D8;&#x91CF;&#x540D;<span class="hljs-number">2</span> &#x7C7B;&#x578B;<span class="hljs-number">2</span>
+    &#x6210;&#x5458;&#x53D8;&#x91CF;&#x540D;<span class="hljs-number">3</span> &#x7C7B;&#x578B;<span class="hljs-number">3</span>
+    ...
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<ul>
+<li>&#x5927;&#x62EC;&#x53F7;&#x4E2D;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x6210;&#x5458;&#xFF0C;&#x6CE8;&#x610F;&#x5728;&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x6210;&#x5458;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x52A0;<code>var</code></li>
+</ul>
+<h2 id="4-&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;">4. &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;</h2>
+<h3 id="&#x65B9;&#x5F0F;1">&#x65B9;&#x5F0F;1</h3>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+<span class="hljs-keyword">var</span> xiaomign Student = Student{<span class="hljs-number">101</span>, <span class="hljs-string">&quot;dongge&quot;</span>, <span class="hljs-constant">true</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">100</span>}
+</code></pre>
+<h3 id="&#x65B9;&#x5F0F;2">&#x65B9;&#x5F0F;2</h3>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+xiaoming := Student{<span class="hljs-string">&quot;dongge&quot;</span>, <span class="hljs-constant">true</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">100</span>}
+</code></pre>
+<h3 id="&#x65B9;&#x5F0F;3">&#x65B9;&#x5F0F;3</h3>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+xiaoming := Student{name: <span class="hljs-string">&quot;dongge&quot;</span>, sex: <span class="hljs-constant">true</span>, weight: <span class="hljs-number">100</span>}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<ul>
+<li>&#x987A;&#x5E8F;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x503C;&#x7684;&#x987A;&#x5E8F;&#x4E0E;&#x7ED3;&#x6784;&#x4F53;&#x6210;&#x5458;&#x7684;&#x987A;&#x5E8F;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</li>
+</ul>
+<h2 id="5-&#x8D4B;&#x503C;&#x3001;&#x53D6;&#x503C;">5. &#x8D4B;&#x503C;&#x3001;&#x53D6;&#x503C;</h2>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-keyword">func</span> main()  {
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;</span>
+    <span class="hljs-keyword">type</span> Student <span class="hljs-keyword">struct</span> {
+        id <span class="hljs-typename">int</span>
+        name <span class="hljs-typename">string</span>
+        sex <span class="hljs-typename">bool</span>
+        age <span class="hljs-typename">int</span>
+        address <span class="hljs-typename">string</span>
+        weight <span class="hljs-typename">int</span>
+    }
+
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+    xiaoming := Student{name: <span class="hljs-string">&quot;dongge&quot;</span>, sex: <span class="hljs-constant">true</span>, weight: <span class="hljs-number">100</span>}
+
+    <span class="hljs-comment">// &#x7ED9;&#x7ED3;&#x6784;&#x4F53;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x8D4B;&#x503C;</span>
+    xiaoming.id = <span class="hljs-number">101</span>
+    xiaoming.age = <span class="hljs-number">19</span>
+    xiaoming.address = <span class="hljs-string">&quot;shandong&quot;</span>
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7ED3;&#x6784;&#x4F53;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x503C;</span>
+    fmt.Println(xiaoming.id)
+    fmt.Println(xiaoming.name)
+    fmt.Println(xiaoming.sex)
+    fmt.Println(xiaoming.age)
+    fmt.Println(xiaoming.address)
+    fmt.Println(xiaoming.weight)
+}
+</code></pre>
+<p><img src="assets/image-20190908131552700.png" alt=""></p>
+<h2 id="6-&#x6BD4;&#x8F83;&#x3001;&#x8D4B;&#x503C;&#x6574;&#x4F53;">6. &#x6BD4;&#x8F83;&#x3001;&#x8D4B;&#x503C;&#x6574;&#x4F53;</h2>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-keyword">func</span> main()  {
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;</span>
+    <span class="hljs-keyword">type</span> Student <span class="hljs-keyword">struct</span> {
+        id <span class="hljs-typename">int</span>
+        name <span class="hljs-typename">string</span>
+        sex <span class="hljs-typename">bool</span>
+        age <span class="hljs-typename">int</span>
+        address <span class="hljs-typename">string</span>
+        weight <span class="hljs-typename">int</span>
+    }
+
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+    xiaoming := Student{name: <span class="hljs-string">&quot;dongge&quot;</span>, sex: <span class="hljs-constant">true</span>, weight: <span class="hljs-number">100</span>}
+    laowang := Student{name: <span class="hljs-string">&quot;dongge&quot;</span>, sex: <span class="hljs-constant">true</span>, weight: <span class="hljs-number">100</span>}
+
+    fmt.Println(xiaoming == laowang)
+
+}
+</code></pre>
+<p><img src="assets/image-20190908131712510.png" alt=""></p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-keyword">func</span> main()  {
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;</span>
+    <span class="hljs-keyword">type</span> Student <span class="hljs-keyword">struct</span> {
+        id <span class="hljs-typename">int</span>
+        name <span class="hljs-typename">string</span>
+        sex <span class="hljs-typename">bool</span>
+        age <span class="hljs-typename">int</span>
+        address <span class="hljs-typename">string</span>
+        weight <span class="hljs-typename">int</span>
+    }
+
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+    xiaoming := Student{name: <span class="hljs-string">&quot;dongge&quot;</span>, sex: <span class="hljs-constant">true</span>, weight: <span class="hljs-number">100</span>}
+    <span class="hljs-keyword">var</span> laowang Student
+
+    laowang = xiaoming
+
+    fmt.Println(laowang)
+
+}
+</code></pre>
+<p><img src="assets/image-20190908131748809.png" alt=""></p>
+<h2 id="7-&#x7ED3;&#x6784;&#x4F53;&#x5F53;&#x505A;&#x53C2;&#x6570;">7. &#x7ED3;&#x6784;&#x4F53;&#x5F53;&#x505A;&#x53C2;&#x6570;</h2>
+<p>&#x7ED3;&#x6784;&#x4F53;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#xFF0C;&#x662F;&#x503C;&#x4F20;&#x9012;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">type</span> Student <span class="hljs-keyword">struct</span> {
+    id <span class="hljs-typename">int</span>
+    name <span class="hljs-typename">string</span>
+    sex <span class="hljs-typename">bool</span>
+    age <span class="hljs-typename">int</span>
+    address <span class="hljs-typename">string</span>
+    weight <span class="hljs-typename">int</span>
+}
+
+<span class="hljs-keyword">func</span> Test(temp Student) {
+
+    temp.name = <span class="hljs-string">&quot;&#x738B;&#x8001;&#x5E08;&quot;</span>
+
+    <span class="hljs-comment">// &#x6253;&#x5370;&#x7ED3;&#x679C;</span>
+    fmt.Println(<span class="hljs-string">&quot;Test&#x51FD;&#x6570;&#x4E2D;,&quot;</span>, temp)
+}
+
+<span class="hljs-keyword">func</span> main()  {
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+    xiaoming := Student{<span class="hljs-number">101</span>, <span class="hljs-string">&quot;dongge&quot;</span>, <span class="hljs-constant">true</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">100</span>}
+
+    <span class="hljs-comment">// &#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x7ED3;&#x6784;&#x4F53;&#x4F20;&#x9012;&#x8FC7;&#x53BB;</span>
+    Test(xiaoming)
+
+    <span class="hljs-comment">// &#x6253;&#x5370;&#x7ED3;&#x679C;</span>
+    fmt.Println(<span class="hljs-string">&quot;main&#x51FD;&#x6570;&#x4E2D;,&quot;</span>, xiaoming)
+}
+</code></pre>
+<p><img src="assets/image-20190908125451723.png" alt=""></p>
+<h2 id="8-&#x7ED3;&#x6784;&#x4F53;&#x6570;&#x7EC4;">8. &#x7ED3;&#x6784;&#x4F53;&#x6570;&#x7EC4;</h2>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-comment">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x7C7B;&#x578B;</span>
+<span class="hljs-keyword">type</span> Student <span class="hljs-keyword">struct</span> {
+    id <span class="hljs-typename">int</span>
+    name <span class="hljs-typename">string</span>
+    sex <span class="hljs-typename">bool</span>
+    age <span class="hljs-typename">int</span>
+    address <span class="hljs-typename">string</span>
+    weight <span class="hljs-typename">int</span>
+}
+
+<span class="hljs-keyword">func</span> main()  {
+    students := []Student{
+        {<span class="hljs-number">101</span>, <span class="hljs-string">&quot;&#x738B;&#x8001;&#x5E08;&quot;</span>, <span class="hljs-constant">true</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">100</span>},
+        {<span class="hljs-number">102</span>, <span class="hljs-string">&quot;&#x674E;&#x8001;&#x5E08;&quot;</span>, <span class="hljs-constant">true</span>, <span class="hljs-number">19</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">70</span>},
+        {<span class="hljs-number">103</span>, <span class="hljs-string">&quot;&#x8D75;&#x8001;&#x5E08;&quot;</span>, <span class="hljs-constant">false</span>, <span class="hljs-number">20</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">90</span>},
+        {<span class="hljs-number">104</span>, <span class="hljs-string">&quot;&#x5F20;&#x8001;&#x5E08;&quot;</span>, <span class="hljs-constant">true</span>, <span class="hljs-number">21</span>, <span class="hljs-string">&quot;shandong&quot;</span>, <span class="hljs-number">80</span>},
+    }
+
+    <span class="hljs-comment">// &#x4F7F;&#x7528;for&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x6570;&#x7EC4;</span>
+    <span class="hljs-keyword">for</span> i, temp := <span class="hljs-keyword">range</span> students{
+        fmt.Println(<span class="hljs-string">&quot;i =&quot;</span>, i, <span class="hljs-string">&quot;&#x7ED3;&#x6784;&#x4F53; =&quot;</span>, temp)
+    }
+}
+</code></pre>
+<p><img src="assets/image-20190908130148151.png" alt=""></p>
+<h2 id="9-&#x7EC3;&#x4E60;">9. &#x7EC3;&#x4E60;</h2>
+<h3 id="&#x7B2C;1&#x9898;">&#x7B2C;1&#x9898;</h3>
+<blockquote>
+<p>  &#x8BA1;&#x7B97;&#x4EE5;&#x4E0A;&#x5B66;&#x751F;&#x6210;&#x7EE9;&#x7684;&#x603B;&#x5206;</p>
+</blockquote>
+<h3 id="&#x7B2C;2&#x9898;">&#x7B2C;2&#x9898;</h3>
+<blockquote>
+<p>  &#x8F93;&#x51FA;&#x4EE5;&#x4E0A;&#x5B66;&#x751F;&#x6210;&#x7EE9;&#x4E2D;&#x6700;&#x9AD8;&#x5206;</p>
+</blockquote>
+<h3 id="&#x7B2C;3&#x9898;">&#x7B2C;3&#x9898;</h3>
+<blockquote>
+<p>  3&#x4E2A;&#x5B66;&#x751F;&#xFF0C;&#x8BA1;&#x7B97;&#x5176;&#x5E73;&#x5747;&#x5206;</p>
+</blockquote>
+<h3 id="&#x7B2C;4&#x9898;">&#x7B2C;4&#x9898;</h3>
+<blockquote>
+<p>  3&#x4E2A;&#x5B66;&#x751F;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B66;&#x751F;3&#x95E8;&#x8BFE;&#x7A0B;&#xFF0C;&#x6C42;&#x5176;&#x5E73;&#x5747;&#x503C;</p>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../10-复合数据类型/04-Map.html" class="navigation navigation-prev " aria-label="Previous page: Map"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../10-复合数据类型/06-指针.html" class="navigation navigation-next " aria-label="Next page: 指针"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"maxiang":{},"toggle-chapters":{},"splitter":{},"emphasize":{},"book-summary-scroll-position-saver":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+<!-- body:end -->
+    </body>
+    <!-- End of book Go基础 -->
+<!-- End of book Go基础 -->
+</html>
